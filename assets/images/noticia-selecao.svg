@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%" fill="none">
+  <rect width="1200" height="675" fill="#FDD835"/>
+  <path d="M0 675 L1200 0 L1200 675 Z" fill="#4CAF50" opacity="0.8"/>
+  <text x="400" y="250" font-family="system-ui" font-size="72" font-weight="bold" fill="#0B132B" text-anchor="start">SELEÇÃO</text>
+  <text x="400" y="330" font-family="system-ui" font-size="72" font-weight="bold" fill="#0B132B" text-anchor="start">BRASILEIRA</text>
+  <text x="400" y="400" font-family="system-ui" font-size="28" fill="#1C2541" text-anchor="start">NOVOS CONVOCADOS PARA AS ELIMINATÓRIAS</text>
+</svg>

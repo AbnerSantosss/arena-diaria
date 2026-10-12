@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 600" width="100%" height="100%" fill="none">
+  <rect width="300" height="600" fill="#0B132B" stroke="#333" stroke-width="2"/>
+  <circle cx="150" cy="200" r="80" fill="#FBBF24"/>
+  <path d="M130 180 L170 180 L150 240 Z" fill="#fff"/>
+  <text x="150" y="350" font-family="system-ui" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle">ENERGY DRINK</text>
+  <text x="150" y="390" font-family="system-ui" font-size="24" font-weight="bold" fill="#FBBF24" text-anchor="middle">MAIS ENERGIA</text>
+  <text x="150" y="420" font-family="system-ui" font-size="16" fill="#aaa" text-anchor="middle">Sabor Original e Zero Açúcar</text>
+  <rect x="80" y="480" width="140" height="40" fill="#FBBF24" rx="20"/>
+  <text x="150" y="505" font-family="system-ui" font-size="14" font-weight="bold" fill="#0B132B" text-anchor="middle">PEÇA O SEU</text>
+</svg>

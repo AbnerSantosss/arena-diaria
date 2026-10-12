@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <circle cx="60" cy="60" r="58" fill="#1C2541" stroke="#38BDF8" stroke-width="3"/>
+  <!-- Cabelo longo estilizado -->
+  <path d="M38 48 C38 30, 82 30, 82 48 C82 70, 82 85, 78 95 C74 90, 70 82, 60 82 C50 82, 46 90, 42 95 C38 85, 38 70, 38 48 Z" fill="#028090"/>
+  <!-- Rosto -->
+  <circle cx="60" cy="50" r="19" fill="#FBCFE8"/>
+  <path d="M42 42 C46 36, 74 36, 78 42 C74 46, 70 48, 60 48 C50 48, 46 46, 42 42 Z" fill="#0B132B"/>
+  <!-- Ombros -->
+  <path d="M28 105 C28 85, 42 80, 60 80 C78 80, 92 85, 92 105" fill="#38BDF8"/>
+</svg>

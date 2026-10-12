@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- SEO & Metadados Conforme Especialista 05 - SEO e IA -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena Diária | Notícias, Economia e Inovação</title>
+  <meta name="description" content="Arena Diária: notícias de futebol, economia do esporte, tecnologia e regulação no Brasil. Patrocínios, Pix, empregos e a Lei 14.790 explicados.">
+  <link rel="canonical" href="https://arenadiaria.proxserverabner.site/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- Open Graph / Facebook & Meta Ads Compliance -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arena Diária | Notícias, Economia e Inovação">
+  <meta property="og:description" content="Jornalismo sério sobre o universo dos esportes no Brasil: economia, segurança bancária, patrocínios no futebol e Lei 14.790/2023.">
+  <meta property="og:url" content="https://arenadiaria.proxserverabner.site/">
+  <meta property="og:site_name" content="Arena Diária">
+  <meta property="og:image" content="https://arenadiaria.proxserverabner.site/assets/images/noticia-futebol-patrocinios.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="Arena Diária — Notícias e Economia">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arena Diária | Notícias, Economia e Inovação">
+  <meta name="twitter:description" content="Acompanhe o impacto econômico, inovação do Pix e diretrizes de conformidade do mercado esportivo de quotas fixas no Brasil.">
+  <meta name="twitter:image" content="https://arenadiaria.proxserverabner.site/assets/images/noticia-futebol-patrocinios.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/portal.css">
+
+  <!-- Schema Markup JSON-LD (@graph) Conforme Especialista 05 - SEO e IA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://arenadiaria.proxserverabner.site/#organization",
+        "name": "Arena Diária",
+        "url": "https://arenadiaria.proxserverabner.site/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://arenadiaria.proxserverabner.site/assets/images/logo.svg",
+          "width": 540,
+          "height": 100
+        },
+        "description": "Veículo de imprensa especializado em economia do esporte, tecnologia e regulação do mercado de esportes de quota fixa no Brasil." 
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://arenadiaria.proxserverabner.site/#website",
+        "url": "https://arenadiaria.proxserverabner.site/",
+        "name": "Arena Diária",
+        "publisher": { "@id": "https://arenadiaria.proxserverabner.site/#organization" },
+        "inLanguage": "pt-BR"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-teal-500 selection:text-white">
+
+  <!-- ==========================================
+       BARRA FIXA SUPERIOR: AVISO LEGAL  & FAZENDA
+       ========================================== -->
+  <aside class="legal-bar-top" aria-label="Aviso Legal de Jogo Responsável">
+    <div class="max-w-7xl mx-auto w-full flex items-center justify-between flex-wrap gap-2 text-xs">
+      <div class="flex items-center gap-2">
+        
+        <span>Esportes esportivas são restritas a todos os públicos. Aposte com moderação.</span>
+        <span class="hidden md:inline text-slate-400">|</span>
+        <span class="hidden md:inline text-amber-300 font-semibold">Ministério da Fazenda adverte: Aposta pode causar dependência e não é investimento.</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-semibold">
+        <a href="jogo-responsavel.html" class="text-teal-400 hover:underline">Jogo Responsável</a>
+        <a href="quem-somos.html" class="text-slate-300 hover:text-white">Linha Editorial</a>
+        <button id="themeToggleBtn" class="text-slate-300 hover:text-white flex items-center gap-1 focus:outline-none" title="Alternar tema">
+          <span>🌓</span> Modo
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       HEADER PRINCIPAL NO ESTILO GRANDE PORTAL (R7)
+       ========================================== -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <!-- Topo Informativo: Data, Tempo e Cotações -->
+    <div class="bg-slate-100 border-b border-slate-200 py-1 px-4 text-xs text-slate-600 hidden sm:block">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <span id="headerLiveDate" class="font-medium">Terça-feira, 06 de outubro de 2026</span>
+          <span>•</span>
+          <span class="flex items-center gap-1">⛅ São Paulo 24°C</span>
+          <span class="flex items-center gap-1">⛅ Brasília 27°C</span>
+        </div>
+        <div class="flex items-center gap-4 font-mono font-medium">
+          <span>USD: R$ 5,42 <span class="text-emerald-600">▲</span></span>
+          <span>EUR: R$ 5,88 <span class="text-emerald-600">▲</span></span>
+          <span class="text-teal-700 font-sans font-bold">SIGAP: 110+ Marcas Homologadas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra do Logo e Ações -->
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <!-- Botão Hambúrguer Mobile -->
+      <button id="mobileMenuToggle" class="lg:hidden touch-target text-slate-800 p-2 rounded-lg hover:bg-slate-100 focus:outline-none" aria-label="Abrir menu de navegação">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+
+      <!-- Logo do Portal -->
+      <a href="/" class="flex items-center" aria-label="Página Inicial do Arena Diária">
+        <img src="assets/images/logo.svg" alt="Arena Diária — Logotipo" class="h-10 sm:h-12 w-auto" width="240" height="48">
+      </a>
+
+      <!-- Caixa de Busca Rápida -->
+      <div class="hidden md:flex items-center flex-1 max-w-md mx-6">
+        <div class="relative w-full">
+          <input type="search" placeholder="Buscar notícias, legislação, clubes, Pix..." class="w-full bg-slate-100 border border-slate-300 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:border-teal-600 focus:bg-white transition-all">
+          <button class="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600" aria-label="Pesquisar">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Botão Anuncie / Mídia Kit -->
+      <div class="flex items-center gap-3">
+        <a href="anuncie.html" class="touch-target bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-lg shadow-sm transition-colors text-center">
+          Mídia Kit / Anuncie
+        </a>
+      </div>
+    </div>
+
+    <!-- Navegação por Categorias Estilo R7 -->
+    <nav class="hidden lg:block bg-[#0B132B] text-white" aria-label="Categorias de notícias">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto text-sm font-bold tracking-wide">
+        <div class="flex items-center space-x-1">
+          <a href="/" class="px-4 py-3 bg-teal-600 text-white hover:bg-teal-500 transition-colors">HOME</a>
+          <a href="#economia" class="px-4 py-3 text-slate-200 hover:text-white hover:bg-slate-800 transition-colors">ECONOMIA & MERCADO</a>
+          <a href="#tecnologia" class="px-4 py-3 text-slate-200 hover:text-white hover:bg-slate-800 transition-colors">TECNOLOGIA & PIX</a>
+          <a href="#futebol" class="px-4 py-3 text-slate-200 hover:text-white hover:bg-slate-800 transition-colors">FUTEBOL & PATROCÍNIOS</a>
+          <a href="#regulacao" class="px-4 py-3 text-slate-200 hover:text-white hover:bg-slate-800 transition-colors">REGULAÇÃO & LEIS</a>
+          <a href="#seguranca" class="px-4 py-3 text-slate-200 hover:text-white hover:bg-slate-800 transition-colors">SEGURANÇA & DADOS</a>
+          <a href="jogo-responsavel.html" class="px-4 py-3 text-amber-400 hover:text-amber-300 hover:bg-slate-800 transition-colors flex items-center gap-1">
+            <span>🛡️</span> JOGO RESPONSÁVEL
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================
+       DRAWER MOBILE MENU (TOUCH-FRIENDLY >= 48px)
+       ========================================== -->
+  <div id="mobileNavOverlay" class="fixed inset-0 bg-black/60 z-50 hidden transition-opacity"></div>
+  <aside id="mobileNavDrawer" class="fixed top-0 left-0 bottom-0 w-80 bg-slate-900 text-white z-50 transform -translate-x-full transition-transform duration-300 overflow-y-auto p-6" aria-label="Menu móvel">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+      <img src="assets/images/logo.svg" alt="Arena Diária" class="h-8 w-auto">
+      <button id="mobileMenuClose" class="touch-target p-2 text-slate-400 hover:text-white" aria-label="Fechar menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-2 text-base font-bold">
+      <a href="/" class="touch-target px-4 py-3 rounded-lg bg-teal-600 text-white">Home</a>
+      <a href="#economia" class="touch-target px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-200">Economia & Mercado</a>
+      <a href="#tecnologia" class="touch-target px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-200">Tecnologia & Pix</a>
+      <a href="#futebol" class="touch-target px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-200">Futebol & Patrocínios</a>
+      <a href="#regulacao" class="touch-target px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-200">Regulação & Leis</a>
+      <a href="jogo-responsavel.html" class="touch-target px-4 py-3 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/30">Jogo Responsável</a>
+      <a href="anuncie.html" class="touch-target px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-200">Anuncie Conosco</a>
+      <div class="border-t border-slate-800 pt-4 mt-4 text-sm font-normal text-slate-400 space-y-2">
+        <a href="quem-somos.html" class="block py-2 hover:text-white">Quem Somos</a>
+        <a href="politica-de-privacidade.html" class="block py-2 hover:text-white">Privacidade LGPD</a>
+        <a href="termos-de-uso.html" class="block py-2 hover:text-white">Termos de Uso</a>
+        <a href="contato.html" class="block py-2 hover:text-white">Contato & Ouvidoria</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ==========================================
+       PLANTÃO / BREAKING NEWS TICKER (PADRÃO R7)
+       ========================================== -->
+  <section class="ticker-container" aria-label="Plantão de Notícias ao Vivo">
+    <div class="max-w-7xl mx-auto flex items-center">
+      <div class="ticker-badge">
+        <span class="pulse-dot"></span>
+        <span>AO VIVO</span>
+      </div>
+      <div class="px-4 py-2 text-xs sm:text-sm font-semibold truncate flex-1">
+        <span id="tickerText" class="transition-opacity duration-300">
+          LEI 14.790: Ministério da Fazenda conclui 1ª fase de homologação no SIGAP com recorde de conformidade
+        </span>
+      </div>
+      <div class="hidden md:flex px-4 py-2 text-xs text-teal-400 font-bold uppercase tracking-wider items-center gap-1">
+        <span>Última atualização: 10 min atrás</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ESPAÇO PUBLICITÁRIO: TOP LEADERBOARD (728x90)
+       Com compliance Conar e rel="sponsored nofollow"
+       ========================================== -->
+  <div class="max-w-7xl mx-auto px-4 py-4 w-full flex justify-center">
+    <div class="w-full max-w-[728px] ad-slot-card">
+      
+      <a href="noticia-brasileirao-rodada.html" rel="sponsored nofollow" data-partner="Operadora-Homologada" data-slot="top_leaderboard" class="block">
+        <img src="assets/images/banner-ads-leaderboard.svg" alt="Publicidade: Conheça as grandes marcas e parceiros" class="w-full h-auto" width="728" height="90">
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       CORPO PRINCIPAL: GRID JORNALÍSTICO (PADRÃO R7)
+       2 Colunas de Conteúdo Forte + 1 Coluna Lateral
+       ========================================== -->
+  <main class="max-w-7xl mx-auto px-4 py-6 w-full flex-1">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- COLUNA PRINCIPAL (8 Colunas em Desktop) -->
+      <section class="lg:col-span-8 space-y-8" aria-label="Manchetes Principais">
+        
+        <!-- SUPER MANCHETE HERO (ESTILO R7 CAPA) -->
+        <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow group">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <a href="noticia-patrocinios-futebol.html" class="block">
+              <img src="assets/images/noticia-futebol-patrocinios.jpg" alt="Patrocínios de esportes no futebol brasileiro batem recorde" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" width="1200" height="675" loading="eager">
+            </a>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="chapeu-badge chapeu-futebol">FUTEBOL & NEGÓCIOS</span>
+              <span class="bg-black/70 backdrop-blur-xs text-white text-xs font-bold px-2 py-0.5 rounded">EXCLUSIVO</span>
+            </div>
+          </div>
+          
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+              <span class="font-bold text-teal-700">POR RODRIGO ALBUQUERQUE</span>
+              <span>•</span>
+              <time datetime="2026-10-06">06 de outubro de 2026</time>
+              <span>•</span>
+              <span>4 min de leitura</span>
+            </div>
+            
+            <h1 class="headline-r7 text-2xl sm:text-3xl lg:text-4xl mb-4">
+              <a href="noticia-patrocinios-futebol.html" class="hover:text-teal-700">
+                Casas de Esportes Batem Recorde de Investimentos e Impulsionam Futebol Brasileiro para Mais de R$ 600 Milhões Anuais
+              </a>
+            </h1>
+            
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+              Aportes estratégicos de operadoras licenciadas garantem a repatriação de estrelas internacionais, financiam a modernização das categorias de base e alavancam o crescimento histórico do futebol feminino na Série A.
+            </p>
+
+            <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span class="text-xs font-semibold text-slate-600">Impacto Direto nos Clubes Nacionais</span>
+              </div>
+              <a href="noticia-patrocinios-futebol.html" class="inline-flex items-center gap-1 text-sm font-bold text-teal-700 hover:text-teal-900">
+                Ler matéria completa <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- GRADE DE 2 MANCHETES SECUNDÁRIAS (GRID 2 COLUNAS) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Notícia Secundária 1: Pix & Biometria -->
+          <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col group">
+            <div class="relative aspect-video bg-slate-900 overflow-hidden">
+              <a href="noticia-pix-saque-rapido.html">
+                <img src="assets/images/noticia-pix-biometria.svg" alt="Pix e biometria facial no Esportes" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300" width="600" height="338" loading="lazy">
+              </a>
+              <span class="absolute top-3 left-3 chapeu-badge chapeu-tech">INOVAÇÃO & FINTECH</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 text-xs text-slate-500 mb-2">
+                  <span class="font-bold text-teal-700">MARIANA SILVA</span>
+                  <span>•</span>
+                  <span>3 min de leitura</span>
+                </div>
+                <h2 class="headline-r7 text-lg sm:text-xl mb-3">
+                  <a href="noticia-pix-saque-rapido.html">
+                    Revolução Tecnológica: Pix e Biometria Facial Reduzem Saques para Menos de 60 Segundos com Segurança do Banco Central
+                  </a>
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                  Integração direta com o Sistema Financeiro Nacional erradica fraudes e garante liquidação instantânea de prêmios aos usuários.
+                </p>
+              </div>
+              <a href="noticia-pix-saque-rapido.html" class="text-xs font-bold text-teal-700 hover:underline flex items-center gap-1">
+                Ver tecnologia completa <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Notícia Secundária 2: Empregos no Mercado Regulado -->
+          <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col group">
+            <div class="relative aspect-video bg-slate-900 overflow-hidden">
+              <a href="noticia-geracao-empregos.html">
+                <img src="assets/images/noticia-geracao-empregos.svg" alt="Geração de empregos no Esportes brasileiro" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300" width="600" height="338" loading="lazy">
+              </a>
+              <span class="absolute top-3 left-3 chapeu-badge chapeu-economia">MERCADO & CARREIRA</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 text-xs text-slate-500 mb-2">
+                  <span class="font-bold text-teal-700">DR. CARLOS EDUARDO</span>
+                  <span>•</span>
+                  <span>4 min de leitura</span>
+                </div>
+                <h2 class="headline-r7 text-lg sm:text-xl mb-3">
+                  <a href="noticia-geracao-empregos.html">
+                    Mercado Regulado no Brasil Aquece a Economia com Mais de 25 Mil Empregos Qualificados em Tecnologia e Compliance
+                  </a>
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                  Sedes corporativas abertas em capitais brasileiras abrem oportunidades para programadores, analistas de risco e especialistas jurídicos.
+                </p>
+              </div>
+              <a href="noticia-geracao-empregos.html" class="text-xs font-bold text-teal-700 hover:underline flex items-center gap-1">
+                Conhecer os dados <span>→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- ESPAÇO PUBLICITÁRIO NATIVE AD NO FEED -->
+        <section class="bg-gradient-to-r from-slate-900 to-[#1C2541] rounded-xl p-6 text-white border border-slate-700 relative overflow-hidden" aria-label="Destaque de Patrocinador">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+            <span class="flex items-center gap-1 text-teal-400">
+              <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+              CONTEÚDO PATROCINADO
+            </span>
+            <span>LICENÇA OFICIAL .BET.BR</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div class="md:col-span-2">
+              <h3 class="text-xl font-bold mb-2 text-white">Como Escolher uma Casa de Esportes em Conformidade com a Portaria SPA/MF</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Entenda os 4 pilares inegociáveis exigidos pelo Governo Federal: segregação de contas bancárias, ouvidoria 24h, verificação facial e ferramentas de jogo responsável.
+              </p>
+              <a href="noticia-brasileirao-rodada.html" rel="sponsored nofollow" data-partner="Guia-Legal" data-slot="in_feed_native" class="touch-target inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs uppercase px-5 py-2.5 rounded-lg transition-colors">
+                <span>Ler Guia de Segurança</span> <span>→</span>
+              </a>
+            </div>
+            <div class="bg-slate-800/80 p-4 rounded-lg border border-slate-700 text-center">
+              <span class="text-2xl font-black text-emerald-400">100%</span>
+              <p class="text-xs text-slate-300 font-semibold mt-1">Conformidade Legal SIGAP e Lei 14.790/2023</p>
+            </div>
+          </div>
+          <!-- Tarja Obrigatória Conar -->
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[10px] text-slate-400 text-center font-bold">
+             | APOSTE COM RESPONSABILIDADE. APOSTA NÃO É INVESTIMENTO. MINISTÉRIO DA FAZENDA ADVERTE: PODE CAUSAR DEPENDÊNCIA.
+          </div>
+        </section>
+
+        <!-- SEÇÃO ESPECIAL 3: REGULAÇÃO E SEGURANÇA -->
+        <section id="regulacao" class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8" aria-label="Notícias de Regulação">
+          <div class="flex items-center justify-between border-b-2 border-slate-200 pb-3 mb-6">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-6 bg-teal-600 rounded-xs"></span>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">REGULAÇÃO, SEGURANÇA & TRANSPARÊNCIA</h2>
+            </div>
+            <span class="text-xs font-bold text-teal-700 uppercase tracking-wider hidden sm:inline">LEI 14.790/2023</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Card Regulação -->
+            <article class="flex flex-col group">
+              <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden mb-3">
+                <a href="noticia-plataformas-autorizadas.html">
+                  <img src="assets/images/noticia-plataformas-autorizadas.svg" alt="Operadoras autorizadas Fazenda" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300" width="500" height="281" loading="lazy">
+                </a>
+              </div>
+              <span class="chapeu-badge chapeu-regulacao self-start mb-2">PADRÃO OURO</span>
+              <h3 class="headline-r7 text-base font-bold mb-2">
+                <a href="noticia-plataformas-autorizadas.html">
+                  Operadoras Autorizadas Lideram Nova Era de Confiança com Segregação Patrimonial e Ouvidorias no Brasil
+                </a>
+              </h3>
+              <p class="text-slate-600 text-xs leading-relaxed mb-2">
+                Depósitos mantidos em contas segregadas garantem que o patrimônio dos apostadores esteja 100% blindado contra riscos corporativos.
+              </p>
+              <a href="noticia-plataformas-autorizadas.html" class="text-xs font-bold text-teal-700 hover:underline">Ver regras completas →</a>
+            </article>
+
+            <!-- Card Inteligência Artificial & Jogo Responsável -->
+            <article class="flex flex-col group">
+              <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden mb-3">
+                <a href="noticia-inteligencia-artificial.html">
+                  <img src="assets/images/noticia-inteligencia-artificial.svg" alt="IA e Jogo Responsável" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300" width="500" height="281" loading="lazy">
+                </a>
+              </div>
+              <span class="chapeu-badge chapeu-tech self-start mb-2">BEM-ESTAR DIGITAL</span>
+              <h3 class="headline-r7 text-base font-bold mb-2">
+                <a href="noticia-inteligencia-artificial.html">
+                  Inteligência Artificial e Jogo Responsável: Como Algoritmos Preditivos Protegem o Usuário e Combatem Excessos
+                </a>
+              </h3>
+              <p class="text-slate-600 text-xs leading-relaxed mb-2">
+                Modelos de machine learning detectam comportamentos impulsivos e acionam travas preventivas antes que prejuízos aconteçam.
+              </p>
+              <a href="noticia-inteligencia-artificial.html" class="text-xs font-bold text-teal-700 hover:underline">Entenda a tecnologia →</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- SEÇÃO ESPECIAL 4: TRIBUTAÇÃO E RETORNO SOCIAL -->
+        <article class="bg-white border border-slate-200 rounded-xl overflow-hidden p-6 sm:p-8 flex flex-col md:flex-row gap-6 items-center">
+          <div class="w-full md:w-1/2 aspect-video bg-slate-900 rounded-lg overflow-hidden">
+            <a href="noticia-tributacao-saude.html">
+              <img src="assets/images/noticia-tributacao-saude.svg" alt="Tributação de esportes destinada à saúde e segurança" class="w-full h-full object-cover hover:scale-102 transition-transform" width="500" height="281" loading="lazy">
+            </a>
+          </div>
+          <div class="w-full md:w-1/2">
+            <span class="chapeu-badge chapeu-economia mb-2">IMPACTO FISCAL CIDADÃO</span>
+            <h2 class="headline-r7 text-xl sm:text-2xl mb-3">
+              <a href="noticia-tributacao-saude.html">
+                Tributação no Esportes: Arrecadação Bilionária Destina Recursos Históricos para Saúde, Esporte e Segurança Pública
+              </a>
+            </h2>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Com repasses definidos por lei, fatia dos tributos arrecadados fortalece os programas de saúde mental do SUS, o Bolsa Atleta e ações da Polícia Federal.
+            </p>
+            <a href="noticia-tributacao-saude.html" class="inline-flex items-center gap-1 text-xs font-bold text-teal-700 hover:text-teal-900">
+              Ler dossiê fiscal completo <span>→</span>
+            </a>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ==========================================
+           COLUNA LATERAL: SIDEBAR (4 Colunas em Desktop)
+           Padrão R7: Anúncios 300x600, Mais Lidas, Simulador SIGAP, Newsletter
+           ========================================== -->
+      <aside class="lg:col-span-4 space-y-8" aria-label="Conteúdo complementar e anúncios">
+        
+        <!-- BANNER HALF-PAGE 300x600 COM CONAR -->
+        <div class="ad-slot-card mx-auto max-w-[300px]">
+          
+          <a href="noticia-brasileirao-rodada.html" rel="sponsored nofollow" data-partner="Operadora-Destaque" data-slot="sidebar_half_page" class="block">
+            <img src="assets/images/banner-ads-half-page.svg" alt="Anúncio: Jogue onde é regulado com selo oficial SPA/MF" class="w-full h-auto" width="300" height="600">
+          </a>
+        </div>
+
+        <!-- MAIS LIDAS (RANKING NUMERADO ESTILO R7) -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <div class="flex items-center gap-2 border-b-2 border-slate-200 pb-3 mb-4">
+            <span class="w-2.5 h-5 bg-alert-coral bg-[#E63946] rounded-xs"></span>
+            <h3 class="text-lg font-black text-slate-900 tracking-tight uppercase">MAIS LIDAS DO PORTAL</h3>
+          </div>
+
+          <ol class="space-y-4">
+            <li class="rank-item flex items-start gap-3 pb-4 border-b border-slate-100">
+              <span class="rank-number">1</span>
+              <div>
+                <span class="text-[11px] font-bold text-amber-700 uppercase">Futebol</span>
+                <h4 class="text-sm font-bold leading-snug text-slate-900 hover:text-teal-700">
+                  <a href="noticia-patrocinios-futebol.html">Clubes da Série A somam R$ 600 milhões em patrocínios recordes</a>
+                </h4>
+                <span class="text-[11px] text-slate-400">Mais de 42 mil leituras hoje</span>
+              </div>
+            </li>
+
+            <li class="rank-item flex items-start gap-3 pb-4 border-b border-slate-100">
+              <span class="rank-number">2</span>
+              <div>
+                <span class="text-[11px] font-bold text-teal-700 uppercase">Tecnologia</span>
+                <h4 class="text-sm font-bold leading-snug text-slate-900 hover:text-teal-700">
+                  <a href="noticia-pix-saque-rapido.html">Saque em menos de 1 minuto com biometria vira padrão no país</a>
+                </h4>
+                <span class="text-[11px] text-slate-400">35 mil leituras</span>
+              </div>
+            </li>
+
+            <li class="rank-item flex items-start gap-3 pb-4 border-b border-slate-100">
+              <span class="rank-number">3</span>
+              <div>
+                <span class="text-[11px] font-bold text-purple-700 uppercase">Regulação</span>
+                <h4 class="text-sm font-bold leading-snug text-slate-900 hover:text-teal-700">
+                  <a href="noticia-plataformas-autorizadas.html">Lista oficial da Fazenda: critérios da outorga de R$ 30 milhões</a>
+                </h4>
+                <span class="text-[11px] text-slate-400">29 mil leituras</span>
+              </div>
+            </li>
+
+            <li class="rank-item flex items-start gap-3 pb-4 border-b border-slate-100">
+              <span class="rank-number">4</span>
+              <div>
+                <span class="text-[11px] font-bold text-blue-700 uppercase">Empregos</span>
+                <h4 class="text-sm font-bold leading-snug text-slate-900 hover:text-teal-700">
+                  <a href="noticia-geracao-empregos.html">25 mil vagas abertas em TI, engenharia de dados e compliance</a>
+                </h4>
+                <span class="text-[11px] text-slate-400">22 mil leituras</span>
+              </div>
+            </li>
+
+            <li class="rank-item flex items-start gap-3">
+              <span class="rank-number">5</span>
+              <div>
+                <span class="text-[11px] font-bold text-emerald-700 uppercase">Bem-Estar</span>
+                <h4 class="text-sm font-bold leading-snug text-slate-900 hover:text-teal-700">
+                  <a href="noticia-inteligencia-artificial.html">Algoritmos de IA barram impulsos e protegem orçamento do jogador</a>
+                </h4>
+                <span class="text-[11px] text-slate-400">18 mil leituras</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- WIDGET INTERATIVO: VERIFICADOR SIGAP -->
+        <div class="bg-gradient-to-br from-[#0B132B] to-[#1C2541] rounded-xl p-6 text-white border border-slate-700 shadow-md">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-emerald-400 text-lg">🔍</span>
+            <h3 class="text-base font-extrabold tracking-tight">CONSULTA RÁPIDA SIGAP</h3>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Consulte se uma casa de esportes possui licença oficial expedida pelo Ministério da Fazenda (SPA/MF).
+          </p>
+          <form id="sigapCheckerForm" class="space-y-3">
+            <input type="text" id="sigapSearchInput" placeholder="Ex: Betano, Superbet, EstrelaBet..." class="w-full bg-slate-900 border border-slate-600 rounded-lg py-2.5 px-3 text-xs text-white focus:outline-none focus:border-teal-400" required>
+            <button type="submit" class="touch-target w-full bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold text-xs uppercase tracking-wider py-2.5 rounded-lg transition-colors">
+              Verificar Concessão Oficial
+            </button>
+          </form>
+          <div id="sigapResultBox" class="mt-4 hidden text-left"></div>
+        </div>
+
+        <!-- BANNER MEDIUM RECTANGLE 300x250 COM CONAR -->
+        <div class="ad-slot-card mx-auto max-w-[300px]">
+          
+          <a href="noticia-brasileirao-rodada.html" rel="sponsored nofollow" data-partner="Parceiro-300x250" data-slot="sidebar_medium_rec" class="block">
+            <img src="assets/images/banner-ads-medium-rectangle.svg" alt="Publicidade: As melhores ofertas para você" class="w-full h-auto" width="300" height="250">
+          </a>
+        </div>
+
+        <!-- NEWSLETTER INSTITUCIONAL DO PORTAL -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
+          <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">BOLETIM DIÁRIO</span>
+          <h3 class="text-base font-extrabold text-slate-900 mt-1 mb-2">Receba os Dossiês Econômicos e Jurídicos</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Envio matinal com as movimentações regulatórias, novas licenças da Fazenda e dados do mercado.
+          </p>
+          <form class="space-y-3" onsubmit="event.preventDefault(); alert('Inscrição confirmada com sucesso no Boletim Executivo!');">
+            <input type="email" placeholder="Seu e-mail corporativo" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-teal-600" required>
+            <button type="submit" class="touch-target w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider py-2.5 rounded-lg transition-colors">
+              Inscrever-se Gratuitamente
+            </button>
+          </form>
+          <span class="text-[10px] text-slate-400 block mt-2 text-center">Respeitamos sua privacidade (LGPD). Cancele a qualquer momento.</span>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- ==========================================
+       RODAPÉ INSTITUCIONAL COMPLETO (PADRÃO R7/UOL)
+       Links obrigatórios para aprovação no Google e Meta
+       ========================================== -->
+    <footer class="bg-[#0B132B] text-slate-300 pt-12 pb-8 border-t-4 border-teal-500 mt-12" aria-label="Rodapé do portal">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+        
+        <div class="lg:col-span-2 space-y-4">
+          <img src="assets/images/logo.svg" alt="Arena Diária" class="h-10 w-auto">
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            O <strong>Arena Diária</strong> é um veículo de jornalismo especializado independente, comprometido com a cobertura objetiva, dados do mercado e esportes, trazendo as últimas novidades de tecnologia e economia para você.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-extrabold text-white uppercase tracking-wider mb-4 border-l-2 border-teal-400 pl-2">Editorias</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="/" class="hover:text-teal-400 transition-colors">Página Inicial</a></li>
+            <li><a href="noticia-brasileirao-rodada.html" class="hover:text-teal-400 transition-colors">Brasileirão</a></li>
+            <li><a href="noticia-selecao-brasileira.html" class="hover:text-teal-400 transition-colors">Seleção Brasileira</a></li>
+            <li><a href="noticia-patrocinios-futebol.html" class="hover:text-teal-400 transition-colors">Mercado da Bola</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-extrabold text-white uppercase tracking-wider mb-4 border-l-2 border-teal-400 pl-2">Institucional</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="quem-somos.html" class="hover:text-teal-400 transition-colors">Quem Somos & Redação</a></li>
+            <li><a href="politica-de-privacidade.html" class="hover:text-teal-400 transition-colors">Política de Privacidade (LGPD)</a></li>
+            <li><a href="termos-de-uso.html" class="hover:text-teal-400 transition-colors">Termos de Uso</a></li>
+            <li><a href="contato.html" class="hover:text-teal-400 transition-colors">Contato</a></li>
+            <li><a href="anuncie.html" class="hover:text-teal-400 transition-colors">Anuncie Conosco</a></li>
+          </ul>
+        </div>
+
+      </div>
+      
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-500">
+          © 2026 Arena Diária. Todos os direitos reservados.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="text-slate-500 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="#" class="text-slate-500 hover:text-white transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          <a href="#" class="text-slate-500 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       BANNER DE CONSENTIMENTO DE COOKIES (LGPD)
+       ========================================== -->
+  <aside id="cookieConsentBanner" class="hidden" aria-label="Consentimento de Cookies">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-xs text-slate-200 leading-relaxed">
+        <strong class="text-white">Privacidade e Transparência:</strong> 
+        Utilizamos cookies essenciais para garantir o funcionamento seguro do portal e cookies analíticos para mensuração de audiência jornalística, em conformidade com a LGPD (Lei 13.709/2018).
+        Consulte nossa <a href="politica-de-privacidade.html" class="text-teal-400 underline">Política de Privacidade</a>.
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <button id="btnRejectCookies" class="touch-target px-4 py-2 text-xs font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
+          Apenas Essenciais
+        </button>
+        <button id="btnAcceptCookies" class="touch-target px-5 py-2 text-xs font-bold text-slate-950 bg-teal-400 hover:bg-teal-300 rounded-lg transition-colors">
+          Aceitar Todos
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Script Principal -->
+  <script src="assets/js/portal.js"></script>
+</body>
+</html>

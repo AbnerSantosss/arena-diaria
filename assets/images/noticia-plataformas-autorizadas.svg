@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%" fill="none">
+  <rect width="1200" height="675" fill="#1C2541"/>
+  <circle cx="600" cy="300" r="180" fill="#0B132B"/>
+  <path d="M600 150 L720 200 L720 320 C720 420 620 460 600 480 C580 460 480 420 480 320 L480 200 Z" fill="#00A896"/>
+  <path d="M570 310 L590 330 L640 270" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="560" font-family="system-ui" font-size="48" font-weight="bold" fill="#fff" text-anchor="middle">ESPORTES E MERCADO</text>
+  <text x="600" y="610" font-family="system-ui" font-size="28" fill="#94A3B8" text-anchor="middle">PADRÃO OURO DE SEGURANÇA E CONFIANÇA</text>
+</svg>

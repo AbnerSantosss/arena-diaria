@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: arena-diaria:latest
+    container_name: arena-diaria
+    restart: unless-stopped
+    ports:
+      - "8105:80"

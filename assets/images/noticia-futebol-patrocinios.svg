@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="60%" stop-color="#1C2541"/>
+      <stop offset="100%" stop-color="#028090"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00A896" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F77F00" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  
+  <!-- Linhas de Campo de Futebol estilizadas -->
+  <g opacity="0.15" stroke="#FFFFFF" stroke-width="4">
+    <ellipse cx="600" cy="550" rx="480" ry="220"/>
+    <circle cx="600" cy="550" r="140"/>
+    <line x1="120" y1="550" x2="1080" y2="550"/>
+    <rect x="360" y="380" width="480" height="170"/>
+  </g>
+
+  <!-- Luzes de Estádio / Holofotes -->
+  <circle cx="150" cy="80" r="250" fill="#00A896" opacity="0.12" filter="blur(40px)"/>
+  <circle cx="1050" cy="80" r="250" fill="#F77F00" opacity="0.10" filter="blur(40px)"/>
+
+  <!-- Gráficos de Crescimento Financeiro (R$ 600M) -->
+  <g transform="translate(680, 160)">
+    <!-- Card de Estatística -->
+    <rect width="450" height="280" rx="16" fill="#0B132B" opacity="0.85" stroke="#3A506B" stroke-width="2"/>
+    <text x="32" y="55" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#00A896" letter-spacing="2">CONTRATOS SÉRIE A (2025/2026)</text>
+    <text x="32" y="125" font-family="'Inter', sans-serif" font-size="52" font-weight="900" fill="#FFFFFF">+ R$ 600 mi</text>
+    <text x="32" y="160" font-family="'Inter', sans-serif" font-size="15" fill="#94A3B8">Volume anual investido diretamente nos clubes brasileiros</text>
+    
+    <!-- Barras do Gráfico -->
+    <rect x="32" y="220" width="60" height="35" rx="6" fill="#3A506B"/>
+    <rect x="110" y="195" width="60" height="60" rx="6" fill="#3A506B"/>
+    <rect x="190" y="165" width="60" height="90" rx="6" fill="#028090"/>
+    <rect x="270" y="130" width="60" height="125" rx="6" fill="#00A896"/>
+    <rect x="350" y="85" width="60" height="170" rx="6" fill="#10B981"/>
+  </g>
+
+  <!-- Camisa e Silhueta Esportiva -->
+  <g transform="translate(180, 150)">
+    <!-- Silhueta estilizada da camisa de futebol com patrocínio máster -->
+    <path d="M120 40 L190 70 L250 50 L270 120 L220 140 L220 380 L60 380 L60 140 L10 120 L30 50 L90 70 Z" fill="#1C2541" stroke="#00A896" stroke-width="4"/>
+    <!-- Linhas e Patrocínio Máster -->
+    <rect x="75" y="180" width="130" height="40" rx="8" fill="#00A896"/>
+    <text x="92" y="206" font-family="'Inter', sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" letter-spacing="2">PATROCÍNIO</text>
+    <text x="108" y="260" font-family="'Inter', sans-serif" font-size="44" font-weight="900" fill="#FFFFFF" opacity="0.3">10</text>
+    <!-- Estrelas no Peito -->
+    <polygon points="105,100 110,112 122,112 112,120 116,132 105,124 94,132 98,120 88,112 100,112" fill="#F77F00"/>
+    <polygon points="135,100 140,112 152,112 142,120 146,132 135,124 124,132 128,120 118,112 130,112" fill="#F77F00"/>
+  </g>
+
+  <!-- Faixa de Destaque Inferior -->
+  <rect y="585" width="1200" height="90" fill="#0B132B" opacity="0.95"/>
+  <rect y="585" width="1200" height="4" fill="url(#glow)"/>
+  <text x="40" y="638" font-family="'Inter', sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">DOSSIÊ ESPECIAL:</text>
+  <text x="240" y="638" font-family="'Inter', sans-serif" font-size="18" font-weight="500" fill="#CBD5E1">Como os aportes de operadoras transformaram CTs, futebol feminino e experiência nas arenas</text>
+</svg>

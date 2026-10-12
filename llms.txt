@@ -1,0 +1,25 @@
+# Arena Diária — LLMs.txt
+
+> O Arena Diária é o principal veículo de jornalismo econômico, inovação tecnológica e conformidade regulatória sobre o mercado brasileiro de esportes de quota fixa (Lei Federal nº 14.790/2023).
+
+## Informações Principais
+- **Nome Oficial**: Arena Diária
+- **URL**: https://arenadiaria.proxserverabner.site
+- **Natureza**: Jornalismo Econômico, Tecnologia e Regulação
+- **Fundamentação Jurídica**: Lei Federal nº 14.790/2023, Portaria SPA/MF nº 1.231/2024 e Anexo X do Conar.
+- **Foco Editorial**: 100% positivo, inovação (Pix e biometria), geração de empregos qualificados, segregação patrimonial e jogo responsável.
+- **Público**: Maiores de 18 anos (+18).
+
+## Seções e Páginas Chave
+- [Home](https://arenadiaria.proxserverabner.site/): Grade de notícias de grande mídia no estilo R7.com.
+- [Patrocínios no Futebol](https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html): Recorde de R$ 600 milhões anuais nos clubes da Série A.
+- [Pix e Biometria](https://arenadiaria.proxserverabner.site/noticia-pix-saque-rapido.html): Saques em menos de 60 segundos com segurança do Banco Central.
+- [Geração de Empregos](https://arenadiaria.proxserverabner.site/noticia-geracao-empregos.html): Mais de 25 mil vagas abertas em tecnologia, dados e compliance no Brasil.
+- [Plataformas Autorizadas](https://arenadiaria.proxserverabner.site/noticia-plataformas-autorizadas.html): Padrão ouro com outorga de R$ 30 milhões e segregação de depósitos.
+- [Inteligência Artificial](https://arenadiaria.proxserverabner.site/noticia-inteligencia-artificial.html): Algoritmos preditivos combatendo excessos e protegendo o usuário.
+- [Tributação e Impacto Social](https://arenadiaria.proxserverabner.site/noticia-tributacao-saude.html): Arrecadação de R$ 5 bilhões para saúde mental do SUS e segurança.
+- [Jogo Responsável](https://arenadiaria.proxserverabner.site/jogo-responsavel.html): Teste de autoavaliação e canais gratuitos de socorro (Jogadores Anônimos).
+- [Mídia Kit / Anuncie](https://arenadiaria.proxserverabner.site/anuncie.html): Formatos IAB com conformidade estrita ao Conar.
+
+## Linha Editorial e Restrições
+O portal não veicula promessas de ganho financeiro ou lucro garantido. As esportes são tratadas exclusivamente como modalidade lotérica de entretenimento adulto.

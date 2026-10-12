@@ -1,0 +1,23 @@
+# Registro bruto de sessões (local, só para retomada)
+registro/
+
+# Configuração local do Claude Code
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.obsidian/
+
+# Material interno: fica só no computador, fora do repositório público
+wiki/
+campanhas/
+orchestrator/
+noticias/
+brand-guidelines.md
+CLAUDE.md
+GEMINI.md
