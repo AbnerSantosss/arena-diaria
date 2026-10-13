@@ -1,271 +1,289 @@
-/**
- * PORTAL IGAMING BRASIL — JAVASCRIPT PRINCIPAL
- * Interatividade, Compliance LGPD, Rastreamento e Utilitários de Imprensa
- */
+/* ==========================================================================
+   ARENA DIÁRIA — comportamento do portal
+   Tudo aqui é aprimoramento: sem JavaScript, links, busca (noticias.html?q=)
+   e formulários continuam funcionando.
+   ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-  initLiveClockAndDate();
-  initBreakingTicker();
-  initMobileMenu();
-  initCookieConsent();
-  initDarkModeToggle();
-  initSigapChecker();
-  initResponsibleGamingQuiz();
-  initCommercialTracking();
-  initRandomAds();
-});
+/* Índice das matérias publicadas (usado pela busca e pela faixa de destaques).
+   Ao publicar uma matéria nova, acrescente uma linha aqui. */
+const MATERIAS = [
+  {"titulo": "Como funciona o Brasileirão: pontos corridos, rodadas e o que vale cada posição", "resumo": "Pontos corridos, 38 rodadas e muito em jogo: veja como a tabela do Brasileirão define campeão, vagas continentais e rebaixados.", "editoria": "Futebol", "url": "noticia-brasileirao-rodada.html"},
+  {"titulo": "Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base", "resumo": "Do primeiro título em 1958 ao penta em 2002: como a Seleção é formada, como funciona a data FIFA e por que a base importa.", "editoria": "Futebol", "url": "noticia-selecao-brasileira.html"},
+  {"titulo": "Do master ao estádio: como as marcas chegam à camisa do seu time", "resumo": "Do master da camisa ao nome do estádio: como funciona o patrocínio no futebol e quais setores mais investem nos clubes brasileiros.", "editoria": "Economia do esporte", "url": "noticia-patrocinios-futebol.html"},
+  {"titulo": "Pix e apostas: o que a MP 1.394 muda para bancos e para o seu dinheiro", "resumo": "Bancos não podem mais processar pagamentos de apostas, nem por Pix. Entenda as regras da MP 1.394 e como o saldo volta para você.", "editoria": "Consumidor", "url": "noticia-pix-saque-rapido.html"},
+  {"titulo": "Para onde ia o dinheiro das bets e o que a MP 1.394 faz com essas receitas", "resumo": "Esporte, turismo, segurança, educação e saúde dividiam a arrecadação das bets. Veja os percentuais da lei e o efeito da MP 1.394.", "editoria": "Economia do esporte", "url": "noticia-tributacao-saude.html"},
+  {"titulo": "Lista de bets autorizadas virou registro histórico: o que mudou com a MP", "resumo": "A lista oficial de bets e o .bet.br não indicam mais quem pode operar. Veja como funciona o bloqueio e o que muda para o consumidor.", "editoria": "Consumidor", "url": "noticia-plataformas-autorizadas.html"},
+  {"titulo": "Redes, buscadores e lojas de apps passam a responder por anúncios de bets", "resumo": "Redes, buscadores e lojas de apps agora respondem por anúncios de bets. Veja o que a MP 1.394 exige, as multas e como denunciar.", "editoria": "Consumidor", "url": "noticia-inteligencia-artificial.html"},
+  {"titulo": "Fim das bets: o que muda para quem trabalha no setor e no entorno", "resumo": "Empresas, afiliados, influenciadores e agências perdem uma atividade com a MP 1.394. Veja as regras e os riscos de continuar.", "editoria": "Economia do esporte", "url": "noticia-geracao-empregos.html"},
+  {"titulo": "Proibição das bets: o que muda com a MP 1.394 e como o saldo volta ao apostador", "resumo": "Entenda a MP 1.394/2026: o que foi proibido, as datas do cronograma oficial e como funciona a devolução do saldo aos apostadores.", "editoria": "Consumidor", "url": "noticia-proibicao-bets-brasil.html"}
+];
 
-/* 1. Relógio e Data em Tempo Real no Header */
-function initLiveClockAndDate() {
-  const dateElement = document.getElementById('headerLiveDate');
-  if (!dateElement) return;
+/* E-mail que recebe as mensagens do formulário de contato. */
+const EMAIL_CONTATO = 'redacao@arenadiaria.com.br';
 
-  const now = new Date();
-  const options = { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  };
-  
-  // Ex: Terça-feira, 6 de outubro de 2026
-  let formatted = now.toLocaleDateString('pt-BR', options);
-  formatted = formatted.charAt(0).toUpperCase() + formatted.slice(1);
-  dateElement.textContent = formatted;
+/* ID do Pixel da Meta (Gerenciador de Eventos). Vazio = pixel desligado.
+   O pixel só carrega depois que o leitor aceita os cookies. */
+const META_PIXEL_ID = '';
+
+const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function armazenamento(acao, chave, valor) {
+  try {
+    if (acao === 'ler') return window.localStorage.getItem(chave);
+    window.localStorage.setItem(chave, valor);
+  } catch (e) {
+    return null; /* navegação privada ou armazenamento bloqueado */
+  }
+  return null;
 }
 
-/* 2. Ticker de Plantão / Breaking News Rotativo */
-function initBreakingTicker() {
-  const tickerText = document.getElementById('tickerText');
-  if (!tickerText) return;
-
-  const headlines = [
-    "LEI 14.790: Ministério da Fazenda conclui 1ª fase de homologação no SIGAP com recorde de conformidade",
-    "FUTEBOL NACIONAL: Contratos de patrocínio máster na Série A ultrapassam R$ 600 milhões anuais",
-    "INOVAÇÃO PIX: Banco Central e operadoras validam liquidação de saques em menos de 60 segundos",
-    "BEM-ESTAR DIGITAL: Plataformas adotam IA preventiva para impor travas automáticas contra perdas",
-    "MERCADO DE TRABALHO: Setor de tecnologia abre 25 mil vagas de engenharia, dados e compliance no país"
-  ];
-
-  let currentIndex = 0;
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % headlines.length;
-    tickerText.style.opacity = 0;
-    setTimeout(() => {
-      tickerText.textContent = headlines[currentIndex];
-      tickerText.style.opacity = 1;
-    }, 250);
-  }, 4500);
+function normalizar(texto) {
+  return (texto || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
-/* 3. Menu Mobile Acessível (Touch Targets >= 48px) */
-function initMobileMenu() {
-  const toggleBtn = document.getElementById('mobileMenuToggle');
-  const menuDrawer = document.getElementById('mobileNavDrawer');
-  const overlay = document.getElementById('mobileNavOverlay');
-  const closeBtn = document.getElementById('mobileMenuClose');
-
-  if (!toggleBtn || !menuDrawer) return;
-
-  function openMenu() {
-    menuDrawer.classList.remove('-translate-x-full');
-    if (overlay) overlay.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    menuDrawer.classList.add('-translate-x-full');
-    if (overlay) overlay.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-
-  toggleBtn.addEventListener('click', openMenu);
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-  if (overlay) overlay.addEventListener('click', closeMenu);
+function escaparHtml(texto) {
+  const div = document.createElement('div');
+  div.textContent = texto;
+  return div.innerHTML;
 }
 
-/* 4. Gerenciador de Consentimento LGPD (Cookies) */
-function initCookieConsent() {
-  const banner = document.getElementById('cookieConsentBanner');
-  if (!banner) return;
-
-  const consent = localStorage.getItem('portal_cookie_consent');
-  if (!consent) {
-    banner.classList.remove('hidden');
-  }
-
-  const acceptBtn = document.getElementById('btnAcceptCookies');
-  const rejectBtn = document.getElementById('btnRejectCookies');
-
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('portal_cookie_consent', 'accepted');
-      banner.classList.add('hidden');
-    });
-  }
-
-  if (rejectBtn) {
-    rejectBtn.addEventListener('click', () => {
-      localStorage.setItem('portal_cookie_consent', 'essential_only');
-      banner.classList.add('hidden');
-    });
-  }
-}
-
-/* 5. Alternador de Modo Escuro / Claro */
-function initDarkModeToggle() {
-  const toggleBtn = document.getElementById('themeToggleBtn');
-  if (!toggleBtn) return;
-
-  const currentTheme = localStorage.getItem('portal_theme') || 'light';
-  if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('portal_theme', isDark ? 'dark' : 'light');
+function buscarMaterias(termo) {
+  const palavras = normalizar(termo).split(/\s+/).filter(Boolean);
+  if (!palavras.length) return [];
+  return MATERIAS.filter((m) => {
+    const alvo = normalizar(`${m.titulo} ${m.resumo} ${m.editoria}`);
+    return palavras.every((p) => alvo.includes(p));
   });
 }
 
-/* 6. Simulador / Verificador de Concessão SIGAP Fazenda */
-function initSigapChecker() {
-  const form = document.getElementById('sigapCheckerForm');
-  const input = document.getElementById('sigapSearchInput');
-  const resultBox = document.getElementById('sigapResultBox');
+/* 1. Data de hoje no cabeçalho */
+function initData() {
+  const alvo = document.getElementById('headerLiveDate');
+  if (!alvo) return;
+  const hoje = new Date();
+  const texto = hoje.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+  alvo.textContent = texto.charAt(0).toUpperCase() + texto.slice(1);
+  alvo.setAttribute('datetime', hoje.toISOString().slice(0, 10));
+}
 
-  if (!form || !input || !resultBox) return;
+/* 2. Busca com sugestões (o formulário envia para noticias.html?q=) */
+function initBusca() {
+  document.querySelectorAll('[data-busca-form]').forEach((form) => {
+    const campo = form.querySelector('input[type="search"]');
+    const lista = form.querySelector('.busca-resultados');
+    if (!campo || !lista) return;
 
-  // Base demonstrativa de marcas reguladas sob a Lei 14.790
-  const authorizedBrands = [
-    { name: "Betano", cnpj: "40.320.123/0001-44", outorga: "SIGAP nº 001/2024", dominio: "betano.bet.br", status: "Autorizada (SPA/MF)" },
-    { name: "Superbet", cnpj: "48.112.987/0001-12", outorga: "SIGAP nº 002/2024", dominio: "superbet.bet.br", status: "Autorizada (SPA/MF)" },
-    { name: "EstrelaBet", cnpj: "43.987.654/0001-89", outorga: "SIGAP nº 003/2024", dominio: "estrelabet.bet.br", status: "Autorizada (SPA/MF)" },
-    { name: "Sportingbet", cnpj: "38.543.210/0001-56", outorga: "SIGAP nº 004/2024", dominio: "sportingbet.bet.br", status: "Autorizada (SPA/MF)" },
-    { name: "KTO", cnpj: "45.678.901/0001-23", outorga: "SIGAP nº 005/2024", dominio: "kto.bet.br", status: "Autorizada (SPA/MF)" },
-    { name: "Betfair", cnpj: "39.123.456/0001-78", outorga: "SIGAP nº 006/2024", dominio: "betfair.bet.br", status: "Autorizada (SPA/MF)" }
-  ];
+    const fechar = () => { lista.hidden = true; campo.setAttribute('aria-expanded', 'false'); };
+
+    campo.addEventListener('input', () => {
+      const termo = campo.value.trim();
+      if (termo.length < 2) { fechar(); return; }
+      const achadas = buscarMaterias(termo).slice(0, 6);
+      lista.innerHTML = achadas.length
+        ? achadas.map((m) => `<a href="${m.url}"><span class="block text-xs font-bold uppercase text-teal-700">${escaparHtml(m.editoria)}</span><span class="block text-sm font-semibold text-slate-900">${escaparHtml(m.titulo)}</span></a>`).join('')
+        : `<p class="px-4 py-3 text-sm text-slate-600">Nenhuma matéria encontrada para “${escaparHtml(termo)}”.</p>`;
+      lista.hidden = false;
+      campo.setAttribute('aria-expanded', 'true');
+    });
+
+    campo.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') fechar();
+      if (e.key === 'ArrowDown') {
+        const primeiro = lista.querySelector('a');
+        if (primeiro && !lista.hidden) { e.preventDefault(); primeiro.focus(); }
+      }
+    });
+    lista.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { fechar(); campo.focus(); }
+    });
+    document.addEventListener('click', (e) => { if (!form.contains(e.target)) fechar(); });
+  });
+
+  /* Botão de busca no celular abre/fecha o painel */
+  const botao = document.getElementById('buscaToggle');
+  const painel = document.getElementById('buscaPainel');
+  if (botao && painel) {
+    botao.addEventListener('click', () => {
+      const abrir = painel.hidden;
+      painel.hidden = !abrir;
+      botao.setAttribute('aria-expanded', String(abrir));
+      if (abrir) painel.querySelector('input').focus();
+    });
+  }
+}
+
+/* 3. Página "Todas as notícias": filtra a lista por ?q= */
+function initListaNoticias() {
+  const itens = document.querySelectorAll('[data-materia]');
+  const aviso = document.getElementById('buscaStatus');
+  const campo = document.getElementById('buscaPagina');
+  if (!itens.length || !aviso) return;
+
+  const aplicar = (termo) => {
+    const palavras = normalizar(termo).split(/\s+/).filter(Boolean);
+    let visiveis = 0;
+    itens.forEach((item) => {
+      const alvo = normalizar(item.textContent);
+      const mostra = palavras.every((p) => alvo.includes(p));
+      item.hidden = !mostra;
+      if (mostra) visiveis++;
+    });
+    if (!palavras.length) aviso.textContent = `${itens.length} matérias publicadas.`;
+    else if (visiveis) aviso.textContent = `${visiveis} ${visiveis === 1 ? 'matéria encontrada' : 'matérias encontradas'} para “${termo}”.`;
+    else aviso.textContent = `Nenhuma matéria encontrada para “${termo}”. Tente outra palavra.`;
+  };
+
+  const termoInicial = new URLSearchParams(window.location.search).get('q') || '';
+  if (campo) {
+    campo.value = termoInicial;
+    campo.addEventListener('input', () => aplicar(campo.value.trim()));
+  }
+  aplicar(termoInicial.trim());
+}
+
+/* 4. Faixa de destaques: troca a cada 7 s, com pausa; parada se o usuário reduz movimento */
+function initDestaques() {
+  const link = document.getElementById('tickerText');
+  const botao = document.getElementById('tickerPausa');
+  // A faixa mostra só as 5 primeiras: as do fim da lista ficam fora do topo de propósito
+  const destaques = MATERIAS.slice(0, 5);
+  if (!link || destaques.length < 2) return;
+
+  let indice = 0;
+  let pausado = reduzMovimento;
+  let timer = null;
+
+  const mostrar = (i) => {
+    const m = destaques[i];
+    link.style.opacity = 0;
+    setTimeout(() => {
+      link.textContent = m.titulo;
+      link.href = m.url;
+      link.style.opacity = 1;
+    }, reduzMovimento ? 0 : 250);
+  };
+  const iniciar = () => {
+    clearInterval(timer);
+    if (pausado) return;
+    timer = setInterval(() => { indice = (indice + 1) % destaques.length; mostrar(indice); }, 7000);
+  };
+  const atualizarBotao = () => {
+    if (!botao) return;
+    botao.setAttribute('aria-pressed', String(pausado));
+    botao.setAttribute('aria-label', pausado ? 'Retomar a troca de destaques' : 'Pausar a troca de destaques');
+    botao.querySelector('[data-icone]').textContent = pausado ? '▶' : '❚❚';
+  };
+
+  if (botao) {
+    botao.addEventListener('click', () => { pausado = !pausado; atualizarBotao(); iniciar(); });
+  }
+  const faixa = link.closest('.ticker-container');
+  if (faixa) {
+    faixa.addEventListener('mouseenter', () => clearInterval(timer));
+    faixa.addEventListener('mouseleave', iniciar);
+    faixa.addEventListener('focusin', () => clearInterval(timer));
+    faixa.addEventListener('focusout', iniciar);
+  }
+  atualizarBotao();
+  iniciar();
+}
+
+/* 5. Consentimento de cookies (escolhas com o mesmo peso) */
+function initCookies() {
+  const banner = document.getElementById('cookieConsentBanner');
+  if (!banner) return;
+  const escolha = armazenamento('ler', 'arena_cookies');
+  window.arenaConsentimento = escolha;
+
+  const fechar = (valor) => {
+    armazenamento('gravar', 'arena_cookies', valor);
+    window.arenaConsentimento = valor;
+    banner.hidden = true;
+    document.dispatchEvent(new CustomEvent('arena:consentimento', { detail: valor }));
+  };
+  if (!escolha) banner.hidden = false;
+
+  banner.querySelector('[data-cookie="aceitar"]').addEventListener('click', () => fechar('aceito'));
+  banner.querySelector('[data-cookie="recusar"]').addEventListener('click', () => fechar('recusado'));
+
+  document.querySelectorAll('[data-abrir-cookies]').forEach((b) => {
+    b.addEventListener('click', () => { banner.hidden = false; banner.querySelector('button').focus(); });
+  });
+}
+
+/* 6. Teste de autoavaliação (Jogo responsável) */
+/* 7. Compartilhar e copiar link */
+function initCompartilhar() {
+  document.querySelectorAll('[data-copiar-link]').forEach((botao) => {
+    const status = document.getElementById(botao.getAttribute('aria-describedby'));
+    botao.addEventListener('click', async () => {
+      const url = botao.dataset.copiarLink || window.location.href;
+      try {
+        if (navigator.share && window.matchMedia('(pointer: coarse)').matches) {
+          await navigator.share({ title: document.title, url });
+          return;
+        }
+        await navigator.clipboard.writeText(url);
+        if (status) status.textContent = 'Link copiado.';
+      } catch (e) {
+        if (status && e.name !== 'AbortError') status.textContent = `Não deu para copiar. O endereço é ${url}`;
+      }
+    });
+  });
+}
+
+/* 8. Formulário de contato: abre o e-mail do leitor com a mensagem pronta */
+function initContato() {
+  const form = document.getElementById('formContato');
+  const status = document.getElementById('contatoStatus');
+  if (!form || !status) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const query = input.value.trim().toLowerCase();
-    if (!query) return;
-
-    const match = authorizedBrands.find(b => b.name.toLowerCase().includes(query));
-
-    resultBox.classList.remove('hidden');
-    if (match) {
-      resultBox.innerHTML = `
-        <div class="p-4 bg-emerald-50 border border-emerald-300 rounded-lg text-emerald-900">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-            <strong class="text-emerald-800 text-sm font-bold uppercase tracking-wide">✓ Operadora Homologada no SIGAP</strong>
-          </div>
-          <p class="text-sm font-bold text-slate-900 text-base mb-1">${match.name} (${match.status})</p>
-          <ul class="text-xs space-y-1 text-slate-700 mt-2">
-            <li><strong>Domínio Licenciado:</strong> <code class="bg-emerald-100 px-1 py-0.5 rounded">${match.dominio}</code></li>
-            <li><strong>Portaria Fazenda:</strong> ${match.outorga}</li>
-            <li><strong>Segregação Patrimonial:</strong> Auditada e em conformidade com a Lei 14.790/2023</li>
-          </ul>
-        </div>
-      `;
-    } else {
-      resultBox.innerHTML = `
-        <div class="p-4 bg-amber-50 border border-amber-300 rounded-lg text-amber-900">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-            <strong class="text-amber-800 text-sm font-bold uppercase tracking-wide">Atenção / Não Localizada no Filtro Rápido</strong>
-          </div>
-          <p class="text-xs text-slate-700 leading-relaxed">
-            A marca digitada não consta no índice rápido das principais operadoras ou pode estar em processo final de publicação na Portaria SPA/MF. 
-            Verifique se o site oficial utiliza a terminação <strong>.bet.br</strong> e consulte o site oficial do Ministério da Fazenda.
-          </p>
-        </div>
-      `;
-    }
+    if (!form.reportValidity()) return;
+    const dados = new FormData(form);
+    const assunto = `[${dados.get('assunto')}] Mensagem de ${dados.get('nome')}`;
+    const corpo = `${dados.get('mensagem')}\n\n—\n${dados.get('nome')}\n${dados.get('email')}`;
+    window.location.href = `mailto:${EMAIL_CONTATO}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    status.textContent = `Abrimos o seu aplicativo de e-mail com a mensagem pronta. Se ele não abriu, escreva para ${EMAIL_CONTATO}.`;
   });
 }
 
-/* 7. Teste de Autoavaliação de Jogo Responsável */
-function initResponsibleGamingQuiz() {
-  const quizForm = document.getElementById('responsibleQuizForm');
-  const quizResult = document.getElementById('responsibleQuizResult');
-  if (!quizForm || !quizResult) return;
-
-  quizForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const answers = new FormData(quizForm);
-    let yesCount = 0;
-
-    for (let value of answers.values()) {
-      if (value === 'yes') yesCount++;
-    }
-
-    quizResult.classList.remove('hidden');
-    let message = '';
-    let alertClass = '';
-
-    if (yesCount === 0) {
-      alertClass = 'bg-emerald-50 border-emerald-300 text-emerald-900';
-      message = `
-        <strong class="text-emerald-800 block mb-1">Perfil de Risco: Baixo / Saudável</strong>
-        <p class="text-xs">Seu comportamento reflete o uso do entretenimento esportivo como lazer e diversão consciente. Continue mantendo limites rígidos de orçamento e tempo.</p>
-      `;
-    } else if (yesCount <= 2) {
-      alertClass = 'bg-amber-50 border-amber-300 text-amber-900';
-      message = `
-        <strong class="text-amber-800 block mb-1">Perfil de Risco: Moderado (Atenção Recomendada)</strong>
-        <p class="text-xs">Você sinalizou alguns pontos de alerta. Recomendamos ativar ferramentas de limite diário de depósito na sua operadora e estabelecer pausas periódicas.</p>
-      `;
-    } else {
-      alertClass = 'bg-rose-50 border-rose-300 text-rose-900';
-      message = `
-        <strong class="text-rose-800 block mb-1">Perfil de Risco: Alto (Procure Apoio Especializado)</strong>
-        <p class="text-xs">Seus hábitos sugerem potencial desequilíbrio financeiro ou emocional. Recomendamos acionar a autoexclusão temporária e contatar canais gratuitos como <strong>Jogadores Anônimos do Brasil</strong> (jogadoresanonimos.com.br).</p>
-      `;
-    }
-
-    quizResult.className = `p-4 border rounded-lg mt-4 ${alertClass}`;
-    quizResult.innerHTML = message;
-  });
-}
-
-/* 8. Rastreamento Padronizado de Links Patrocinados (Analytics Compliance) */
-function initCommercialTracking() {
-  document.querySelectorAll('a[rel*="sponsored"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const partner = link.getAttribute('data-partner') || 'unknown';
-      const slot = link.getAttribute('data-slot') || 'native_banner';
-
-      if (window.gtag) {
-        window.gtag('event', 'bookmaker_clicked', {
-          partner_name: partner,
-          slot_location: slot,
-          timestamp: new Date().toISOString()
-        });
+/* 9. Cliques em publicidade (só registra se houver analytics e consentimento) */
+function initPublicidade() {
+  document.querySelectorAll('[data-slot]').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (window.gtag && window.arenaConsentimento === 'aceito') {
+        window.gtag('event', 'ad_click', { slot_location: link.dataset.slot });
       }
-      console.log(`[Analytics Event] bookmaker_clicked -> Parceiro: ${partner}, Slot: ${slot}`);
     });
   });
 }
 
-
-/* 9. Randomize Banners */
-function initRandomAds() {
-  const adImages = [
-    'assets/images/ad-lumea.webp',
-    'assets/images/ad-voltix.webp',
-    'assets/images/ad-tenis.webp'
-  ];
-  
-  // Find all images that are currently acting as banners
-  const banners = document.querySelectorAll('img[src^="assets/images/banner-ads-"]');
-  
-  banners.forEach(banner => {
-    // Pick a random ad
-    const randomAd = adImages[Math.floor(Math.random() * adImages.length)];
-    banner.src = randomAd;
-    banner.alt = "Anúncio do nosso parceiro";
-  });
+/* 10. Medição de audiência: Pixel da Meta só com consentimento */
+function initMedicao() {
+  const carregar = () => {
+    if (!META_PIXEL_ID || window.fbq) return;
+    /* eslint-disable */
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    /* eslint-enable */
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+    const artigo = document.querySelector('meta[property="article:section"]');
+    if (artigo) window.fbq('track', 'ViewContent', { content_category: artigo.content, content_type: 'article' });
+  };
+  if (window.arenaConsentimento === 'aceito') carregar();
+  document.addEventListener('arena:consentimento', (e) => { if (e.detail === 'aceito') carregar(); });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initData();
+  initBusca();
+  initListaNoticias();
+  initDestaques();
+  initCookies();
+  initCompartilhar();
+  initContato();
+  initMedicao();
+  initPublicidade();
+});

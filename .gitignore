@@ -21,3 +21,9 @@ noticias/
 brand-guidelines.md
 CLAUDE.md
 GEMINI.md
+
+# Gerador: arquivos temporários de renderização das capas
+build/_render/
+
+# Configuração local do plugin de design
+.impeccable/

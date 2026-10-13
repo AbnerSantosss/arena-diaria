@@ -1,308 +1,251 @@
 /* ==========================================================================
-   PORTAL IGAMING BRASIL — CSS EDITORIAL & DESIGN SYSTEM
-   Padrão: Portal R7.com + UX Impecável (WCAG 2.2, Fitts, Hick, C.R.A.P.)
+   ARENA DIÁRIA — estilos editoriais
+   Complementa o Tailwind compilado (assets/css/tailwind.css).
+   Regras de UX: corpo ≥16px, micro ≥12px, alvo de toque ≥44px,
+   contraste ≥4,5:1, foco sempre visível, respeito a reduced-motion.
    ========================================================================== */
 
 :root {
-  --color-primary-navy: #0B132B;
-  --color-secondary-navy: #1C2541;
-  --color-slate-card: #3A506B;
-  --color-accent-teal: #00A896;
-  --color-accent-cyan: #028090;
-  --color-alert-coral: #E63946;
-  --color-safe-green: #10B981;
-  --color-paper-light: #F8FAFC;
-  --color-card-light: #FFFFFF;
-  --color-ink-dark: #0F172A;
-  --color-slate-body: #475569;
-  --color-border-subtle: #E2E8F0;
-  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --navy: #0B132B;
+  --navy-2: #1C2541;
+  --teal: #0F766E;        /* teal-700: 5,5:1 sobre branco */
+  --teal-claro: #5EEAD4;  /* teal-300: para fundo escuro */
+  --tinta: #0F172A;
+  --texto: #334155;       /* slate-700 */
+  --texto-suave: #475569; /* slate-600, 7:1 sobre branco */
+  --borda: #E2E8F0;
+  --papel: #F8FAFC;
+  --foco: #F59E0B;
 }
 
-/* Reset de Segurança e Eliminação de Overflow Horizontal */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-  font-family: var(--font-body);
-  background-color: var(--color-paper-light);
-  color: var(--color-ink-dark);
+html {
+  scroll-padding-top: 8rem; /* âncoras não ficam sob o cabeçalho fixo */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--papel);
+  color: var(--tinta);
+  overflow-x: clip; /* clip não cria contexto de rolagem, então o header sticky funciona */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Touch Targets Ergonômicos (Lei de Fitts - Mínimo 48px) */
-a, button, input, select, textarea {
-  touch-action: manipulation;
+/* ---------- Foco visível e acessibilidade ---------- */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 8px 8px;
+}
+.skip-link:focus { top: 0; }
+
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
 .touch-target {
-  min-height: 48px;
-  min-width: 48px;
+  min-height: 44px;
+  min-width: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Tipografia de Manchete R7 */
-.headline-r7 {
-  font-family: var(--font-heading);
+/* ---------- Barra legal e cabeçalho ---------- */
+.legal-bar-top {
+  background-color: var(--tinta);
+  color: #CBD5E1;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+.legal-bar-top a { color: var(--teal-claro); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+.nav-editorias {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-editorias::-webkit-scrollbar { display: none; }
+.nav-editorias a[aria-current="page"],
+.nav-editorias a[aria-current="true"] {
+  color: var(--teal);
+  box-shadow: inset 0 -3px 0 var(--teal);
+}
+
+/* Busca: lista de sugestões */
+.busca-resultados {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+  z-index: 60;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.busca-resultados a { display: block; padding: 0.75rem 1rem; border-bottom: 1px solid #F1F5F9; }
+.busca-resultados a:hover,
+.busca-resultados a:focus-visible { background: #F0FDFA; }
+
+/* ---------- Manchetes e chapéus ---------- */
+.headline {
   font-weight: 800;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
-  color: var(--color-ink-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--tinta);
+  text-wrap: balance;
 }
+a .headline, .headline a { transition: color 0.15s ease-in-out; }
+a:hover .headline, .headline a:hover { color: var(--teal); }
 
-.headline-r7:hover {
-  color: var(--color-accent-teal);
-  transition: color 0.15s ease-in-out;
-}
-
-/* Chapéu Editorial / Badge de Seção */
 .chapeu-badge {
   display: inline-flex;
   align-items: center;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   padding: 0.2rem 0.55rem;
   border-radius: 4px;
 }
+.chapeu-economia  { background-color: #ECFDF5; color: #065F46; border-left: 3px solid #059669; }
+.chapeu-futebol   { background-color: #FEF3C7; color: #92400E; border-left: 3px solid #D97706; }
+.chapeu-consumidor { background-color: #F3E8FF; color: #6B21A8; border-left: 3px solid #7E22CE; }
 
-.chapeu-urgente {
-  background-color: #FEE2E2;
-  color: #B91C1C;
-  border-left: 3px solid #DC2626;
-}
+/* Cartão inteiro clicável: o link da manchete cobre o cartão (um link só por cartão) */
+.card-link { position: relative; }
+.card-link .stretched::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.card-link:hover img { transform: scale(1.02); }
+.card-link img { transition: transform 0.3s ease; }
 
-.chapeu-economia {
-  background-color: #ECFDF5;
-  color: #047857;
-  border-left: 3px solid #059669;
-}
-
-.chapeu-tech {
-  background-color: #E0F2FE;
-  color: #0369A1;
-  border-left: 3px solid #0284C7;
-}
-
-.chapeu-futebol {
-  background-color: #FEF3C7;
-  color: #B45309;
-  border-left: 3px solid #D97706;
-}
-
-.chapeu-regulacao {
-  background-color: #F3E8FF;
-  color: #6B21A8;
-  border-left: 3px solid #7E22CE;
-}
-
-.chapeu-patrocinado {
-  background-color: #F1F5F9;
-  color: #475569;
-  border: 1px solid #CBD5E1;
-}
-
-/* Barra de Plantão / Breaking News Ticker */
+/* ---------- Faixa de destaques ---------- */
 .ticker-container {
-  background-color: #0B132B;
-  color: #FFFFFF;
-  border-bottom: 2px solid #00A896;
+  background-color: var(--navy);
+  color: #fff;
+  border-bottom: 2px solid #14B8A6;
 }
-
 .ticker-badge {
-  background-color: var(--color-alert-coral);
-  color: #FFFFFF;
-  font-weight: 900;
+  background-color: #B91C1C;
+  color: #fff;
+  font-weight: 800;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
-  padding: 0.35rem 0.75rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+  text-transform: uppercase;
 }
+#tickerText { transition: opacity 0.25s ease; }
 
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  animation: pulse-animation 1.5s infinite;
-}
-
-@keyframes pulse-animation {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
-}
-
-/* Slots de Publicidade IAB com Sinalização Obrigatória e Tarja 10% */
-.ad-slot-card {
-  background-color: #FFFFFF;
+/* ---------- Publicidade ---------- */
+.ad-slot {
+  background-color: #fff;
   border: 1px solid #CBD5E1;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  margin-bottom: 1.5rem;
-  position: relative;
 }
-
-.ad-label-bar {
+.ad-label {
+  display: block;
   background-color: #F1F5F9;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.65rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #64748B;
+  color: #475569;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid var(--borda);
 }
 
-.conar-strip-10 {
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 0.35rem 0.5rem;
-  font-size: 0.62rem;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
-}
-
-/* Barra Fixa de Aviso Legal (+18 / Ministério da Fazenda) */
-.legal-bar-top {
-  background-color: #0F172A;
-  color: #94A3B8;
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.35rem 1rem;
-  border-bottom: 1px solid #1E293B;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.legal-badge-18 {
-  background-color: #DC2626;
-  color: #FFFFFF;
-  font-weight: 900;
-  font-size: 0.68rem;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-}
-
-/* Mais Lidas - Numeração Estilo R7 */
+/* ---------- Ranking "Em destaque" ---------- */
 .rank-number {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 900;
   line-height: 1;
-  color: #CBD5E1;
-  min-width: 2.2rem;
+  color: #64748B; /* 4,8:1, legível */
+  min-width: 2rem;
   text-align: center;
 }
 
-.rank-item:hover .rank-number {
-  color: var(--color-accent-teal);
-  transition: color 0.15s ease-in-out;
-}
-
-/* Leitura de Artigos: Linha Ideal de 65-75 caracteres e Tipografia Rica */
-.article-body-content {
+/* ---------- Corpo da matéria ---------- */
+.article-body {
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.75;
   color: #1E293B;
+  max-width: 68ch;
 }
-
-.article-body-content p {
-  margin-bottom: 1.4rem;
-}
-
-.article-body-content h2 {
-  font-size: 1.55rem;
+.article-body > * + * { margin-top: 1.25rem; }
+.article-body h2 {
+  font-size: 1.5rem;
   font-weight: 800;
   line-height: 1.3;
-  color: var(--color-primary-navy);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid #E2E8F0;
+  color: var(--navy);
+  margin-top: 2.25rem;
+  text-wrap: balance;
 }
-
-.article-body-content h3 {
+.article-body h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #0F172A;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+  color: var(--tinta);
+  margin-top: 1.75rem;
 }
-
-.article-body-content blockquote {
-  border-left: 4px solid var(--color-accent-teal);
+.article-body ul { list-style: disc; padding-left: 1.5rem; }
+.article-body ol { list-style: decimal; padding-left: 1.5rem; }
+.article-body li + li { margin-top: 0.5rem; }
+.article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+.article-body blockquote {
+  border-left: 4px solid #14B8A6;
   background-color: #F0FDFA;
   padding: 1rem 1.25rem;
   border-radius: 0 8px 8px 0;
   font-style: italic;
-  font-size: 1.1rem;
   color: #134E4A;
-  margin: 1.5rem 0;
 }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.article-body th, .article-body td { border: 1px solid var(--borda); padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+.article-body th { background: #F1F5F9; }
+.tabela-rolavel { overflow-x: auto; }
 
-/* Caixa de Disclaimer Legal do Ministério da Fazenda dentro dos artigos */
-.box-disclaimer-legal {
-  background-color: #FEF2F2;
-  border: 1px solid #FCA5A5;
-  border-left: 5px solid #EF4444;
-  border-radius: 8px;
-  padding: 1.25rem;
-  margin: 2rem 0;
-}
+/* Textos institucionais (termos, privacidade, quem somos) */
+.prose-institucional { font-size: 1rem; line-height: 1.7; color: var(--texto); max-width: 72ch; }
+.prose-institucional > * + * { margin-top: 1rem; }
+.prose-institucional h2 { font-size: 1.25rem; font-weight: 800; color: var(--tinta); margin-top: 2rem; }
+.prose-institucional ul { list-style: disc; padding-left: 1.5rem; }
+.prose-institucional a { color: var(--teal); text-decoration: underline; }
 
-/* Banner de Cookies LGPD */
+/* ---------- Banner de cookies ---------- */
 #cookieConsentBanner {
   position: fixed;
-  bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(11, 19, 43, 0.98);
-  backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  padding: 1rem 1.5rem;
-  z-index: 9999;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
-  border-top: 2px solid #00A896;
+  bottom: 0;
+  background-color: var(--navy);
+  color: #fff;
+  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+  z-index: 90;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+  border-top: 2px solid #14B8A6;
 }
+#cookieConsentBanner a { color: var(--teal-claro); text-decoration: underline; }
 
-/* Modo Escuro Opcional */
-body.dark-mode {
-  background-color: #090D16;
-  color: #E2E8F0;
-}
-
-body.dark-mode .ad-slot-card,
-body.dark-mode .bg-white {
-  background-color: #131B2E !important;
-  color: #E2E8F0 !important;
-  border-color: #1E293B !important;
-}
-
-body.dark-mode .headline-r7 {
-  color: #F8FAFC !important;
-}
-
-body.dark-mode .text-slate-800,
-body.dark-mode .text-slate-900 {
-  color: #F1F5F9 !important;
-}
-
-body.dark-mode .text-slate-600 {
-  color: #94A3B8 !important;
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card-link:hover img { transform: none; }
 }

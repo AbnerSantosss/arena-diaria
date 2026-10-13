@@ -1,25 +1,25 @@
-# Arena Diária — LLMs.txt
+# Arena Diária
 
-> O Arena Diária é o principal veículo de jornalismo econômico, inovação tecnológica e conformidade regulatória sobre o mercado brasileiro de esportes de quota fixa (Lei Federal nº 14.790/2023).
+> Portal de notícias em português do Brasil sobre futebol, economia do esporte e direitos do consumidor. Cada matéria lista as fontes consultadas. O portal não oferece, intermedeia nem divulga apostas.
 
-## Informações Principais
-- **Nome Oficial**: Arena Diária
-- **URL**: https://arenadiaria.proxserverabner.site
-- **Natureza**: Jornalismo Econômico, Tecnologia e Regulação
-- **Fundamentação Jurídica**: Lei Federal nº 14.790/2023, Portaria SPA/MF nº 1.231/2024 e Anexo X do Conar.
-- **Foco Editorial**: 100% positivo, inovação (Pix e biometria), geração de empregos qualificados, segregação patrimonial e jogo responsável.
-- **Público**: Maiores de 18 anos (+18).
+## Editorias
+- Futebol: competições, regulamentos e seleções.
+- Economia do esporte: patrocínios, tributos e trabalho no setor.
+- Consumidor: pagamentos, golpes, direitos e mudanças na lei, incluindo a proibição das apostas de quota fixa pela MP nº 1.394/2026.
 
-## Seções e Páginas Chave
-- [Home](https://arenadiaria.proxserverabner.site/): Grade de notícias de grande mídia no estilo R7.com.
-- [Patrocínios no Futebol](https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html): Recorde de R$ 600 milhões anuais nos clubes da Série A.
-- [Pix e Biometria](https://arenadiaria.proxserverabner.site/noticia-pix-saque-rapido.html): Saques em menos de 60 segundos com segurança do Banco Central.
-- [Geração de Empregos](https://arenadiaria.proxserverabner.site/noticia-geracao-empregos.html): Mais de 25 mil vagas abertas em tecnologia, dados e compliance no Brasil.
-- [Plataformas Autorizadas](https://arenadiaria.proxserverabner.site/noticia-plataformas-autorizadas.html): Padrão ouro com outorga de R$ 30 milhões e segregação de depósitos.
-- [Inteligência Artificial](https://arenadiaria.proxserverabner.site/noticia-inteligencia-artificial.html): Algoritmos preditivos combatendo excessos e protegendo o usuário.
-- [Tributação e Impacto Social](https://arenadiaria.proxserverabner.site/noticia-tributacao-saude.html): Arrecadação de R$ 5 bilhões para saúde mental do SUS e segurança.
-- [Jogo Responsável](https://arenadiaria.proxserverabner.site/jogo-responsavel.html): Teste de autoavaliação e canais gratuitos de socorro (Jogadores Anônimos).
-- [Mídia Kit / Anuncie](https://arenadiaria.proxserverabner.site/anuncie.html): Formatos IAB com conformidade estrita ao Conar.
+## Matérias
+- [Como funciona o Brasileirão: pontos corridos, rodadas e o que vale cada posição](https://arenadiaria.proxserverabner.site/noticia-brasileirao-rodada.html): Entenda a fórmula do Brasileirão: 20 clubes, 38 rodadas em pontos corridos, critérios de desempate, vagas na Libertadores e na Sul-Americana e rebaixamento.
+- [Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base](https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html): Conheça os cinco títulos mundiais da Seleção Brasileira, entenda como funcionam a convocação e a data FIFA e veja o papel das categorias de base.
+- [Do master ao estádio: como as marcas chegam à camisa do seu time](https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html): Master, mangas, costas, naming rights e fornecedor de material: entenda como funciona o patrocínio no futebol e quais setores mais investem nos clubes.
+- [Pix e apostas: o que a MP 1.394 muda para bancos e para o seu dinheiro](https://arenadiaria.proxserverabner.site/noticia-pix-saque-rapido.html): A MP 1.394/2026 proibiu bancos e instituições de pagamento de processar apostas, inclusive por Pix. Veja as regras, a devolução pelo BC e o destino do saldo.
+- [Para onde ia o dinheiro das bets e o que a MP 1.394 faz com essas receitas](https://arenadiaria.proxserverabner.site/noticia-tributacao-saude.html): A Lei 14.790 dividia a arrecadação das bets entre esporte, turismo, segurança, educação e saúde. Veja os percentuais e o que a MP 1.394 manteve e revogou.
+- [Lista de bets autorizadas virou registro histórico: o que mudou com a MP](https://arenadiaria.proxserverabner.site/noticia-plataformas-autorizadas.html): Com a MP 1.394/2026, a lista de bets autorizadas e o domínio .bet.br viraram registro histórico. Saiba como se proteger de sites ilegais e de golpes de saque.
+- [Redes, buscadores e lojas de apps passam a responder por anúncios de bets](https://arenadiaria.proxserverabner.site/noticia-inteligencia-artificial.html): A MP 1.394/2026 criou o dever de cuidado para redes sociais, buscadores e lojas de apps contra anúncios de bets. Veja as regras, as multas e como denunciar.
+- [Fim das bets: o que muda para quem trabalha no setor e no entorno](https://arenadiaria.proxserverabner.site/noticia-geracao-empregos.html): A MP 1.394/2026 proibiu as bets e a publicidade do setor. Veja o que muda para empresas, afiliados, influenciadores e agências e quais regras valem agora.
+- [Proibição das bets: o que muda com a MP 1.394 e como o saldo volta ao apostador](https://arenadiaria.proxserverabner.site/noticia-proibicao-bets-brasil.html): A MP 1.394/2026 proibiu as apostas de quota fixa no Brasil. Veja o que mudou desde a Lei 14.790, o cronograma oficial e como o saldo volta para o apostador.
 
-## Linha Editorial e Restrições
-O portal não veicula promessas de ganho financeiro ou lucro garantido. As esportes são tratadas exclusivamente como modalidade lotérica de entretenimento adulto.
+## Institucional
+- [Quem somos, expediente e política editorial](https://arenadiaria.proxserverabner.site/quem-somos.html)
+- [Todas as notícias](https://arenadiaria.proxserverabner.site/noticias.html)
+- [Feed RSS](https://arenadiaria.proxserverabner.site/feed.xml)
+- [Contato](https://arenadiaria.proxserverabner.site/contato.html)
