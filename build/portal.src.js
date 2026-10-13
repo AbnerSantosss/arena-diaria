@@ -203,8 +203,7 @@ function initCookies() {
   });
 }
 
-/* 6. Teste de autoavaliação (Jogo responsável) */
-/* 7. Compartilhar e copiar link */
+/* 6. Compartilhar e copiar link */
 function initCompartilhar() {
   document.querySelectorAll('[data-copiar-link]').forEach((botao) => {
     const status = document.getElementById(botao.getAttribute('aria-describedby'));

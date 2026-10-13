@@ -9,13 +9,13 @@
 const MATERIAS = [
   {"titulo": "Como funciona o Brasileirão: pontos corridos, rodadas e o que vale cada posição", "resumo": "Pontos corridos, 38 rodadas e muito em jogo: veja como a tabela do Brasileirão define campeão, vagas continentais e rebaixados.", "editoria": "Futebol", "url": "noticia-brasileirao-rodada.html"},
   {"titulo": "Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base", "resumo": "Do primeiro título em 1958 ao penta em 2002: como a Seleção é formada, como funciona a data FIFA e por que a base importa.", "editoria": "Futebol", "url": "noticia-selecao-brasileira.html"},
+  {"titulo": "Como funciona a Copa do Brasil: fases, desempate e vaga na Libertadores", "resumo": "Nove fases, 126 clubes e nada de gol fora: veja como a Copa do Brasil define quem avança e quem vai à Libertadores.", "editoria": "Futebol", "url": "noticia-copa-do-brasil.html"},
+  {"titulo": "Como funciona a Libertadores: das fases preliminares à final em jogo único", "resumo": "Fases preliminares, grupos, mata-mata e final única: veja o caminho até a taça e como os brasileiros entram na Libertadores.", "editoria": "Futebol", "url": "noticia-libertadores.html"},
   {"titulo": "Do master ao estádio: como as marcas chegam à camisa do seu time", "resumo": "Do master da camisa ao nome do estádio: como funciona o patrocínio no futebol e quais setores mais investem nos clubes brasileiros.", "editoria": "Economia do esporte", "url": "noticia-patrocinios-futebol.html"},
-  {"titulo": "Pix e apostas: o que a MP 1.394 muda para bancos e para o seu dinheiro", "resumo": "Bancos não podem mais processar pagamentos de apostas, nem por Pix. Entenda as regras da MP 1.394 e como o saldo volta para você.", "editoria": "Consumidor", "url": "noticia-pix-saque-rapido.html"},
-  {"titulo": "Para onde ia o dinheiro das bets e o que a MP 1.394 faz com essas receitas", "resumo": "Esporte, turismo, segurança, educação e saúde dividiam a arrecadação das bets. Veja os percentuais da lei e o efeito da MP 1.394.", "editoria": "Economia do esporte", "url": "noticia-tributacao-saude.html"},
-  {"titulo": "Lista de bets autorizadas virou registro histórico: o que mudou com a MP", "resumo": "A lista oficial de bets e o .bet.br não indicam mais quem pode operar. Veja como funciona o bloqueio e o que muda para o consumidor.", "editoria": "Consumidor", "url": "noticia-plataformas-autorizadas.html"},
-  {"titulo": "Redes, buscadores e lojas de apps passam a responder por anúncios de bets", "resumo": "Redes, buscadores e lojas de apps agora respondem por anúncios de bets. Veja o que a MP 1.394 exige, as multas e como denunciar.", "editoria": "Consumidor", "url": "noticia-inteligencia-artificial.html"},
-  {"titulo": "Fim das bets: o que muda para quem trabalha no setor e no entorno", "resumo": "Empresas, afiliados, influenciadores e agências perdem uma atividade com a MP 1.394. Veja as regras e os riscos de continuar.", "editoria": "Economia do esporte", "url": "noticia-geracao-empregos.html"},
-  {"titulo": "Proibição das bets: o que muda com a MP 1.394 e como o saldo volta ao apostador", "resumo": "Entenda a MP 1.394/2026: o que foi proibido, as datas do cronograma oficial e como funciona a devolução do saldo aos apostadores.", "editoria": "Consumidor", "url": "noticia-proibicao-bets-brasil.html"}
+  {"titulo": "Direitos de transmissão no futebol: o que diz a lei do mandante e como os clubes negociam", "resumo": "Quem vende o jogo para a TV? Veja o que mudou com a lei do mandante e como os clubes negociam em blocos e discutem uma liga.", "editoria": "Economia do esporte", "url": "noticia-direitos-de-transmissao.html"},
+  {"titulo": "O que é a SAF: como o clube vira empresa e o que acontece com as dívidas", "resumo": "O clube virou empresa? Veja como funciona a SAF, o que acontece com as dívidas antigas e quais garantias a lei dá ao torcedor.", "editoria": "Economia do esporte", "url": "noticia-saf-sociedade-anonima-futebol.html"},
+  {"titulo": "Ingressos para jogos de futebol: os direitos de quem compra a entrada", "resumo": "Ingresso numerado, preço impresso, meia-entrada e reembolso: conheça os direitos de quem compra entrada para o estádio.", "editoria": "Consumidor", "url": "noticia-ingressos-direitos-torcedor.html"},
+  {"titulo": "Golpes no Pix: como se proteger e como pedir o dinheiro de volta pelo MED", "resumo": "Caiu em golpe no Pix? Veja como usar o botão de contestação, qual é o prazo do MED e o que fazer para tentar reaver o dinheiro.", "editoria": "Consumidor", "url": "noticia-pix-golpes-med.html"}
 ];
 
 /* E-mail que recebe as mensagens do formulário de contato. */
@@ -23,7 +23,7 @@ const EMAIL_CONTATO = 'redacao@arenadiaria.com.br';
 
 /* ID do Pixel da Meta (Gerenciador de Eventos). Vazio = pixel desligado.
    O pixel só carrega depois que o leitor aceita os cookies. */
-const META_PIXEL_ID = '';
+const META_PIXEL_ID = '1879343259722567';
 
 const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -211,8 +211,7 @@ function initCookies() {
   });
 }
 
-/* 6. Teste de autoavaliação (Jogo responsável) */
-/* 7. Compartilhar e copiar link */
+/* 6. Compartilhar e copiar link */
 function initCompartilhar() {
   document.querySelectorAll('[data-copiar-link]').forEach((botao) => {
     const status = document.getElementById(botao.getAttribute('aria-describedby'));

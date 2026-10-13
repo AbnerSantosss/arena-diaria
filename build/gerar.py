@@ -8,6 +8,10 @@ rode, a partir da raiz do projeto:
 
     python build/gerar.py            # páginas, portal.js, sitemap, feed
     python build/gerar.py --capas    # também redesenha as capas JPG (usa o Chrome)
+
+Fotos das matérias: coloque o original em build/fotos/<slug>.jpg|png|webp (veja
+build/fotos/BRIEFING.md). O gerador recorta em 1200x630, comprime o JPG abaixo de
+300 KB e cria o WebP em assets/images/fotos/. Sem foto, a matéria usa a arte.
     npx tailwindcss@3.4.17 -c build/tailwind.config.js -i build/tailwind.src.css -o assets/css/tailwind.css --minify
 
 O resultado (HTML estático) é o que vai para o servidor; esta pasta não entra
@@ -29,7 +33,7 @@ BUILD = RAIZ / 'build'
 SITE = 'https://arenadiaria.proxserverabner.site'
 NOME = 'Arena Diária'
 EMAIL = 'redacao@arenadiaria.com.br'   # e-mail de contato (provisório)
-META_PIXEL_ID = ''                      # ID do Pixel da Meta; vazio = desligado
+META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
 VERSAO = '20261013'                     # muda o cache de CSS/JS a cada publicação
 HOJE = '2026-10-13'
 
@@ -54,10 +58,6 @@ AUTORES = {
         'bio': 'Advogado, responde pela edição do portal e acompanha leis e regras que afetam o esporte e o consumidor.'},
 }
 
-NOTA_MP = ('Esta matéria foi reescrita em 13 de outubro de 2026. A versão anterior tratava o mercado '
-           'regulado de apostas como vigente e não refletia a Medida Provisória nº 1.394, de 25 de '
-           'setembro de 2026, que proibiu as apostas de quota fixa no país.')
-
 # Ordem = ordem de importância na home e na lista de notícias.
 # arte: texto curto da capa (linha 1, linha 2).
 MATERIAS = [
@@ -65,29 +65,29 @@ MATERIAS = [
          publicada='2026-10-13T09:00:00-03:00', atualizada=None, nota=None, apoio=False,
          arte=('Brasileirão', '20 clubes, 38 rodadas, nenhuma final')),
     dict(slug='noticia-selecao-brasileira', fonte='selecao', editoria='futebol',
-         publicada='2026-10-13T10:00:00-03:00', atualizada=None, nota=None, apoio=False,
+         publicada='2026-09-02T16:20:00-03:00', atualizada=None, nota=None, apoio=False,
          arte=('Seleção Brasileira', 'Cinco títulos e a força da base')),
+    dict(slug='noticia-copa-do-brasil', fonte='copa-do-brasil', editoria='futebol',
+         publicada='2026-10-10T15:30:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Copa do Brasil', '126 clubes, 9 fases e vaga na Libertadores')),
+    dict(slug='noticia-libertadores', fonte='libertadores', editoria='futebol',
+         publicada='2026-10-06T18:10:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Libertadores', 'Do pré-torneio à final em jogo único')),
     dict(slug='noticia-patrocinios-futebol', fonte='patrocinios', editoria='economia',
-         publicada='2026-10-13T11:00:00-03:00', atualizada=None, nota=None, apoio=False,
+         publicada='2026-08-18T10:40:00-03:00', atualizada=None, nota=None, apoio=False,
          arte=('Patrocínio no futebol', 'Do master da camisa ao nome do estádio')),
-    dict(slug='noticia-pix-saque-rapido', fonte='pix', editoria='consumidor',
-         publicada='2026-10-06T10:15:00-03:00', atualizada='2026-10-13T18:00:00-03:00', nota=NOTA_MP, apoio=False,
-         arte=('Pix e apostas', 'O que os bancos passam a barrar')),
-    dict(slug='noticia-tributacao-saude', fonte='tributacao', editoria='economia',
-         publicada='2026-10-06T14:00:00-03:00', atualizada='2026-10-13T18:00:00-03:00', nota=NOTA_MP, apoio=False,
-         arte=('Arrecadação', 'Para onde ia o dinheiro das bets')),
-    dict(slug='noticia-plataformas-autorizadas', fonte='plataformas', editoria='consumidor',
-         publicada='2026-10-06T12:00:00-03:00', atualizada='2026-10-13T18:00:00-03:00', nota=NOTA_MP, apoio=False,
-         arte=('Sites de apostas', 'O que mudou com a MP 1.394')),
-    dict(slug='noticia-inteligencia-artificial', fonte='ia', editoria='consumidor',
-         publicada='2026-10-06T13:00:00-03:00', atualizada='2026-10-13T18:00:00-03:00', nota=NOTA_MP, apoio=False,
-         arte=('Dever de cuidado', 'Redes e lojas de apps contra anúncios de bets')),
-    dict(slug='noticia-geracao-empregos', fonte='empregos', editoria='economia',
-         publicada='2026-10-06T11:00:00-03:00', atualizada='2026-10-13T18:00:00-03:00', nota=NOTA_MP, apoio=False,
-         arte=('Fim das bets', 'O que muda para quem trabalha no setor')),
-    dict(slug='noticia-proibicao-bets-brasil', fonte='proibicao-bets', editoria='consumidor',
-         publicada='2026-10-13T08:00:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('MP 1.394', 'O que muda com a MP')),
+    dict(slug='noticia-direitos-de-transmissao', fonte='transmissao', editoria='economia',
+         publicada='2026-09-16T14:00:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Direitos de TV', 'O que muda com a lei do mandante')),
+    dict(slug='noticia-saf-sociedade-anonima-futebol', fonte='saf', editoria='economia',
+         publicada='2026-09-08T09:30:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('SAF no futebol', 'Como o clube vira empresa e paga dívidas')),
+    dict(slug='noticia-ingressos-direitos-torcedor', fonte='ingressos', editoria='consumidor',
+         publicada='2026-09-25T11:45:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Ingressos', 'Meia-entrada, reembolso e onde reclamar')),
+    dict(slug='noticia-pix-golpes-med', fonte='pix-golpes', editoria='consumidor',
+         publicada='2026-10-02T10:20:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Golpe no Pix', 'Como usar o MED e pedir o dinheiro de volta')),
 ]
 
 MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto',
@@ -139,7 +139,47 @@ def ler_materia(m):
     m['url'] = f"{m['slug']}.html"
     m['capa'] = f"assets/images/capas/{m['slug']}.jpg"
     m['alt'] = f"Arte da Arena Diária com o texto “{m['arte'][0]}: {m['arte'][1]}”"
+    m['capa_web'] = m['capa']
+    m['credito'] = 'Arte: Arena Diária'
+    foto = preparar_foto(m['slug'])
+    if foto:
+        m['capa'], m['capa_web'] = foto
+        m['alt'] = IMAGENS.get(m['slug'], {}).get('alt') or m['alt']
+        m['credito'] = 'Imagem ilustrativa gerada com inteligência artificial'
     return m
+
+
+IMAGENS = json.loads((BUILD / 'imagens.json').read_text(encoding='utf-8')) if (BUILD / 'imagens.json').exists() else {}
+
+
+def preparar_foto(slug):
+    """Converte build/fotos/<slug>.* em JPG 1200x630 (< 300 KB) e WebP. Devolve (jpg, webp) ou None."""
+    origem = next((f for f in sorted((BUILD / 'fotos').glob(f'{slug}.*')) if f.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp')), None)
+    if not origem:
+        return None
+    jpg = RAIZ / 'assets/images/fotos' / f'{slug}.jpg'
+    webp = jpg.with_suffix('.webp')
+    if not (jpg.exists() and webp.exists() and jpg.stat().st_mtime >= origem.stat().st_mtime):
+        from PIL import Image
+        img = Image.open(origem).convert('RGB')
+        alvo = 1200 / 630
+        if img.width / img.height > alvo:
+            novo_w = round(img.height * alvo)
+            x = (img.width - novo_w) // 2
+            img = img.crop((x, 0, x + novo_w, img.height))
+        else:
+            novo_h = round(img.width / alvo)
+            y = (img.height - novo_h) // 2
+            img = img.crop((0, y, img.width, y + novo_h))
+        img = img.resize((1200, 630), Image.LANCZOS)
+        jpg.parent.mkdir(parents=True, exist_ok=True)
+        for qualidade in (85, 80, 75, 70, 65, 60):
+            img.save(jpg, 'JPEG', quality=qualidade, optimize=True, progressive=True)
+            if jpg.stat().st_size < 300 * 1024:
+                break
+        img.save(webp, 'WEBP', quality=80, method=6)
+        print('  foto:', jpg.relative_to(RAIZ), f'{jpg.stat().st_size // 1024} KB /', f'{webp.stat().st_size // 1024} KB webp')
+    return (f'assets/images/fotos/{slug}.jpg', f'assets/images/fotos/{slug}.webp')
 
 
 # --------------------------------------------------------------------------
@@ -238,7 +278,7 @@ def rodape():
       </div>
     </div>
     <div class="border-t border-slate-700">
-      <p class="max-w-6xl mx-auto px-4 py-5 text-sm text-slate-400">© 2026 Arena Diária. Conteúdo jornalístico. Não oferecemos, intermediamos nem divulgamos apostas.</p>
+      <p class="max-w-6xl mx-auto px-4 py-5 text-sm text-slate-400">© 2026 Arena Diária. Conteúdo jornalístico.</p>
     </div>
   </footer>
 
@@ -355,7 +395,7 @@ def cartao(m, tamanho='medio', carregar='lazy'):
     prioridade = ' fetchpriority="high"' if carregar == 'eager' else ''
     return f'''<article class="card-link group">
           <div class="overflow-hidden rounded-lg bg-slate-200">
-            <img src="{m['capa']}" width="1200" height="630" alt="" loading="{carregar}"{prioridade} class="w-full h-auto aspect-[1200/630] object-cover">
+            <img src="{m['capa_web']}" width="1200" height="630" alt="" loading="{carregar}"{prioridade} class="w-full h-auto aspect-[1200/630] object-cover">
           </div>
           <div class="mt-3">{chapeu(m['editoria'])}</div>
           <h3 class="headline {tit} mt-2"><a href="{m['url']}" class="stretched">{e(m['h1'])}</a></h3>
@@ -366,7 +406,7 @@ def cartao(m, tamanho='medio', carregar='lazy'):
 
 def item_lista(m):
     return f'''<li class="card-link py-4 border-b border-slate-200 flex gap-4">
-            <img src="{m['capa']}" width="120" height="63" alt="" loading="lazy" class="w-24 sm:w-32 h-auto aspect-[1200/630] object-cover rounded shrink-0">
+            <img src="{m['capa_web']}" width="120" height="63" alt="" loading="lazy" class="w-24 sm:w-32 h-auto aspect-[1200/630] object-cover rounded shrink-0">
             <div>
               <span class="text-xs font-bold uppercase tracking-wide text-teal-700">{EDITORIAS[m['editoria']]['nome']}</span>
               <a href="{m['url']}" class="stretched block headline text-base sm:text-lg mt-1">{e(m['h1'])}</a>
@@ -423,8 +463,8 @@ def gerar_materia(m, todas):
       </header>
 
       <figure class="mt-6">
-        <img src="{m['capa']}" width="1200" height="630" alt="{e(m['alt'])}" fetchpriority="high" class="w-full h-auto rounded-lg">
-        <figcaption class="mt-2 text-sm text-slate-600">Arte: Arena Diária</figcaption>
+        <img src="{m['capa_web']}" width="1200" height="630" alt="{e(m['alt'])}" fetchpriority="high" class="w-full h-auto rounded-lg">
+        <figcaption class="mt-2 text-sm text-slate-600">{m['credito']}</figcaption>
       </figure>
 
       {nota}
@@ -566,7 +606,7 @@ def gerar_home(ms):
 def gerar_noticias(ms):
     por_data = sorted(ms, key=lambda m: m['publicada'], reverse=True)
     itens = '\n'.join(f'''<li data-materia class="card-link py-5 border-b border-slate-200 flex gap-4">
-            <img src="{m['capa']}" width="160" height="84" alt="" loading="lazy" class="w-28 sm:w-40 h-auto aspect-[1200/630] object-cover rounded shrink-0">
+            <img src="{m['capa_web']}" width="160" height="84" alt="" loading="lazy" class="w-28 sm:w-40 h-auto aspect-[1200/630] object-cover rounded shrink-0">
             <div class="min-w-0">
               <span class="text-xs font-bold uppercase tracking-wide text-teal-700">{EDITORIAS[m['editoria']]['nome']}</span>
               <h2 class="headline text-lg sm:text-xl mt-1"><a href="{m['url']}" class="stretched">{e(m['h1'])}</a></h2>
@@ -636,16 +676,15 @@ def gerar_institucionais():
       <h2 id="politica-editorial">Política editorial</h2>
       <ul>
         <li>Toda matéria se apoia em fonte primária sempre que ela existe: lei, regulamento, documento oficial ou entidade responsável. As fontes ficam listadas no fim do texto.</li>
-        <li>Não publicamos palpites, odds nem indicação de site de apostas. Desde a Medida Provisória nº 1.394/2026, a divulgação de apostas é proibida no país, e o tema só aparece aqui como notícia.</li>
         <li>Separamos fato de opinião. Quando houver análise, ela vem identificada como tal.</li>
-        <li>Imagens ilustrativas são artes da redação e vêm identificadas como “Arte: Arena Diária”.</li>
+        <li>Imagens ilustrativas são produzidas pela redação, algumas com auxílio de inteligência artificial, e vêm identificadas na legenda.</li>
       </ul>
 
       <h2 id="correcoes">Política de correções</h2>
       <p>Errou, corrigimos. Se você encontrar uma informação errada, <a href="contato.html">escreva para a redação</a>. Quando a correção muda o sentido da matéria, publicamos uma nota no próprio texto com a data e o que foi alterado.</p>
 
       <h2 id="publicidade">Publicidade e jornalismo</h2>
-      <p>Anúncios aparecem sempre dentro de um espaço com o rótulo “Publicidade” e não interferem na pauta. Anunciantes não leem matérias antes da publicação. Não aceitamos anúncios de apostas. Veja as regras completas em <a href="anuncie.html">Anuncie</a>.</p>
+      <p>Anúncios aparecem sempre dentro de um espaço com o rótulo “Publicidade” e não interferem na pauta. Anunciantes não leem matérias antes da publicação. Veja as regras completas em <a href="anuncie.html">Anuncie</a>.</p>
 
       <h2 id="dados">Dados institucionais</h2>
       <p>Arena Diária Comunicação e Mídia Digital Ltda.<br>CNPJ 45.890.123/0001-90<br>Setor Hoteleiro Sul, Quadra 06, Bloco E, Asa Sul, Brasília (DF), CEP 70322-900<br>E-mail: <a href="mailto:{EMAIL}">{EMAIL}</a></p>''')
@@ -706,7 +745,7 @@ def gerar_institucionais():
 
       <h2 id="regras">Regras de aceite</h2>
       <ul>
-        <li>Não aceitamos anúncios de apostas, cassinos ou jogos on-line, nem de quem facilite o acesso a eles. A Medida Provisória nº 1.394/2026 proíbe esse tipo de publicidade.</li>
+        <li>Seguimos o Código de Defesa do Consumidor e o Código Brasileiro de Autorregulamentação Publicitária: não aceitamos anúncio enganoso, abusivo ou de produto proibido por lei.</li>
         <li>Não aceitamos promessa de ganho fácil, renda extra garantida ou crédito sem informação de custo.</li>
         <li>Todo anúncio leva o rótulo “Publicidade”, e os links seguem marcados como patrocinados.</li>
         <li>Conteúdo patrocinado, quando houver, vem identificado no título e não é escrito pela redação.</li>
@@ -722,7 +761,7 @@ def gerar_institucionais():
       <p class="text-sm text-slate-600">Última atualização: 13 de outubro de 2026</p>
 
       <h2>1. O que é a Arena Diária</h2>
-      <p>A Arena Diária é um veículo jornalístico de informação. Não somos casa de apostas, não recebemos depósitos, não pagamos prêmios e não oferecemos, intermediamos nem divulgamos apostas.</p>
+      <p>A Arena Diária é um veículo jornalístico de informação. Publicamos notícias, guias e reportagens sobre futebol, economia do esporte e direitos do consumidor.</p>
 
       <h2>2. Uso das informações</h2>
       <p>As matérias informam e não substituem orientação jurídica, financeira ou médica para o seu caso. Datas, prazos e regras podem mudar; por isso cada matéria mostra quando foi publicada e atualizada.</p>
@@ -821,12 +860,12 @@ def gerar_llms(ms):
     linhas = '\n'.join(f"- [{m['h1']}]({SITE}/{m['url']}): {m['description']}" for m in ms)
     (RAIZ / 'llms.txt').write_text(f'''# Arena Diária
 
-> Portal de notícias em português do Brasil sobre futebol, economia do esporte e direitos do consumidor. Cada matéria lista as fontes consultadas. O portal não oferece, intermedeia nem divulga apostas.
+> Portal de notícias em português do Brasil sobre futebol, economia do esporte e direitos do consumidor. Cada matéria lista as fontes consultadas.
 
 ## Editorias
 - Futebol: competições, regulamentos e seleções.
 - Economia do esporte: patrocínios, tributos e trabalho no setor.
-- Consumidor: pagamentos, golpes, direitos e mudanças na lei, incluindo a proibição das apostas de quota fixa pela MP nº 1.394/2026.
+- Consumidor: pagamentos, golpes, direitos e mudanças na lei.
 
 ## Matérias
 {linhas}
@@ -904,7 +943,7 @@ def renderizar(html_txt, destino_jpg, w=1200, h=630, qualidade=84):
 
 def gerar_capas(ms):
     for m in ms:
-        renderizar(capa_html(EDITORIAS[m['editoria']]['nome'], m['arte'][0], m['arte'][1], m['editoria']), RAIZ / m['capa'])
+        renderizar(capa_html(EDITORIAS[m['editoria']]['nome'], m['arte'][0], m['arte'][1], m['editoria']), RAIZ / 'assets/images/capas' / f"{m['slug']}.jpg")
     renderizar(capa_html('Portal de notícias', 'Arena Diária', 'Futebol, economia do esporte e direitos do consumidor', None),
                RAIZ / 'assets/images/og-arena-diaria.jpg')
     logo_html = f'''<!DOCTYPE html><html><head><style>html,body{{margin:0;width:512px;height:512px;background:#fff;display:flex;align-items:center;justify-content:center}}svg{{width:340px;height:auto}}</style></head><body>{ESCUDO.replace('width="26" height="32"', '')}</body></html>'''

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%" fill="none">
-  <rect width="1200" height="675" fill="#2E7D32"/>
-  <circle cx="600" cy="337.5" r="250" fill="none" stroke="#fff" stroke-width="4" opacity="0.3"/>
-  <path d="M400 337.5 L800 337.5 M600 137.5 L600 537.5" stroke="#fff" stroke-width="2" opacity="0.2"/>
-  <text x="600" y="320" font-family="system-ui" font-size="64" font-weight="bold" fill="#fff" text-anchor="middle">BRASILEIRÃO</text>
-  <text x="600" y="390" font-family="system-ui" font-size="32" fill="#C8E6C9" text-anchor="middle">DISPUTA ACIRRADA NO TOPO DA TABELA</text>
-</svg>

@@ -7,26 +7,6 @@
   <description>Notícias de futebol, economia do esporte e direitos do consumidor.</description>
   <language>pt-BR</language>
   <item>
-    <title>Do master ao estádio: como as marcas chegam à camisa do seu time</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html</guid>
-    <description>Master, mangas, costas, naming rights e fornecedor de material: entenda como funciona o patrocínio no futebol e quais setores mais investem nos clubes.</description>
-    <category>Economia do esporte</category>
-    <dc:creator>Rodrigo Albuquerque</dc:creator>
-    <pubDate>Tue, 13 Oct 2026 11:00:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-patrocinios-futebol.jpg" type="image/jpeg" length="48837"/>
-  </item>
-  <item>
-    <title>Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html</guid>
-    <description>Conheça os cinco títulos mundiais da Seleção Brasileira, entenda como funcionam a convocação e a data FIFA e veja o papel das categorias de base.</description>
-    <category>Futebol</category>
-    <dc:creator>Mariana Silva</dc:creator>
-    <pubDate>Tue, 13 Oct 2026 10:00:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-selecao-brasileira.jpg" type="image/jpeg" length="44845"/>
-  </item>
-  <item>
     <title>Como funciona o Brasileirão: pontos corridos, rodadas e o que vale cada posição</title>
     <link>https://arenadiaria.proxserverabner.site/noticia-brasileirao-rodada.html</link>
     <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-brasileirao-rodada.html</guid>
@@ -37,64 +17,84 @@
     <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-brasileirao-rodada.jpg" type="image/jpeg" length="43716"/>
   </item>
   <item>
-    <title>Proibição das bets: o que muda com a MP 1.394 e como o saldo volta ao apostador</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-proibicao-bets-brasil.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-proibicao-bets-brasil.html</guid>
-    <description>A MP 1.394/2026 proibiu as apostas de quota fixa no Brasil. Veja o que mudou desde a Lei 14.790, o cronograma oficial e como o saldo volta para o apostador.</description>
-    <category>Consumidor</category>
-    <dc:creator>Dr. Carlos Eduardo Mendes</dc:creator>
-    <pubDate>Tue, 13 Oct 2026 08:00:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-proibicao-bets-brasil.jpg" type="image/jpeg" length="34995"/>
-  </item>
-  <item>
-    <title>Para onde ia o dinheiro das bets e o que a MP 1.394 faz com essas receitas</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-tributacao-saude.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-tributacao-saude.html</guid>
-    <description>A Lei 14.790 dividia a arrecadação das bets entre esporte, turismo, segurança, educação e saúde. Veja os percentuais e o que a MP 1.394 manteve e revogou.</description>
-    <category>Economia do esporte</category>
+    <title>Como funciona a Copa do Brasil: fases, desempate e vaga na Libertadores</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-copa-do-brasil.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-copa-do-brasil.html</guid>
+    <description>Entenda a Copa do Brasil: 126 clubes, nove fases de mata-mata, jogos únicos e de ida e volta, critérios de desempate e as vagas na Libertadores.</description>
+    <category>Futebol</category>
     <dc:creator>Rodrigo Albuquerque</dc:creator>
-    <pubDate>Tue, 06 Oct 2026 14:00:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-tributacao-saude.jpg" type="image/jpeg" length="46065"/>
+    <pubDate>Sat, 10 Oct 2026 15:30:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-copa-do-brasil.jpg" type="image/jpeg" length="44861"/>
   </item>
   <item>
-    <title>Redes, buscadores e lojas de apps passam a responder por anúncios de bets</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-inteligencia-artificial.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-inteligencia-artificial.html</guid>
-    <description>A MP 1.394/2026 criou o dever de cuidado para redes sociais, buscadores e lojas de apps contra anúncios de bets. Veja as regras, as multas e como denunciar.</description>
+    <title>Como funciona a Libertadores: das fases preliminares à final em jogo único</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-libertadores.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-libertadores.html</guid>
+    <description>Entenda a Libertadores: 47 clubes, três fases preliminares, oito grupos, mata-mata, final em jogo único e como os clubes brasileiros conquistam a vaga.</description>
+    <category>Futebol</category>
+    <dc:creator>Mariana Silva</dc:creator>
+    <pubDate>Tue, 06 Oct 2026 18:10:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-libertadores.jpg" type="image/jpeg" length="43687"/>
+  </item>
+  <item>
+    <title>Golpes no Pix: como se proteger e como pedir o dinheiro de volta pelo MED</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-pix-golpes-med.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-pix-golpes-med.html</guid>
+    <description>Saiba como evitar golpes no Pix e como pedir o dinheiro de volta pelo MED, o Mecanismo Especial de Devolução do Banco Central, com prazos e passo a passo.</description>
     <category>Consumidor</category>
     <dc:creator>Mariana Silva</dc:creator>
-    <pubDate>Tue, 06 Oct 2026 13:00:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-inteligencia-artificial.jpg" type="image/jpeg" length="43867"/>
+    <pubDate>Fri, 02 Oct 2026 10:20:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-pix-golpes-med.jpg" type="image/jpeg" length="42184"/>
   </item>
   <item>
-    <title>Lista de bets autorizadas virou registro histórico: o que mudou com a MP</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-plataformas-autorizadas.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-plataformas-autorizadas.html</guid>
-    <description>Com a MP 1.394/2026, a lista de bets autorizadas e o domínio .bet.br viraram registro histórico. Saiba como se proteger de sites ilegais e de golpes de saque.</description>
-    <category>Consumidor</category>
-    <dc:creator>Dr. Carlos Eduardo Mendes</dc:creator>
-    <pubDate>Tue, 06 Oct 2026 12:00:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-plataformas-autorizadas.jpg" type="image/jpeg" length="39931"/>
-  </item>
-  <item>
-    <title>Fim das bets: o que muda para quem trabalha no setor e no entorno</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-geracao-empregos.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-geracao-empregos.html</guid>
-    <description>A MP 1.394/2026 proibiu as bets e a publicidade do setor. Veja o que muda para empresas, afiliados, influenciadores e agências e quais regras valem agora.</description>
-    <category>Economia do esporte</category>
-    <dc:creator>Rodrigo Albuquerque</dc:creator>
-    <pubDate>Tue, 06 Oct 2026 11:00:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-geracao-empregos.jpg" type="image/jpeg" length="46068"/>
-  </item>
-  <item>
-    <title>Pix e apostas: o que a MP 1.394 muda para bancos e para o seu dinheiro</title>
-    <link>https://arenadiaria.proxserverabner.site/noticia-pix-saque-rapido.html</link>
-    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-pix-saque-rapido.html</guid>
-    <description>A MP 1.394/2026 proibiu bancos e instituições de pagamento de processar apostas, inclusive por Pix. Veja as regras, a devolução pelo BC e o destino do saldo.</description>
+    <title>Ingressos para jogos de futebol: os direitos de quem compra a entrada</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-ingressos-direitos-torcedor.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-ingressos-direitos-torcedor.html</guid>
+    <description>Veja seus direitos na compra de ingressos para jogos de futebol: Lei Geral do Esporte, CDC, meia-entrada, taxa de conveniência, jogo adiado e onde reclamar.</description>
     <category>Consumidor</category>
     <dc:creator>Mariana Silva</dc:creator>
-    <pubDate>Tue, 06 Oct 2026 10:15:00 -0300</pubDate>
-    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-pix-saque-rapido.jpg" type="image/jpeg" length="40957"/>
+    <pubDate>Fri, 25 Sep 2026 11:45:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-ingressos-direitos-torcedor.jpg" type="image/jpeg" length="40545"/>
+  </item>
+  <item>
+    <title>Direitos de transmissão no futebol: o que diz a lei do mandante e como os clubes negociam</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-direitos-de-transmissao.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-direitos-de-transmissao.html</guid>
+    <description>Entenda como funcionam os direitos de transmissão no futebol brasileiro: a Lei 14.205/2021, o direito de arena do mandante, os blocos de clubes e as ligas.</description>
+    <category>Economia do esporte</category>
+    <dc:creator>Rodrigo Albuquerque</dc:creator>
+    <pubDate>Wed, 16 Sep 2026 14:00:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-direitos-de-transmissao.jpg" type="image/jpeg" length="43979"/>
+  </item>
+  <item>
+    <title>O que é a SAF: como o clube vira empresa e o que acontece com as dívidas</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-saf-sociedade-anonima-futebol.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-saf-sociedade-anonima-futebol.html</guid>
+    <description>Entenda a SAF, criada pela Lei 14.193/2021: como o clube vira empresa, como ficam as dívidas antigas, o regime de tributação TEF e o que muda para o torcedor.</description>
+    <category>Economia do esporte</category>
+    <dc:creator>Dr. Carlos Eduardo Mendes</dc:creator>
+    <pubDate>Tue, 08 Sep 2026 09:30:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-saf-sociedade-anonima-futebol.jpg" type="image/jpeg" length="46022"/>
+  </item>
+  <item>
+    <title>Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html</guid>
+    <description>Conheça os cinco títulos mundiais da Seleção Brasileira, entenda como funcionam a convocação e a data FIFA e veja o papel das categorias de base.</description>
+    <category>Futebol</category>
+    <dc:creator>Mariana Silva</dc:creator>
+    <pubDate>Wed, 02 Sep 2026 16:20:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-selecao-brasileira.jpg" type="image/jpeg" length="44845"/>
+  </item>
+  <item>
+    <title>Do master ao estádio: como as marcas chegam à camisa do seu time</title>
+    <link>https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html</link>
+    <guid isPermaLink="true">https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html</guid>
+    <description>Master, mangas, costas, naming rights e fornecedor de material: entenda como funciona o patrocínio no futebol e quais setores mais investem nos clubes.</description>
+    <category>Economia do esporte</category>
+    <dc:creator>Rodrigo Albuquerque</dc:creator>
+    <pubDate>Tue, 18 Aug 2026 10:40:00 -0300</pubDate>
+    <enclosure url="https://arenadiaria.proxserverabner.site/assets/images/capas/noticia-patrocinios-futebol.jpg" type="image/jpeg" length="48837"/>
   </item>
 </channel>
 </rss>

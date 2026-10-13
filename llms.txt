@@ -1,22 +1,22 @@
 # Arena Diária
 
-> Portal de notícias em português do Brasil sobre futebol, economia do esporte e direitos do consumidor. Cada matéria lista as fontes consultadas. O portal não oferece, intermedeia nem divulga apostas.
+> Portal de notícias em português do Brasil sobre futebol, economia do esporte e direitos do consumidor. Cada matéria lista as fontes consultadas.
 
 ## Editorias
 - Futebol: competições, regulamentos e seleções.
 - Economia do esporte: patrocínios, tributos e trabalho no setor.
-- Consumidor: pagamentos, golpes, direitos e mudanças na lei, incluindo a proibição das apostas de quota fixa pela MP nº 1.394/2026.
+- Consumidor: pagamentos, golpes, direitos e mudanças na lei.
 
 ## Matérias
 - [Como funciona o Brasileirão: pontos corridos, rodadas e o que vale cada posição](https://arenadiaria.proxserverabner.site/noticia-brasileirao-rodada.html): Entenda a fórmula do Brasileirão: 20 clubes, 38 rodadas em pontos corridos, critérios de desempate, vagas na Libertadores e na Sul-Americana e rebaixamento.
 - [Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base](https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html): Conheça os cinco títulos mundiais da Seleção Brasileira, entenda como funcionam a convocação e a data FIFA e veja o papel das categorias de base.
+- [Como funciona a Copa do Brasil: fases, desempate e vaga na Libertadores](https://arenadiaria.proxserverabner.site/noticia-copa-do-brasil.html): Entenda a Copa do Brasil: 126 clubes, nove fases de mata-mata, jogos únicos e de ida e volta, critérios de desempate e as vagas na Libertadores.
+- [Como funciona a Libertadores: das fases preliminares à final em jogo único](https://arenadiaria.proxserverabner.site/noticia-libertadores.html): Entenda a Libertadores: 47 clubes, três fases preliminares, oito grupos, mata-mata, final em jogo único e como os clubes brasileiros conquistam a vaga.
 - [Do master ao estádio: como as marcas chegam à camisa do seu time](https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html): Master, mangas, costas, naming rights e fornecedor de material: entenda como funciona o patrocínio no futebol e quais setores mais investem nos clubes.
-- [Pix e apostas: o que a MP 1.394 muda para bancos e para o seu dinheiro](https://arenadiaria.proxserverabner.site/noticia-pix-saque-rapido.html): A MP 1.394/2026 proibiu bancos e instituições de pagamento de processar apostas, inclusive por Pix. Veja as regras, a devolução pelo BC e o destino do saldo.
-- [Para onde ia o dinheiro das bets e o que a MP 1.394 faz com essas receitas](https://arenadiaria.proxserverabner.site/noticia-tributacao-saude.html): A Lei 14.790 dividia a arrecadação das bets entre esporte, turismo, segurança, educação e saúde. Veja os percentuais e o que a MP 1.394 manteve e revogou.
-- [Lista de bets autorizadas virou registro histórico: o que mudou com a MP](https://arenadiaria.proxserverabner.site/noticia-plataformas-autorizadas.html): Com a MP 1.394/2026, a lista de bets autorizadas e o domínio .bet.br viraram registro histórico. Saiba como se proteger de sites ilegais e de golpes de saque.
-- [Redes, buscadores e lojas de apps passam a responder por anúncios de bets](https://arenadiaria.proxserverabner.site/noticia-inteligencia-artificial.html): A MP 1.394/2026 criou o dever de cuidado para redes sociais, buscadores e lojas de apps contra anúncios de bets. Veja as regras, as multas e como denunciar.
-- [Fim das bets: o que muda para quem trabalha no setor e no entorno](https://arenadiaria.proxserverabner.site/noticia-geracao-empregos.html): A MP 1.394/2026 proibiu as bets e a publicidade do setor. Veja o que muda para empresas, afiliados, influenciadores e agências e quais regras valem agora.
-- [Proibição das bets: o que muda com a MP 1.394 e como o saldo volta ao apostador](https://arenadiaria.proxserverabner.site/noticia-proibicao-bets-brasil.html): A MP 1.394/2026 proibiu as apostas de quota fixa no Brasil. Veja o que mudou desde a Lei 14.790, o cronograma oficial e como o saldo volta para o apostador.
+- [Direitos de transmissão no futebol: o que diz a lei do mandante e como os clubes negociam](https://arenadiaria.proxserverabner.site/noticia-direitos-de-transmissao.html): Entenda como funcionam os direitos de transmissão no futebol brasileiro: a Lei 14.205/2021, o direito de arena do mandante, os blocos de clubes e as ligas.
+- [O que é a SAF: como o clube vira empresa e o que acontece com as dívidas](https://arenadiaria.proxserverabner.site/noticia-saf-sociedade-anonima-futebol.html): Entenda a SAF, criada pela Lei 14.193/2021: como o clube vira empresa, como ficam as dívidas antigas, o regime de tributação TEF e o que muda para o torcedor.
+- [Ingressos para jogos de futebol: os direitos de quem compra a entrada](https://arenadiaria.proxserverabner.site/noticia-ingressos-direitos-torcedor.html): Veja seus direitos na compra de ingressos para jogos de futebol: Lei Geral do Esporte, CDC, meia-entrada, taxa de conveniência, jogo adiado e onde reclamar.
+- [Golpes no Pix: como se proteger e como pedir o dinheiro de volta pelo MED](https://arenadiaria.proxserverabner.site/noticia-pix-golpes-med.html): Saiba como evitar golpes no Pix e como pedir o dinheiro de volta pelo MED, o Mecanismo Especial de Devolução do Banco Central, com prazos e passo a passo.
 
 ## Institucional
 - [Quem somos, expediente e política editorial](https://arenadiaria.proxserverabner.site/quem-somos.html)
