@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=640, height=200">
+<!-- Billboard 320x100 da home no celular, desenhado em 320x100 e renderizado em 2x.
+     O quadro final vira assets/images/anuncios/billboard-mobile.webp. -->
+<style>
+@font-face{font-family:"Titulo";src:url("assets/Montserrat-ExtraBold.ttf") format("truetype");font-display:block}
+@font-face{font-family:"Texto";src:url("assets/Inter-SemiBold.ttf") format("truetype");font-display:block}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:640px;height:200px;overflow:hidden;background:#0B132B}
+#root{position:relative;width:640px;height:200px;overflow:hidden}
+#arte{position:absolute;left:0;top:0;width:320px;height:100px;transform:scale(2);transform-origin:0 0;
+  background:linear-gradient(110deg,#0B132B 0%,#1C2541 58%,#134E4A 100%);overflow:hidden}
+#campo{position:absolute;right:-40px;top:-20px;width:180px;height:140px;opacity:.16}
+#escudo{position:absolute;left:14px;top:31px;width:38px;height:38px}
+#texto{position:absolute;left:62px;top:0;height:100px;width:150px;display:flex;flex-direction:column;justify-content:center}
+#nome{font-family:"Titulo";font-size:10px;color:#5EEAD4;letter-spacing:.06em;text-transform:uppercase}
+#titulo{font-family:"Titulo";font-size:16px;line-height:1.1;color:#fff;margin-top:3px}
+#cta{position:absolute;right:12px;top:33px;height:34px;padding:0 13px;border-radius:999px;background:#5EEAD4;
+  color:#0B132B;font-family:"Titulo";font-size:12px;display:flex;align-items:center}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="640" data-height="200" data-duration="2" data-fps="30">
+ <div id="arte">
+  <svg id="campo" viewBox="0 0 180 140" fill="none" stroke="#5EEAD4" stroke-width="1.5">
+    <rect x="1" y="1" width="178" height="138"/><line x1="90" y1="1" x2="90" y2="139"/><circle cx="90" cy="70" r="28"/>
+  </svg>
+  <svg id="escudo" viewBox="0 0 100 100" fill="none"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00A896"/><stop offset="1" stop-color="#0F766E"/></linearGradient></defs>
+    <path d="M50 10 L90 25 L90 60 C90 85 65 95 50 100 C35 95 10 85 10 60 L10 25 Z" fill="url(#g)"/>
+    <path d="M35 55 L45 65 L70 35" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div id="texto">
+    <span id="nome">Arena Diária</span>
+    <span id="titulo">Sua marca acima da manchete</span>
+  </div>
+  <div id="cta">Anuncie</div>
+ </div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+(function () {
+  var tl = gsap.timeline({ paused: true });
+  tl.fromTo("#escudo", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 0.1);
+  tl.fromTo("#nome", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.3);
+  tl.fromTo("#titulo", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0.45);
+  tl.fromTo("#cta", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 0.8);
+  tl.to({}, { duration: 0.01 }, 1.99);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+})();
+</script>
+</body>
+</html>

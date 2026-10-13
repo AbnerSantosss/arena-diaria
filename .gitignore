@@ -31,3 +31,6 @@ build/_render/
 # Originais das fotos (pesados); só as versões geradas em assets/images/fotos entram
 build/fotos/*
 !build/fotos/BRIEFING.md
+
+build/criativos/*/*/snapshots/
+build/criativos/*/*/assets/

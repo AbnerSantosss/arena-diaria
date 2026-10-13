@@ -34,7 +34,7 @@ SITE = 'https://arenadiaria.proxserverabner.site'
 NOME = 'Arena Diária'
 EMAIL = 'redacao@arenadiaria.com.br'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261013'                     # muda o cache de CSS/JS a cada publicação
+VERSAO = '20261013b'                     # muda o cache de CSS/JS a cada publicação
 HOJE = '2026-10-13'
 
 EDITORIAS = {
@@ -389,6 +389,30 @@ def publicidade(slot, formato='retangulo'):
     return f'<aside class="ad-slot" aria-label="Publicidade"><span class="ad-label">Publicidade</span>{miolo}</aside>'
 
 
+def billboard(slot):
+    """Faixa de publicidade acima da manchete, no formato do G1: 970x250 no computador e 320x100 no celular.
+
+    Criativos em assets/images/anuncios/billboard.webp (970x250) e billboard-mobile.webp (320x100).
+    Sem criativo, mostra o anúncio da casa (Anuncie na Arena Diária). O espaço fica reservado para não
+    empurrar a página quando o anúncio carrega.
+    """
+    pasta = RAIZ / 'assets' / 'images' / 'anuncios'
+    if (pasta / 'billboard.webp').exists():
+        movel = 'billboard-mobile.webp' if (pasta / 'billboard-mobile.webp').exists() else 'billboard.webp'
+        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-link">'
+                 f'<picture><source media="(min-width: 768px)" srcset="assets/images/anuncios/billboard.webp">'
+                 f'<img src="assets/images/anuncios/{movel}" width="970" height="250" '
+                 f'alt="Anuncie na Arena Diária: fale com a nossa equipe comercial" class="billboard-img"></picture></a>')
+    else:
+        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-link billboard-casa">'
+                 f'<span class="billboard-marca">Arena Diária</span>'
+                 f'<span class="billboard-texto"><strong>Sua marca acima da manchete</strong>'
+                 f'<span class="billboard-sub">Fale com leitores de futebol, economia do esporte e consumidor</span></span>'
+                 f'<span class="billboard-cta">Anuncie aqui</span></a>')
+    return (f'<aside class="billboard" aria-label="Publicidade"><span class="billboard-label">Publicidade</span>'
+            f'<div class="billboard-area">{miolo}</div></aside>')
+
+
 def cartao(m, tamanho='medio', carregar='lazy'):
     tit = {'grande': 'text-2xl md:text-4xl', 'medio': 'text-lg md:text-xl', 'pequeno': 'text-base'}[tamanho]
     resumo = '' if tamanho == 'pequeno' else f'<p class="mt-2 text-base text-slate-600 leading-relaxed">{e(m["resumo"])}</p>'
@@ -562,7 +586,7 @@ def gerar_home(ms):
 
   <main id="conteudo" class="max-w-6xl mx-auto px-4 py-8">
     <h1 class="sr-only">Arena Diária: notícias de futebol, economia do esporte e direitos do consumidor</h1>
-    <div class="hidden md:flex justify-center mb-8">{publicidade('home-topo', 'faixa') if (RAIZ / 'assets/images/anuncios/faixa.webp').exists() else ''}</div>
+    {billboard('home-topo')}
 
     <section aria-label="Manchetes" class="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
       {cartao(destaque, 'grande', 'eager')}
