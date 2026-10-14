@@ -34,7 +34,7 @@ SITE = 'https://arenadiaria.proxserverabner.site'
 NOME = 'Arena Diária'
 EMAIL = 'redacao@arenadiaria.com.br'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261013c'                     # muda o cache de CSS/JS a cada publicação
+VERSAO = '20261013d'                     # muda o cache de CSS/JS a cada publicação
 HOJE = '2026-10-13'
 
 EDITORIAS = {
