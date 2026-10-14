@@ -306,6 +306,60 @@ function initBillboardAnimado() {
   video.play().catch(() => video.remove());
 }
 
+/* 12. Carrossel da home: três anúncios, com pausa no foco e suporte a movimento reduzido. */
+function initCarrosselAnuncios() {
+  const carrossel = document.querySelector('[data-ad-carousel]');
+  if (!carrossel) return;
+  const slides = [...carrossel.querySelectorAll('.billboard-slide')];
+  const pontos = [...carrossel.querySelectorAll('[data-ad-goto]')];
+  const anterior = carrossel.querySelector('[data-ad-prev]');
+  const proximo = carrossel.querySelector('[data-ad-next]');
+  const alternar = carrossel.querySelector('[data-ad-toggle]');
+  if (slides.length < 2) return;
+
+  let indice = 0;
+  let pausado = reduzMovimento;
+  let timer = null;
+  const mostrar = (novo) => {
+    indice = (novo + slides.length) % slides.length;
+    slides.forEach((slide, i) => { slide.hidden = i !== indice; });
+    pontos.forEach((ponto, i) => ponto.setAttribute('aria-pressed', String(i === indice)));
+    carrossel.setAttribute('aria-label', `Publicidade, anúncio ${indice + 1} de ${slides.length}`);
+  };
+  const sincronizarBotao = () => {
+    if (!alternar) return;
+    alternar.setAttribute('aria-pressed', String(pausado));
+    alternar.setAttribute('aria-label', pausado ? 'Retomar anúncios' : 'Pausar anúncios');
+    alternar.textContent = pausado ? '▶' : 'Ⅱ';
+  };
+  const iniciar = () => {
+    clearInterval(timer);
+    if (!pausado && !document.hidden) timer = setInterval(() => mostrar(indice + 1), 6500);
+  };
+
+  anterior?.addEventListener('click', () => { mostrar(indice - 1); iniciar(); });
+  proximo?.addEventListener('click', () => { mostrar(indice + 1); iniciar(); });
+  pontos.forEach((ponto) => ponto.addEventListener('click', () => {
+    mostrar(Number(ponto.dataset.adGoto));
+    iniciar();
+  }));
+  alternar?.addEventListener('click', () => {
+    pausado = !pausado;
+    sincronizarBotao();
+    iniciar();
+  });
+  carrossel.addEventListener('mouseenter', () => clearInterval(timer));
+  carrossel.addEventListener('mouseleave', iniciar);
+  carrossel.addEventListener('focusin', () => clearInterval(timer));
+  carrossel.addEventListener('focusout', (event) => {
+    if (!carrossel.contains(event.relatedTarget)) iniciar();
+  });
+  document.addEventListener('visibilitychange', iniciar);
+  mostrar(0);
+  sincronizarBotao();
+  iniciar();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initData();
   initBusca();
@@ -317,4 +371,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMedicao();
   initPublicidade();
   initBillboardAnimado();
+  initCarrosselAnuncios();
 });

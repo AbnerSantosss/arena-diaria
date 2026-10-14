@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Gerador do portal Arena Diária.
+Gerador do portal PASION.
 
 Monta todas as páginas HTML da raiz a partir de um cabeçalho, um rodapé e um
 modelo de matéria únicos. Edite os textos aqui ou em build/materias/*.html e
@@ -31,10 +31,10 @@ ATUAL = ' aria-current="page"'
 RAIZ = Path(__file__).resolve().parent.parent
 BUILD = RAIZ / 'build'
 SITE = 'https://arenadiaria.proxserverabner.site'
-NOME = 'Arena Diária'
+NOME = 'PASION'
 EMAIL = 'redacao@arenadiaria.com.br'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261013d'                     # muda o cache de CSS/JS a cada publicação
+VERSAO = '20261014b'                     # muda o cache de CSS/JS a cada publicação
 HOJE = '2026-10-13'
 
 EDITORIAS = {
@@ -138,9 +138,9 @@ def ler_materia(m):
     m['leitura'] = max(2, round(palavras / 220))
     m['url'] = f"{m['slug']}.html"
     m['capa'] = f"assets/images/capas/{m['slug']}.jpg"
-    m['alt'] = f"Arte da Arena Diária com o texto “{m['arte'][0]}: {m['arte'][1]}”"
+    m['alt'] = f"Arte da PASION com o texto “{m['arte'][0]}: {m['arte'][1]}”"
     m['capa_web'] = m['capa']
-    m['credito'] = 'Arte: Arena Diária'
+    m['credito'] = 'Arte: PASION'
     foto = preparar_foto(m['slug'])
     if foto:
         m['capa'], m['capa_web'] = foto
@@ -196,8 +196,8 @@ LUPA = ('<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focu
 def logo(claro=False):
     cor = 'text-white' if claro else 'text-slate-900'
     destaque = 'text-teal-300' if claro else 'text-teal-700'
-    return (f'{ESCUDO}<span class="text-xl font-black tracking-tight {cor}">Arena '
-            f'<span class="{destaque}">Diária</span></span>')
+    return (f'{ESCUDO}<span class="text-xl font-black tracking-[.04em] {cor}">'
+            f'<span class="{destaque}">PASION</span></span>')
 
 
 def form_busca(sufixo, classes):
@@ -220,13 +220,15 @@ def cabecalho(ativo):
         f'{ATUAL if chave == ativo else ""}>{rotulo}</a></li>'
         for chave, href, rotulo in itens)
     return f'''<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
-  <header class="sticky top-0 z-50 bg-white border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center gap-4">
-      <a href="./" class="flex items-center gap-2 shrink-0" aria-label="Arena Diária, página inicial">{logo()}</a>
+  <header class="site-header sticky top-0 z-50 bg-white border-b border-slate-200">
+    <div class="masthead">
+    <div class="masthead-inner max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
+      <a href="./" class="flex items-center gap-2 shrink-0" aria-label="PASION, página inicial">{logo(claro=ativo == 'inicio')}</a>
       <time id="headerLiveDate" class="hidden lg:block text-sm text-slate-600"></time>
       {form_busca('topo', 'hidden md:block ml-auto w-72')}
       <button id="buscaToggle" type="button" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] md:hidden ml-auto text-slate-700" aria-expanded="false" aria-controls="buscaPainel" aria-label="Abrir busca">{LUPA}</button>
       <a href="anuncie.html" class="hidden sm:inline-flex h-11 items-center px-4 rounded-full border border-slate-300 text-sm font-semibold text-slate-700 hover:border-teal-700 hover:text-teal-700">Anuncie</a>
+    </div>
     </div>
     <div id="buscaPainel" class="md:hidden border-t border-slate-200 px-4 py-3" hidden>
       {form_busca('celular', 'w-full')}
@@ -243,7 +245,7 @@ def rodape():
     return f'''<footer class="bg-slate-900 text-slate-300 mt-16">
     <div class="max-w-6xl mx-auto px-4 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <div>
-        <a href="./" class="flex items-center gap-2" aria-label="Arena Diária, página inicial">{logo(claro=True)}</a>
+        <a href="./" class="flex items-center gap-2" aria-label="PASION, página inicial">{logo(claro=True)}</a>
         <p class="mt-4 text-sm leading-relaxed">Notícias de futebol, economia do esporte e direitos do consumidor, com fonte em cada informação.</p>
       </div>
       <div>
@@ -278,7 +280,7 @@ def rodape():
       </div>
     </div>
     <div class="border-t border-slate-700">
-      <p class="max-w-6xl mx-auto px-4 py-5 text-sm text-slate-400">© 2026 Arena Diária. Conteúdo jornalístico.</p>
+      <p class="max-w-6xl mx-auto px-4 py-5 text-sm text-slate-400">© 2026 PASION. Conteúdo jornalístico.</p>
     </div>
   </footer>
 
@@ -314,9 +316,15 @@ def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', image
            extra_head='', grafo=None, robots='index, follow, max-image-preview:large'):
     url = f'{SITE}/' if arquivo == 'index.html' else f'{SITE}/{arquivo}'
     imagem = imagem or 'assets/images/og-arena-diaria.jpg'
-    imagem_alt = imagem_alt or 'Arena Diária: futebol, economia do esporte e direitos do consumidor'
+    imagem_alt = imagem_alt or 'PASION: futebol, economia do esporte e direitos do consumidor'
     grafo = [jsonld_org()] + (grafo or [])
     ld = json.dumps({'@context': 'https://schema.org', '@graph': grafo}, ensure_ascii=False, indent=1)
+    if arquivo == 'index.html':
+        classe_body = 'antialiased home-page'
+    elif og_tipo == 'article':
+        classe_body = 'antialiased news-page'
+    else:
+        classe_body = 'antialiased'
     doc = f'''<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -328,12 +336,12 @@ def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', image
   <link rel="canonical" href="{url}">
   <meta name="theme-color" content="#0B132B">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="alternate" type="application/rss+xml" title="Arena Diária: últimas notícias" href="{SITE}/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="PASION: últimas notícias" href="{SITE}/feed.xml">
 
   <meta property="og:site_name" content="{NOME}">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="{og_tipo}">
-  <meta property="og:title" content="{e(titulo.replace(' | Arena Diária', ''))}">
+  <meta property="og:title" content="{e(titulo.replace(' | PASION', ''))}">
   <meta property="og:description" content="{e(descricao)}">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{SITE}/{imagem}">
@@ -342,7 +350,7 @@ def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', image
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="{e(imagem_alt)}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{e(titulo.replace(' | Arena Diária', ''))}">
+  <meta name="twitter:title" content="{e(titulo.replace(' | PASION', ''))}">
   <meta name="twitter:description" content="{e(descricao)}">
   <meta name="twitter:image" content="{SITE}/{imagem}">
 {extra_head}
@@ -355,7 +363,7 @@ def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', image
 {ld}
   </script>
 </head>
-<body class="antialiased">
+<body class="{classe_body}">
   {cabecalho(ativo)}
 
 {corpo}
@@ -381,51 +389,63 @@ def publicidade(slot, formato='retangulo'):
         w, h = {'retangulo': (300, 250), 'faixa': (728, 90)}[formato]
         miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="block">'
                  f'<img src="assets/images/anuncios/{formato}.webp" width="{w}" height="{h}" loading="lazy" '
-                 f'alt="Anuncie na Arena Diária: fale com a nossa equipe comercial" class="w-full h-auto"></a>')
+                 f'alt="Anuncie na PASION: fale com a nossa equipe comercial" class="w-full h-auto"></a>')
     else:
-        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="block p-6 text-center hover:bg-slate-50">'
-                 f'<span class="block text-lg font-extrabold text-slate-900">Sua marca aqui</span>'
-                 f'<span class="block mt-1 text-sm text-slate-600">Fale com a equipe comercial da Arena Diária</span></a>')
+        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="article-ad-creative">'
+                 f'<span class="article-ad-brand">{logo(claro=True)}</span>'
+                 f'<span class="article-ad-title">Sua marca <strong>aqui</strong></span>'
+                 f'<span class="article-ad-copy">Fale com a equipe comercial da PASION.</span>'
+                 f'<span class="article-ad-cta">Anuncie aqui <span aria-hidden="true">→</span></span></a>')
     return f'<aside class="ad-slot" aria-label="Publicidade"><span class="ad-label">Publicidade</span>{miolo}</aside>'
 
 
 def billboard(slot):
-    """Faixa de publicidade acima da manchete, no formato do G1: 970x250 no computador e 320x100 no celular.
-
-    Criativos em assets/images/anuncios/billboard.webp (970x250) e billboard-mobile.webp (320x100);
-    se houver billboard(.mp4|.webm) e billboard-mobile(.mp4|.webm), o portal.js toca a versão animada.
-    Sem criativo, mostra o anúncio da casa (Anuncie na Arena Diária). O espaço fica reservado para não
-    empurrar a página quando o anúncio carrega.
-    """
-    pasta = RAIZ / 'assets' / 'images' / 'anuncios'
-    if (pasta / 'billboard.webp').exists():
-        movel = 'billboard-mobile.webp' if (pasta / 'billboard-mobile.webp').exists() else 'billboard.webp'
-        # Versão animada (vídeo do HyperFrames): o portal.js troca a imagem pelo vídeo quando ele carrega
-        videos = ''.join(f' data-video-{tipo}="assets/images/anuncios/{nome}?v={VERSAO}"'
-                         for tipo, nome in (('mp4', 'billboard.mp4'), ('webm', 'billboard.webm'),
-                                            ('mp4-movel', 'billboard-mobile.mp4'), ('webm-movel', 'billboard-mobile.webm'))
-                         if (pasta / nome).exists())
-        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-link"{videos}>'
-                 f'<picture><source media="(min-width: 768px)" srcset="assets/images/anuncios/billboard.webp">'
-                 f'<img src="assets/images/anuncios/{movel}" width="970" height="250" '
-                 f'alt="Anuncie na Arena Diária: fale com a nossa equipe comercial" class="billboard-img"></picture></a>')
-    else:
-        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-link billboard-casa">'
-                 f'<span class="billboard-marca">Arena Diária</span>'
-                 f'<span class="billboard-texto"><strong>Sua marca acima da manchete</strong>'
-                 f'<span class="billboard-sub">Fale com leitores de futebol, economia do esporte e consumidor</span></span>'
-                 f'<span class="billboard-cta">Anuncie aqui</span></a>')
+    """Carrossel de três criativos de demonstração, com altura reservada e controles acessíveis."""
+    anuncios = [
+        (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-slide billboard-first" aria-label="Publicidade Passo Nobre: seu próximo passo começa aqui">'
+         f'<picture><source media="(max-width: 767px)" srcset="assets/images/home/anuncio-passo-nobre-mobile.jpg">'
+         f'<img src="assets/images/home/anuncio-passo-nobre-01.jpg" width="1072" height="176" '
+         f'alt="Passo Nobre — seu próximo passo começa aqui. Conforto, estilo e performance para o seu dia, dentro e fora das quadras. Conheça a coleção." class="billboard-img"></picture>'
+         f'<span class="billboard-copy billboard-mobile-copy"><span class="billboard-brand">PASSO NOBRE</span>'
+         f'<strong>Seu próximo passo<br>começa aqui.</strong>'
+         f'<span class="billboard-caption">Conforto, estilo e performance.</span>'
+         f'<span class="billboard-cta">Conheça a coleção <span aria-hidden="true">→</span></span></span>'
+         f'<img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="" class="billboard-mobile-product"></a>'),
+        (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--ritmo" aria-label="Publicidade Passo Nobre: conforto que acompanha seu ritmo" hidden>'
+         f'<span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span>'
+         f'<strong>Conforto que acompanha<br>o seu ritmo.</strong>'
+         f'<span class="billboard-caption">Movimento com propósito, em cada passo.</span></span>'
+         f'<img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Tênis esportivo em destaque" class="billboard-product">'
+         f'<span class="billboard-cta">Conheça a coleção <span aria-hidden="true">→</span></span></a>'),
+        (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--jogo" aria-label="Publicidade Passo Nobre: feito para acompanhar o jogo" hidden>'
+         f'<span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span>'
+         f'<strong>Seu jogo começa<br>em cada passo.</strong>'
+         f'<span class="billboard-caption">Leveza e estilo dentro e fora da quadra.</span></span>'
+         f'<img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Tênis esportivo em destaque" class="billboard-product">'
+         f'<span class="billboard-cta">Veja a coleção <span aria-hidden="true">→</span></span></a>'),
+    ]
+    slides = '\n'.join(anuncios)
+    controles = ''.join(
+        f'<button type="button" class="billboard-dot" data-ad-goto="{i}" aria-label="Mostrar anúncio {i + 1} de 3" aria-pressed="{"true" if i == 0 else "false"}"></button>'
+        for i in range(3))
     return (f'<aside class="billboard" aria-label="Publicidade"><span class="billboard-label">Publicidade</span>'
-            f'<div class="billboard-area">{miolo}</div></aside>')
+            f'<div class="billboard-area" data-ad-carousel aria-roledescription="carrossel">{slides}'
+            f'<div class="billboard-controls" aria-label="Controles dos anúncios">'
+            f'<button type="button" class="billboard-nav" data-ad-prev aria-label="Anúncio anterior">‹</button>'
+            f'<div class="billboard-dots">{controles}</div>'
+            f'<button type="button" class="billboard-nav" data-ad-next aria-label="Próximo anúncio">›</button>'
+            f'<button type="button" class="billboard-toggle" data-ad-toggle aria-pressed="false" aria-label="Pausar anúncios">Ⅱ</button>'
+            f'</div></div></aside>')
 
 
-def cartao(m, tamanho='medio', carregar='lazy'):
+def cartao(m, tamanho='medio', carregar='lazy', capa=None, classe=''):
     tit = {'grande': 'text-2xl md:text-4xl', 'medio': 'text-lg md:text-xl', 'pequeno': 'text-base'}[tamanho]
     resumo = '' if tamanho == 'pequeno' else f'<p class="mt-2 text-base text-slate-600 leading-relaxed">{e(m["resumo"])}</p>'
     prioridade = ' fetchpriority="high"' if carregar == 'eager' else ''
-    return f'''<article class="card-link group">
+    capa = capa or m['capa_web']
+    return f'''<article class="card-link group {classe}">
           <div class="overflow-hidden rounded-lg bg-slate-200">
-            <img src="{m['capa_web']}" width="1200" height="630" alt="" loading="{carregar}"{prioridade} class="w-full h-auto aspect-[1200/630] object-cover">
+            <img src="{capa}" width="1200" height="630" alt="" loading="{carregar}"{prioridade} class="w-full h-auto aspect-[1200/630] object-cover">
           </div>
           <div class="mt-3">{chapeu(m['editoria'])}</div>
           <h3 class="headline {tit} mt-2"><a href="{m['url']}" class="stretched">{e(m['h1'])}</a></h3>
@@ -441,6 +461,17 @@ def item_lista(m):
               <span class="text-xs font-bold uppercase tracking-wide text-teal-700">{EDITORIAS[m['editoria']]['nome']}</span>
               <a href="{m['url']}" class="stretched block headline text-base sm:text-lg mt-1">{e(m['h1'])}</a>
               <p class="mt-1 text-sm text-slate-600"><time datetime="{m['publicada']}">{data_curta(m['publicada'])}</time></p>
+            </div>
+          </li>'''
+
+
+def item_lateral(m):
+    return f'''<li class="article-more-item">
+            <img src="{m['capa_web']}" width="120" height="120" alt="" loading="lazy">
+            <div class="article-more-copy">
+              <span class="article-more-category">{EDITORIAS[m['editoria']]['nome']}</span>
+              <a href="{m['url']}" class="stretched">{e(m['h1'])}</a>
+              <time datetime="{m['publicada']}">{data_curta(m['publicada'])}</time>
             </div>
           </li>'''
 
@@ -464,11 +495,11 @@ def gerar_materia(m, todas):
     outras = [o for o in todas if o is not m and o['editoria'] != m['editoria']]
     relacionadas = (mesmas + outras)[:3]
     leia = '\n'.join(cartao(o, 'pequeno') for o in relacionadas)
-    mais = '\n'.join(item_lista(o) for o in [o for o in todas if o is not m][:5])
+    mais = '\n'.join(item_lateral(o) for o in [o for o in todas if o is not m][:5])
     whats = 'https://wa.me/?text=' + quote(f"{m['h1']} {url_abs}")
 
-    corpo = f'''  <main id="conteudo" class="max-w-6xl mx-auto px-4 py-6 lg:py-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
-    <article class="min-w-0">
+    corpo = f'''  <main id="conteudo" class="article-shell max-w-6xl mx-auto px-4 py-6 lg:py-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
+    <article class="news-story min-w-0">
       <nav aria-label="Trilha de navegação" class="text-sm text-slate-600">
         <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
           <li><a href="./" class="underline hover:text-teal-700">Início</a></li>
@@ -479,11 +510,11 @@ def gerar_materia(m, todas):
         </ol>
       </nav>
 
-      <header class="mt-6">
+      <header class="story-heading mt-6">
         {chapeu(m['editoria'])}
         <h1 class="headline text-3xl sm:text-4xl lg:text-5xl mt-3">{e(m['h1'])}</h1>
         <p class="mt-4 text-lg sm:text-xl text-slate-600 leading-relaxed">{e(m['linha_fina'])}</p>
-        <div class="mt-6 pb-6 border-b border-slate-200 flex items-center gap-3">
+        <div class="story-byline mt-6 pb-6 border-b border-slate-200 flex items-center gap-3">
           <img src="{autor['foto']}" width="48" height="48" alt="" class="w-12 h-12 rounded-full object-cover bg-slate-200">
           <div class="text-sm leading-relaxed">
             <p>Por <a href="quem-somos.html#{autor['id']}" class="font-semibold text-slate-900 underline hover:text-teal-700">{e(m['autor'])}</a>, {autor['cargo'].lower()}</p>
@@ -492,8 +523,9 @@ def gerar_materia(m, todas):
         </div>
       </header>
 
-      <figure class="mt-6">
+      <figure class="story-hero mt-6">
         <img src="{m['capa_web']}" width="1200" height="630" alt="{e(m['alt'])}" fetchpriority="high" class="w-full h-auto rounded-lg">
+        <span class="story-art-brand" aria-label="PASION">PASION</span>
         <figcaption class="mt-2 text-sm text-slate-600">{m['credito']}</figcaption>
       </figure>
 
@@ -524,10 +556,10 @@ def gerar_materia(m, todas):
       </section>
     </article>
 
-    <div class="space-y-8">
+    <div class="article-sidebar space-y-8">
       {publicidade('materia-lateral')}
       <section aria-labelledby="mais-noticias">
-        <h2 id="mais-noticias" class="text-lg font-extrabold text-slate-900 border-b-2 border-slate-900 pb-2">Mais notícias</h2>
+        <h2 id="mais-noticias" class="text-lg font-extrabold text-slate-900 border-b-2 border-slate-900 pb-2">Mais notícias <a href="noticias.html" class="article-more-all">Ver todas <span aria-hidden="true">→</span></a></h2>
         <ul>
 {mais}
         </ul>
@@ -567,6 +599,9 @@ def gerar_materia(m, todas):
 # --------------------------------------------------------------------------
 def gerar_home(ms):
     destaque, d2, d3 = ms[0], ms[1], ms[2]
+    destaque['home_capa'] = 'assets/images/home/capa-brasileirao.jpg'
+    d2['home_capa'] = 'assets/images/home/capa-selecao.jpg'
+    d3['home_capa'] = 'assets/images/home/capa-copa-brasil.jpg'
     secoes = ''
     for chave, ed in EDITORIAS.items():
         da_secao = [m for m in ms if m['editoria'] == chave and m not in (destaque, d2, d3)]
@@ -590,15 +625,15 @@ def gerar_home(ms):
     </div>
   </div>
 
-  <main id="conteudo" class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="sr-only">Arena Diária: notícias de futebol, economia do esporte e direitos do consumidor</h1>
+  <main id="conteudo" class="home-main max-w-6xl mx-auto px-4 py-6">
+    <h1 class="sr-only">PASION: notícias de futebol, economia do esporte e direitos do consumidor</h1>
     {billboard('home-topo')}
 
-    <section aria-label="Manchetes" class="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-      {cartao(destaque, 'grande', 'eager')}
-      <div class="grid gap-8 content-start">
-        {cartao(d2, 'pequeno')}
-        {cartao(d3, 'pequeno')}
+    <section aria-label="Manchetes" class="home-headlines">
+      {cartao(destaque, 'grande', 'eager', destaque['home_capa'], 'home-feature')}
+      <div class="home-secondary">
+        {cartao(d2, 'pequeno', capa=d2['home_capa'], classe='home-side-card')}
+        {cartao(d3, 'pequeno', capa=d3['home_capa'], classe='home-side-card')}
       </div>
     </section>
 
@@ -608,7 +643,6 @@ def gerar_home(ms):
       </div>
 
       <div class="space-y-8 pt-10">
-        {publicidade('home-lateral')}
         <section aria-labelledby="escolhas">
           <h2 id="escolhas" class="text-lg font-extrabold text-slate-900 border-b-2 border-slate-900 pb-2">Escolhas da redação</h2>
           <ul>
@@ -628,7 +662,7 @@ def gerar_home(ms):
               'publisher': {'@id': ORG_ID},
               'potentialAction': {'@type': 'SearchAction', 'target': f'{SITE}/noticias.html?q={{search_term_string}}',
                                   'query-input': 'required name=search_term_string'}}]
-    pagina('index.html', 'Arena Diária: futebol, economia do esporte e consumidor',
+    pagina('index.html', 'PASION: futebol, economia do esporte e consumidor',
            'Portal de notícias sobre futebol, economia do esporte e direitos do consumidor. Matérias com fonte, '
            'linguagem clara e correções transparentes.', corpo, ativo='inicio', grafo=grafo)
 
@@ -659,8 +693,8 @@ def gerar_noticias(ms):
     grafo = [{'@type': 'CollectionPage', 'url': f'{SITE}/noticias.html', 'name': 'Todas as notícias', 'isPartOf': {'@id': f'{SITE}/#site'},
               'mainEntity': {'@type': 'ItemList', 'itemListElement': [
                   {'@type': 'ListItem', 'position': i + 1, 'url': f"{SITE}/{m['url']}"} for i, m in enumerate(por_data)]}}]
-    pagina('noticias.html', 'Todas as notícias | Arena Diária',
-           'Lista completa das matérias da Arena Diária sobre futebol, economia do esporte e direitos do consumidor, '
+    pagina('noticias.html', 'Todas as notícias | PASION',
+           'Lista completa das matérias da PASION sobre futebol, economia do esporte e direitos do consumidor, '
            'da mais recente para a mais antiga.', corpo, ativo='noticias', grafo=grafo)
 
 
@@ -685,11 +719,11 @@ def gerar_institucionais():
           <div><h3 class="text-lg font-extrabold text-slate-900">{e(nome)}</h3><p class="text-sm font-semibold text-teal-700">{a['cargo']}</p><p class="mt-1 text-base">{a['bio']}</p></div>
         </div>''' for nome, a in AUTORES.items())
 
-    institucional('quem-somos.html', 'Quem somos, expediente e política editorial | Arena Diária',
-        'Conheça a Arena Diária: o que cobrimos, quem escreve, como checamos as informações, como corrigimos erros '
+    institucional('quem-somos.html', 'Quem somos, expediente e política editorial | PASION',
+        'Conheça a PASION: o que cobrimos, quem escreve, como checamos as informações, como corrigimos erros '
         'e como separamos publicidade de jornalismo.',
         'Quem somos', f'''
-      <p class="text-lg">A Arena Diária é um portal de notícias sobre futebol, economia do esporte e direitos do consumidor. Explicamos regras, contratos e mudanças na lei que afetam quem acompanha o esporte, com fonte em cada informação.</p>
+      <p class="text-lg">A PASION é um portal de notícias sobre futebol, economia do esporte e direitos do consumidor. Explicamos regras, contratos e mudanças na lei que afetam quem acompanha o esporte, com fonte em cada informação.</p>
 
       <h2 id="o-que-cobrimos">O que cobrimos</h2>
       <ul>
@@ -719,8 +753,8 @@ def gerar_institucionais():
       <h2 id="dados">Dados institucionais</h2>
       <p>Arena Diária Comunicação e Mídia Digital Ltda.<br>CNPJ 45.890.123/0001-90<br>Setor Hoteleiro Sul, Quadra 06, Bloco E, Asa Sul, Brasília (DF), CEP 70322-900<br>E-mail: <a href="mailto:{EMAIL}">{EMAIL}</a></p>''')
 
-    institucional('contato.html', 'Contato: fale com a redação | Arena Diária',
-        'Fale com a redação da Arena Diária: envie sugestões de pauta, avise sobre um erro, peça informações '
+    institucional('contato.html', 'Contato: fale com a redação | PASION',
+        'Fale com a redação da PASION: envie sugestões de pauta, avise sobre um erro, peça informações '
         'comerciais ou exerça seus direitos de privacidade.',
         'Fale com a redação', f'''
       <p class="text-lg">Sugestão de pauta, correção, publicidade ou privacidade: tudo chega pelo mesmo endereço, <a href="mailto:{EMAIL}">{EMAIL}</a>. Respondemos em dias úteis.</p>
@@ -755,10 +789,10 @@ def gerar_institucionais():
         </div>
       </form>''')
 
-    institucional('anuncie.html', 'Anuncie na Arena Diária: formatos e regras | Arena Diária',
-        'Anuncie na Arena Diária: formatos disponíveis, regras de aceite e como falar com a equipe comercial. '
+    institucional('anuncie.html', 'Anuncie na PASION: formatos e regras | PASION',
+        'Anuncie na PASION: formatos disponíveis, regras de aceite e como falar com a equipe comercial. '
         'Publicidade sempre identificada e separada do jornalismo.',
-        'Anuncie na Arena Diária', f'''
+        'Anuncie na PASION', f'''
       <p class="text-lg">Leitores que acompanham futebol, dinheiro e direitos do consumidor. Sua marca aparece em espaço identificado como publicidade, longe do texto jornalístico.</p>
 
       <h2 id="formatos">Formatos</h2>
@@ -784,14 +818,14 @@ def gerar_institucionais():
       <h2 id="falar">Como contratar</h2>
       <p>Escreva para <a href="mailto:{EMAIL}?subject=Publicidade">{EMAIL}</a> com o assunto “Publicidade”, o período e o formato desejado.</p>''')
 
-    institucional('termos-de-uso.html', 'Termos de uso | Arena Diária',
-        'Termos de uso da Arena Diária: natureza jornalística do portal, uso do conteúdo, responsabilidade sobre '
+    institucional('termos-de-uso.html', 'Termos de uso | PASION',
+        'Termos de uso da PASION: natureza jornalística do portal, uso do conteúdo, responsabilidade sobre '
         'as informações, links externos e foro competente.',
         'Termos de uso', '''
       <p class="text-sm text-slate-600">Última atualização: 13 de outubro de 2026</p>
 
-      <h2>1. O que é a Arena Diária</h2>
-      <p>A Arena Diária é um veículo jornalístico de informação. Publicamos notícias, guias e reportagens sobre futebol, economia do esporte e direitos do consumidor.</p>
+      <h2>1. O que é a PASION</h2>
+      <p>A PASION é um veículo jornalístico de informação. Publicamos notícias, guias e reportagens sobre futebol, economia do esporte e direitos do consumidor.</p>
 
       <h2>2. Uso das informações</h2>
       <p>As matérias informam e não substituem orientação jurídica, financeira ou médica para o seu caso. Datas, prazos e regras podem mudar; por isso cada matéria mostra quando foi publicada e atualizada.</p>
@@ -800,19 +834,19 @@ def gerar_institucionais():
       <p>Indicamos fontes oficiais e serviços de apoio. Não respondemos pelo conteúdo nem pela disponibilidade de sites de terceiros.</p>
 
       <h2>4. Direitos autorais</h2>
-      <p>Textos, artes e marca da Arena Diária são protegidos pela Lei nº 9.610/1998. Você pode citar trechos com crédito e link para a matéria original. A reprodução integral depende de autorização.</p>
+      <p>Textos, artes e marca da PASION são protegidos pela Lei nº 9.610/1998. Você pode citar trechos com crédito e link para a matéria original. A reprodução integral depende de autorização.</p>
 
       <h2>5. Foro</h2>
       <p>Fica eleito o foro da Comarca de Brasília (DF) para resolver questões sobre estes termos, sem prejuízo do foro do domicílio do consumidor.</p>''')
 
-    institucional('politica-de-privacidade.html', 'Política de privacidade e cookies | Arena Diária',
-        'Saiba quais dados a Arena Diária trata, para quê, por quanto tempo e como exercer seus direitos pela LGPD, '
+    institucional('politica-de-privacidade.html', 'Política de privacidade e cookies | PASION',
+        'Saiba quais dados a PASION trata, para quê, por quanto tempo e como exercer seus direitos pela LGPD, '
         'incluindo a escolha sobre cookies de medição e anúncios.',
         'Política de privacidade', f'''
       <p class="text-sm text-slate-600">Última atualização: 13 de outubro de 2026 · Lei nº 13.709/2018 (LGPD)</p>
 
       <h2>1. Em resumo</h2>
-      <p>Você lê a Arena Diária sem cadastro. Não vendemos nem cedemos dados pessoais. Cookies de medição e de anúncios só funcionam se você aceitar.</p>
+      <p>Você lê a PASION sem cadastro. Não vendemos nem cedemos dados pessoais. Cookies de medição e de anúncios só funcionam se você aceitar.</p>
 
       <h2>2. Quais dados tratamos</h2>
       <ul>
@@ -875,7 +909,7 @@ def gerar_feed(ms):
     (RAIZ / 'feed.xml').write_text(f'''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
-  <title>Arena Diária</title>
+  <title>PASION</title>
   <link>{SITE}/</link>
   <atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Notícias de futebol, economia do esporte e direitos do consumidor.</description>
@@ -888,7 +922,7 @@ def gerar_feed(ms):
 
 def gerar_llms(ms):
     linhas = '\n'.join(f"- [{m['h1']}]({SITE}/{m['url']}): {m['description']}" for m in ms)
-    (RAIZ / 'llms.txt').write_text(f'''# Arena Diária
+    (RAIZ / 'llms.txt').write_text(f'''# PASION
 
 > Portal de notícias em português do Brasil sobre futebol, economia do esporte e direitos do consumidor. Cada matéria lista as fontes consultadas.
 
@@ -974,7 +1008,7 @@ def renderizar(html_txt, destino_jpg, w=1200, h=630, qualidade=84):
 def gerar_capas(ms):
     for m in ms:
         renderizar(capa_html(EDITORIAS[m['editoria']]['nome'], m['arte'][0], m['arte'][1], m['editoria']), RAIZ / 'assets/images/capas' / f"{m['slug']}.jpg")
-    renderizar(capa_html('Portal de notícias', 'Arena Diária', 'Futebol, economia do esporte e direitos do consumidor', None),
+    renderizar(capa_html('Portal de notícias', 'PASION', 'Futebol, economia do esporte e direitos do consumidor', None),
                RAIZ / 'assets/images/og-arena-diaria.jpg')
     logo_html = f'''<!DOCTYPE html><html><head><style>html,body{{margin:0;width:512px;height:512px;background:#fff;display:flex;align-items:center;justify-content:center}}svg{{width:340px;height:auto}}</style></head><body>{ESCUDO.replace('width="26" height="32"', '')}</body></html>'''
     renderizar(logo_html, RAIZ / 'assets/images/logo-512.png', 512, 512)
