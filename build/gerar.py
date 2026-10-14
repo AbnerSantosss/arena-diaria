@@ -34,7 +34,7 @@ SITE = 'https://arenadiaria.proxserverabner.site'
 NOME = 'Arena Diária'
 EMAIL = 'redacao@arenadiaria.com.br'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261013b'                     # muda o cache de CSS/JS a cada publicação
+VERSAO = '20261013c'                     # muda o cache de CSS/JS a cada publicação
 HOJE = '2026-10-13'
 
 EDITORIAS = {
@@ -392,14 +392,20 @@ def publicidade(slot, formato='retangulo'):
 def billboard(slot):
     """Faixa de publicidade acima da manchete, no formato do G1: 970x250 no computador e 320x100 no celular.
 
-    Criativos em assets/images/anuncios/billboard.webp (970x250) e billboard-mobile.webp (320x100).
+    Criativos em assets/images/anuncios/billboard.webp (970x250) e billboard-mobile.webp (320x100);
+    se houver billboard(.mp4|.webm) e billboard-mobile(.mp4|.webm), o portal.js toca a versão animada.
     Sem criativo, mostra o anúncio da casa (Anuncie na Arena Diária). O espaço fica reservado para não
     empurrar a página quando o anúncio carrega.
     """
     pasta = RAIZ / 'assets' / 'images' / 'anuncios'
     if (pasta / 'billboard.webp').exists():
         movel = 'billboard-mobile.webp' if (pasta / 'billboard-mobile.webp').exists() else 'billboard.webp'
-        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-link">'
+        # Versão animada (vídeo do HyperFrames): o portal.js troca a imagem pelo vídeo quando ele carrega
+        videos = ''.join(f' data-video-{tipo}="assets/images/anuncios/{nome}?v={VERSAO}"'
+                         for tipo, nome in (('mp4', 'billboard.mp4'), ('webm', 'billboard.webm'),
+                                            ('mp4-movel', 'billboard-mobile.mp4'), ('webm-movel', 'billboard-mobile.webm'))
+                         if (pasta / nome).exists())
+        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-link"{videos}>'
                  f'<picture><source media="(min-width: 768px)" srcset="assets/images/anuncios/billboard.webp">'
                  f'<img src="assets/images/anuncios/{movel}" width="970" height="250" '
                  f'alt="Anuncie na Arena Diária: fale com a nossa equipe comercial" class="billboard-img"></picture></a>')

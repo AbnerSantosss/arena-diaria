@@ -194,6 +194,9 @@ a:hover .headline, .headline a:hover { color: var(--teal); }
 .billboard-link { display: block; width: 100%; height: 100%; }
 .billboard-link picture { display: block; width: 100%; height: 100%; }
 .billboard-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.billboard-link { position: relative; }
+.billboard-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .2s; }
+.billboard-video.visivel { opacity: 1; }
 .billboard-casa {
   display: flex;
   align-items: center;

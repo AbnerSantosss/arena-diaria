@@ -22,4 +22,11 @@ Para refazer:
 3. Converta o PNG do quadro final para WebP com qualidade 85:
    - `assets/images/anuncios/billboard.webp` (1940x500)
    - `assets/images/anuncios/billboard-mobile.webp` (640x200)
-4. Rode `python build/gerar.py`.
+4. Versão animada (6 s, termina no quadro completo): renderize e recomprima sem áudio.
+   - `npx --no-install hyperframes render <pasta> --format mp4 -q delivery -o <saida>.mp4`
+   - `ffmpeg -i <saida>.mp4 -an -c:v libx264 -pix_fmt yuv420p -crf 26 -preset slow -movflags +faststart assets/images/anuncios/billboard.mp4`
+   - `ffmpeg -i <saida>.mp4 -an -c:v libvpx-vp9 -b:v 0 -crf 38 -row-mt 1 assets/images/anuncios/billboard.webm`
+   - no mobile, os mesmos comandos com `billboard-mobile.mp4` e `billboard-mobile.webm`.
+   O `portal.js` toca o vídeo por cima da imagem (até 3 vezes, com pausa de 4 s) e respeita
+   `prefers-reduced-motion`. Sem os vídeos, fica só a imagem.
+5. Rode `python build/gerar.py`.

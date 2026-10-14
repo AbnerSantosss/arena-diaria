@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=640, height=200">
-<!-- Billboard 320x100 da home no celular, desenhado em 320x100 e renderizado em 2x.
+<!-- Billboard 320x100 da home no celular, desenhado em 320x100 e renderizado em 2x. Animação de 6 s: entrada, brilho e pulso no botão; termina no quadro completo.
      O quadro final vira assets/images/anuncios/billboard-mobile.webp. -->
 <style>
 @font-face{font-family:"Titulo";src:url("assets/Montserrat-ExtraBold.ttf") format("truetype");font-display:block}
@@ -18,12 +18,13 @@ html,body{width:640px;height:200px;overflow:hidden;background:#0B132B}
 #texto{position:absolute;left:62px;top:0;height:100px;width:150px;display:flex;flex-direction:column;justify-content:center}
 #nome{font-family:"Titulo";font-size:10px;color:#5EEAD4;letter-spacing:.06em;text-transform:uppercase}
 #titulo{font-family:"Titulo";font-size:16px;line-height:1.1;color:#fff;margin-top:3px}
-#cta{position:absolute;right:12px;top:33px;height:34px;padding:0 13px;border-radius:999px;background:#5EEAD4;
+#cta{position:absolute;overflow:hidden;right:12px;top:33px;height:34px;padding:0 13px;border-radius:999px;background:#5EEAD4;
   color:#0B132B;font-family:"Titulo";font-size:12px;display:flex;align-items:center}
+#brilho{position:absolute;top:0;left:0;width:45%;height:100%;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.75) 50%,rgba(255,255,255,0) 100%);transform:translateX(-120%) skewX(-18deg)}
 </style>
 </head>
 <body>
-<div id="root" data-composition-id="main" data-start="0" data-width="640" data-height="200" data-duration="2" data-fps="30">
+<div id="root" data-composition-id="main" data-start="0" data-width="640" data-height="200" data-duration="6" data-fps="30">
  <div id="arte">
   <svg id="campo" viewBox="0 0 180 140" fill="none" stroke="#5EEAD4" stroke-width="1.5">
     <rect x="1" y="1" width="178" height="138"/><line x1="90" y1="1" x2="90" y2="139"/><circle cx="90" cy="70" r="28"/>
@@ -35,7 +36,7 @@ html,body{width:640px;height:200px;overflow:hidden;background:#0B132B}
     <span id="nome">Arena Diária</span>
     <span id="titulo">Sua marca acima da manchete</span>
   </div>
-  <div id="cta">Anuncie</div>
+  <div id="cta"><span id="brilho"></span>Anuncie</div>
  </div>
 </div>
 <script src="assets/gsap.min.js"></script>
@@ -46,7 +47,10 @@ html,body{width:640px;height:200px;overflow:hidden;background:#0B132B}
   tl.fromTo("#nome", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.3);
   tl.fromTo("#titulo", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0.45);
   tl.fromTo("#cta", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 0.8);
-  tl.to({}, { duration: 0.01 }, 1.99);
+  tl.fromTo("#brilho", { xPercent: -120 }, { xPercent: 340, duration: 0.6, ease: "power2.inOut" }, 1.8);
+  tl.to("#cta", { scale: 1.07, duration: 0.25, ease: "power2.out", yoyo: true, repeat: 1 }, 3.2);
+  tl.fromTo("#brilho", { xPercent: -120 }, { xPercent: 340, duration: 0.6, ease: "power2.inOut", immediateRender: false }, 4.5);
+  tl.to({}, { duration: 0.01 }, 5.99);
   window.__timelines = window.__timelines || {};
   window.__timelines["main"] = tl;
   tl.seek(0);

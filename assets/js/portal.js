@@ -275,6 +275,37 @@ function initMedicao() {
   document.addEventListener('arena:consentimento', (e) => { if (e.detail === 'aceito') carregar(); });
 }
 
+/* 11. Billboard animado: toca o vídeo do HyperFrames por cima da imagem (que segue como base e fallback) */
+function initBillboardAnimado() {
+  const link = document.querySelector('.billboard-link[data-video-mp4]');
+  if (!link || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const desktop = window.matchMedia('(min-width: 768px)').matches;
+  const d = link.dataset;
+  const fontes = desktop ? [[d.videoWebm, 'video/webm'], [d.videoMp4, 'video/mp4']]
+    : [[d.videoWebmMovel, 'video/webm'], [d.videoMp4Movel, 'video/mp4']];
+  const video = document.createElement('video');
+  video.className = 'billboard-video';
+  video.muted = true;
+  video.playsInline = true;
+  video.preload = 'auto';
+  video.setAttribute('aria-hidden', 'true');
+  fontes.filter(([src]) => src).forEach(([src, tipo]) => {
+    const fonte = document.createElement('source');
+    fonte.src = src;
+    fonte.type = tipo;
+    video.appendChild(fonte);
+  });
+  if (!video.children.length) return;
+  let voltas = 0;
+  video.addEventListener('ended', () => {
+    voltas += 1;
+    if (voltas < 3) setTimeout(() => video.play().catch(() => {}), 4000);
+  });
+  video.addEventListener('playing', () => video.classList.add('visivel'), { once: true });
+  link.appendChild(video);
+  video.play().catch(() => video.remove());
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initData();
   initBusca();
@@ -285,4 +316,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContato();
   initMedicao();
   initPublicidade();
+  initBillboardAnimado();
 });
