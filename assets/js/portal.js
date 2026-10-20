@@ -19,7 +19,7 @@ const MATERIAS = [
 ];
 
 /* E-mail que recebe as mensagens do formulário de contato. */
-const EMAIL_CONTATO = 'redacao@arenadiaria.com.br';
+const EMAIL_CONTATO = 'redaccion@proxserverabner.site';
 
 /* ID do Pixel da Meta (Gerenciador de Eventos). Vazio = pixel desligado.
    O pixel só carrega depois que o leitor aceita os cookies. */

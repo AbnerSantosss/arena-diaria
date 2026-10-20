@@ -19,7 +19,7 @@
 - [Estafas con transferencias y billeteras virtuales: cómo protegerte y cómo reclamar](https://arenadiaria.proxserverabner.site/noticia-estafas-transferencias.html): Cómo evitar estafas con CBU, CVU, alias y billeteras virtuales en Argentina, qué hacer si transferiste a un estafador y cómo reclamar ante tu banco, el BCRA, la UFECI y Defensa del Consumidor.
 
 ## Institucional
-- [Quiénes somos, equipo y política editorial](https://arenadiaria.proxserverabner.site/quem-somos.html)
+- [Quiénes somos, equipo y política editorial](https://arenadiaria.proxserverabner.site/quienes-somos.html)
 - [Todas las noticias](https://arenadiaria.proxserverabner.site/noticias.html)
 - [Feed RSS](https://arenadiaria.proxserverabner.site/feed.xml)
-- [Contacto](https://arenadiaria.proxserverabner.site/contato.html)
+- [Contacto](https://arenadiaria.proxserverabner.site/contacto.html)

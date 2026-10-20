@@ -32,9 +32,9 @@ RAIZ = Path(__file__).resolve().parent.parent
 BUILD = RAIZ / 'build'
 SITE = 'https://arenadiaria.proxserverabner.site'
 NOME = 'PASION'
-EMAIL = 'redacao@arenadiaria.com.br'   # e-mail de contato (provisório)
+EMAIL = 'redaccion@proxserverabner.site'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261020a'                     # muda o cache de CSS/JS a cada publicação
+VERSAO = '20261020b'                     # muda o cache de CSS/JS a cada publicação
 HOJE = '2026-10-20'
 
 EDITORIAS = {
@@ -44,17 +44,17 @@ EDITORIAS = {
 }
 
 AUTORES = {
-    'Rodrigo Albuquerque': {
-        'id': 'autor-rodrigo-albuquerque', 'cargo': 'Periodista de economía del deporte',
-        'foto': 'assets/images/autor-rodrigo-albuquerque.svg',
+    'Martín Acosta': {
+        'id': 'autor-martin-acosta', 'cargo': 'Periodista de economía del deporte',
+        'foto': 'assets/images/autor-martin-acosta.svg',
         'bio': 'Economista, cubre las finanzas de los clubes, los patrocinios y el dinero que circula en el fútbol argentino.'},
-    'Mariana Silva': {
-        'id': 'autor-mariana-silva', 'cargo': 'Periodista de tecnología',
-        'foto': 'assets/images/autor-mariana-silva.jpg',
+    'Mariana Benítez': {
+        'id': 'autor-mariana-benitez', 'cargo': 'Periodista de tecnología',
+        'foto': 'assets/images/autor-mariana-benitez.jpg',
         'bio': 'Periodista, cubre medios de pago, billeteras virtuales, seguridad digital y el funcionamiento de las plataformas.'},
-    'Dr. Carlos Eduardo Mendes': {
-        'id': 'autor-carlos-eduardo-mendes', 'cargo': 'Editor jefe',
-        'foto': 'assets/images/autor-carlos-eduardo.jpg',
+    'Dr. Carlos Ferreyra': {
+        'id': 'autor-carlos-ferreyra', 'cargo': 'Editor jefe',
+        'foto': 'assets/images/autor-carlos-ferreyra.jpg',
         'bio': 'Abogado, responde por la edición del portal y sigue las leyes y reglas que afectan al deporte y al consumidor.'},
 }
 
@@ -227,7 +227,7 @@ def cabecalho(ativo):
       <time id="headerLiveDate" class="hidden lg:block text-sm text-slate-600"></time>
       {form_busca('topo', 'hidden md:block ml-auto w-72')}
       <button id="buscaToggle" type="button" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] md:hidden ml-auto text-slate-700" aria-expanded="false" aria-controls="buscaPainel" aria-label="Abrir búsqueda">{LUPA}</button>
-      <a href="anuncie.html" class="hidden sm:inline-flex h-11 items-center px-4 rounded-full border border-slate-300 text-sm font-semibold text-slate-700 hover:border-teal-700 hover:text-teal-700">Anunciá</a>
+      <a href="anuncia.html" class="hidden sm:inline-flex h-11 items-center px-4 rounded-full border border-slate-300 text-sm font-semibold text-slate-700 hover:border-teal-700 hover:text-teal-700">Anunciá</a>
     </div>
     </div>
     <div id="buscaPainel" class="md:hidden border-t border-slate-200 px-4 py-3" hidden>
@@ -261,12 +261,12 @@ def rodape():
       <div>
         <h2 class="text-sm font-bold uppercase tracking-wide text-white">Institucional</h2>
         <ul class="mt-3 space-y-1 text-sm">
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quem-somos.html">Quiénes somos y equipo editorial</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quem-somos.html#politica-editorial">Política editorial</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="contato.html">Contacto</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="anuncie.html">Anunciá</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="politica-de-privacidade.html">Privacidad</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="termos-de-uso.html">Términos de uso</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quienes-somos.html">Quiénes somos y equipo editorial</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quienes-somos.html#politica-editorial">Política editorial</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="contacto.html">Contacto</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="anuncia.html">Anunciá</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="politica-de-privacidad.html">Privacidad</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="terminos-de-uso.html">Términos de uso</a></li>
           <li><button type="button" data-abrir-cookies class="py-1.5 text-left hover:text-white hover:underline">Preferencias de cookies</button></li>
         </ul>
       </div>
@@ -286,7 +286,7 @@ def rodape():
 
   <div id="cookieConsentBanner" role="region" aria-label="Preferencias de cookies" hidden>
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-3">
-      <p class="flex-1 text-sm leading-relaxed">Usamos cookies de medición de audiencia y de anuncios solo si aceptás. Rechazar no cambia nada de lo que leés. <a href="politica-de-privacidade.html#cookies">Más información</a></p>
+      <p class="flex-1 text-sm leading-relaxed">Usamos cookies de medición de audiencia y de anuncios solo si aceptás. Rechazar no cambia nada de lo que leés. <a href="politica-de-privacidad.html#cookies">Más información</a></p>
       <div class="flex gap-2">
         <button type="button" data-cookie="recusar" class="flex-1 md:flex-none h-11 px-6 rounded-full border-2 border-white text-sm font-bold hover:bg-white hover:text-slate-900">Rechazar</button>
         <button type="button" data-cookie="aceitar" class="flex-1 md:flex-none h-11 px-6 rounded-full border-2 border-white text-sm font-bold hover:bg-white hover:text-slate-900">Aceptar</button>
@@ -304,18 +304,20 @@ def jsonld_org():
         '@type': 'NewsMediaOrganization', '@id': ORG_ID, 'name': NOME, 'url': f'{SITE}/',
         'logo': {'@type': 'ImageObject', 'url': f'{SITE}/assets/images/logo-512.png', 'width': 512, 'height': 512},
         'email': EMAIL,
-        'publishingPrinciples': f'{SITE}/quem-somos.html#politica-editorial',
-        'correctionsPolicy': f'{SITE}/quem-somos.html#correcoes',
-        'masthead': f'{SITE}/quem-somos.html#expediente',
-        'actionableFeedbackPolicy': f'{SITE}/contato.html',
+        'publishingPrinciples': f'{SITE}/quienes-somos.html#politica-editorial',
+        'correctionsPolicy': f'{SITE}/quienes-somos.html#correcciones',
+        'masthead': f'{SITE}/quienes-somos.html#equipo',
+        'actionableFeedbackPolicy': f'{SITE}/contacto.html',
         'inLanguage': 'es-AR',
+        'areaServed': {'@type': 'Country', 'name': 'Argentina'},
+        'address': {'@type': 'PostalAddress', 'addressCountry': 'AR'},
     }
 
 
 def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', imagem=None, imagem_alt=None,
            extra_head='', grafo=None, robots='index, follow, max-image-preview:large'):
     url = f'{SITE}/' if arquivo == 'index.html' else f'{SITE}/{arquivo}'
-    imagem = imagem or 'assets/images/og-arena-diaria.jpg'
+    imagem = imagem or 'assets/images/og-pasion.jpg'
     imagem_alt = imagem_alt or 'PASION: fútbol, economía del deporte y derechos del consumidor'
     grafo = [jsonld_org()] + (grafo or [])
     ld = json.dumps({'@context': 'https://schema.org', '@graph': grafo}, ensure_ascii=False, indent=1)
@@ -334,6 +336,10 @@ def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', image
   <meta name="description" content="{e(descricao)}">
   <meta name="robots" content="{robots}">
   <link rel="canonical" href="{url}">
+  <link rel="alternate" hreflang="es-AR" href="{url}">
+  <link rel="alternate" hreflang="x-default" href="{url}">
+  <meta name="geo.region" content="AR">
+  <meta name="geo.placename" content="Argentina">
   <meta name="theme-color" content="#0B132B">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="PASION: últimas noticias" href="{SITE}/feed.xml">
@@ -387,11 +393,11 @@ def publicidade(slot, formato='retangulo'):
     img = RAIZ / 'assets' / 'images' / 'anuncios' / f'{formato}.webp'
     if img.exists():
         w, h = {'retangulo': (300, 250), 'faixa': (728, 90)}[formato]
-        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="block">'
+        miolo = (f'<a href="anuncia.html" data-slot="{slot}" class="block">'
                  f'<img src="assets/images/anuncios/{formato}.webp" width="{w}" height="{h}" loading="lazy" '
                  f'alt="Anunciá en PASION: hablá con nuestro equipo comercial" class="w-full h-auto"></a>')
     else:
-        miolo = (f'<a href="anuncie.html" data-slot="{slot}" class="article-ad-creative">'
+        miolo = (f'<a href="anuncia.html" data-slot="{slot}" class="article-ad-creative">'
                  f'<span class="article-ad-brand">{logo(claro=True)}</span>'
                  f'<span class="article-ad-title">Tu marca <strong>acá</strong></span>'
                  f'<span class="article-ad-copy">Hablá con el equipo comercial de PASION.</span>'
@@ -402,7 +408,7 @@ def publicidade(slot, formato='retangulo'):
 def billboard(slot):
     """Carrossel de três criativos de demonstração, com altura reservada e controles acessíveis."""
     anuncios = [
-        (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-slide billboard-first" aria-label="Publicidad Passo Nobre: tu próximo paso empieza acá">'
+        (f'<a href="anuncia.html" data-slot="{slot}" class="billboard-slide billboard-first" aria-label="Publicidad Passo Nobre: tu próximo paso empieza acá">'
          f'<picture><source media="(max-width: 767px)" srcset="assets/images/home/anuncio-passo-nobre-mobile.jpg">'
          f'<img src="assets/images/home/anuncio-passo-nobre-01.jpg" width="1072" height="176" '
          f'alt="Passo Nobre — tu próximo paso empieza acá. Comodidad, estilo y rendimiento para tu día, dentro y fuera de la cancha. Conocé la colección." class="billboard-img"></picture>'
@@ -411,13 +417,13 @@ def billboard(slot):
          f'<span class="billboard-caption">Comodidad, estilo y rendimiento.</span>'
          f'<span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></span>'
          f'<img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="" class="billboard-mobile-product"></a>'),
-        (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--ritmo" aria-label="Publicidad Passo Nobre: comodidad que acompaña tu ritmo" hidden>'
+        (f'<a href="anuncia.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--ritmo" aria-label="Publicidad Passo Nobre: comodidad que acompaña tu ritmo" hidden>'
          f'<span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span>'
          f'<strong>Comodidad que acompaña<br>tu ritmo.</strong>'
          f'<span class="billboard-caption">Movimiento con propósito, en cada paso.</span></span>'
          f'<img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Zapatilla deportiva destacada" class="billboard-product">'
          f'<span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></a>'),
-        (f'<a href="anuncie.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--jogo" aria-label="Publicidad Passo Nobre: hecho para acompañar el juego" hidden>'
+        (f'<a href="anuncia.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--jogo" aria-label="Publicidad Passo Nobre: hecho para acompañar el juego" hidden>'
          f'<span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span>'
          f'<strong>Tu juego empieza<br>en cada paso.</strong>'
          f'<span class="billboard-caption">Ligereza y estilo dentro y fuera de la cancha.</span></span>'
@@ -490,7 +496,7 @@ def gerar_materia(m, todas):
     fontes = ''
     if m['fontes']:
         lis = '\n'.join(f'<li><a href="{e(f)}" rel="noopener noreferrer">{e(dominio(f))}</a></li>' for f in m['fontes'])
-        fontes = f'<section class="mt-10" aria-labelledby="fontes-titulo"><h2 id="fontes-titulo" class="text-lg font-extrabold text-slate-900">Fuentes consultadas</h2><ul class="mt-3 list-disc pl-6 text-base text-slate-700 space-y-1">{lis}</ul></section>'
+        fontes = f'<section class="mt-10" aria-labelledby="fuentes-titulo"><h2 id="fuentes-titulo" class="text-lg font-extrabold text-slate-900">Fuentes consultadas</h2><ul class="mt-3 list-disc pl-6 text-base text-slate-700 space-y-1">{lis}</ul></section>'
     mesmas = [o for o in todas if o is not m and o['editoria'] == m['editoria']]
     outras = [o for o in todas if o is not m and o['editoria'] != m['editoria']]
     relacionadas = (mesmas + outras)[:3]
@@ -517,7 +523,7 @@ def gerar_materia(m, todas):
         <div class="story-byline mt-6 pb-6 border-b border-slate-200 flex items-center gap-3">
           <img src="{autor['foto']}" width="48" height="48" alt="" class="w-12 h-12 rounded-full object-cover bg-slate-200">
           <div class="text-sm leading-relaxed">
-            <p>Por <a href="quem-somos.html#{autor['id']}" class="font-semibold text-slate-900 underline hover:text-teal-700">{e(m['autor'])}</a>, {autor['cargo'].lower()}</p>
+            <p>Por <a href="quienes-somos.html#{autor['id']}" class="font-semibold text-slate-900 underline hover:text-teal-700">{e(m['autor'])}</a>, {autor['cargo'].lower()}</p>
             <p class="text-slate-600">Publicada el <time datetime="{m['publicada']}">{data_br(m['publicada'])}</time>{atual} · Lectura de {m['leitura']} min</p>
           </div>
         </div>
@@ -546,7 +552,7 @@ def gerar_materia(m, todas):
         <span id="status-copiar" class="text-sm text-slate-600" aria-live="polite"></span>
       </div>
 
-      <p class="mt-6 text-sm text-slate-600">¿Viste un error en esta nota? <a href="contato.html" class="underline hover:text-teal-700">Avisale a la redacción</a>. Lo corregimos y registramos la corrección acá.</p>
+      <p class="mt-6 text-sm text-slate-600">¿Viste un error en esta nota? <a href="contacto.html" class="underline hover:text-teal-700">Avisale a la redacción</a>. Lo corregimos y registramos la corrección acá.</p>
 
       <section class="mt-12 pt-8 border-t border-slate-200" aria-labelledby="leia-tambem">
         <h2 id="leia-tambem" class="text-xl font-extrabold text-slate-900">Leé también</h2>
@@ -568,13 +574,13 @@ def gerar_materia(m, todas):
   </main>'''
 
     grafo = [
-        {'@type': 'Person', '@id': f"{SITE}/quem-somos.html#{autor['id']}", 'name': m['autor'],
-         'jobTitle': autor['cargo'], 'url': f"{SITE}/quem-somos.html#{autor['id']}", 'worksFor': {'@id': ORG_ID}},
+        {'@type': 'Person', '@id': f"{SITE}/quienes-somos.html#{autor['id']}", 'name': m['autor'],
+         'jobTitle': autor['cargo'], 'url': f"{SITE}/quienes-somos.html#{autor['id']}", 'worksFor': {'@id': ORG_ID}},
         {'@type': 'NewsArticle', '@id': f'{url_abs}#materia', 'mainEntityOfPage': url_abs,
          'headline': m['h1'], 'description': m['description'],
          'image': [{'@type': 'ImageObject', 'url': f"{SITE}/{m['capa']}", 'width': 1200, 'height': 630}],
          'datePublished': m['publicada'], 'dateModified': m['atualizada'] or m['publicada'],
-         'author': {'@id': f"{SITE}/quem-somos.html#{autor['id']}"}, 'publisher': {'@id': ORG_ID},
+         'author': {'@id': f"{SITE}/quienes-somos.html#{autor['id']}"}, 'publisher': {'@id': ORG_ID},
          'articleSection': ed['nome'], 'inLanguage': 'es-AR', 'isAccessibleForFree': True,
          'wordCount': len(re.sub(r'<[^>]+>', ' ', m['corpo']).split())},
         {'@type': 'BreadcrumbList', 'itemListElement': [
@@ -586,7 +592,7 @@ def gerar_materia(m, todas):
         f'  <meta property="article:published_time" content="{m["publicada"]}">',
         f'  <meta property="article:modified_time" content="{m["atualizada"] or m["publicada"]}">',
         f'  <meta property="article:section" content="{ed["nome"]}">',
-        f'  <meta property="article:author" content="{SITE}/quem-somos.html#{autor["id"]}">',
+        f'  <meta property="article:author" content="{SITE}/quienes-somos.html#{autor["id"]}">',
         f'  <meta property="article:publisher" content="{SITE}/">',
         f'  <meta name="author" content="{e(m["autor"])}">',
     ])
@@ -650,10 +656,10 @@ def gerar_home(ms):
           </ul>
           <a href="noticias.html" class="mt-4 inline-flex h-11 items-center text-sm font-bold text-teal-700 underline">Ver todas las noticias</a>
         </section>
-        <section aria-labelledby="fale-redacao" class="rounded-lg bg-slate-900 p-5 text-slate-200">
-          <h2 id="fale-redacao" class="text-lg font-extrabold text-white">¿Tenés un tema para proponer o viste un error?</h2>
+        <section aria-labelledby="habla-redaccion" class="rounded-lg bg-slate-900 p-5 text-slate-200">
+          <h2 id="habla-redaccion" class="text-lg font-extrabold text-white">¿Tenés un tema para proponer o viste un error?</h2>
           <p class="mt-2 text-base leading-relaxed">Escribile a la redacción. Leemos todos los mensajes y corregimos lo que esté mal.</p>
-          <a href="contato.html" class="mt-4 inline-flex h-11 items-center px-5 rounded-full bg-white text-sm font-bold text-slate-900 hover:bg-teal-50">Hablá con la redacción</a>
+          <a href="contacto.html" class="mt-4 inline-flex h-11 items-center px-5 rounded-full bg-white text-sm font-bold text-slate-900 hover:bg-teal-50">Hablá con la redacción</a>
         </section>
       </div>
     </div>
@@ -719,20 +725,20 @@ def gerar_institucionais():
           <div><h3 class="text-lg font-extrabold text-slate-900">{e(nome)}</h3><p class="text-sm font-semibold text-teal-700">{a['cargo']}</p><p class="mt-1 text-base">{a['bio']}</p></div>
         </div>''' for nome, a in AUTORES.items())
 
-    institucional('quem-somos.html', 'Quiénes somos, equipo y política editorial | PASION',
+    institucional('quienes-somos.html', 'Quiénes somos, equipo y política editorial | PASION',
         'Conocé PASION: qué cubrimos, quién escribe, cómo chequeamos la información, cómo corregimos errores '
         'y cómo separamos la publicidad del periodismo.',
         'Quiénes somos', f'''
       <p class="text-lg">PASION es un portal de noticias sobre fútbol, economía del deporte y derechos del consumidor. Explicamos reglas, contratos y cambios en la ley que afectan a quienes siguen el deporte, con fuente en cada dato.</p>
 
-      <h2 id="o-que-cobrimos">Qué cubrimos</h2>
+      <h2 id="que-cubrimos">Qué cubrimos</h2>
       <ul>
         <li><strong>Fútbol:</strong> competencias, reglamentos y selecciones.</li>
         <li><strong>Economía del deporte:</strong> patrocinios, ingresos de los clubes, tributos y trabajo en el sector.</li>
         <li><strong>Consumidor:</strong> pagos, estafas, derechos y qué cambia cuando cambia la ley.</li>
       </ul>
 
-      <h2 id="expediente">Equipo editorial</h2>
+      <h2 id="equipo">Equipo editorial</h2>
       <div class="not-prose grid gap-4">
         {autores}
       </div>
@@ -744,16 +750,16 @@ def gerar_institucionais():
         <li>Las imágenes ilustrativas las produce la redacción, algunas con ayuda de inteligencia artificial, y se identifican en el epígrafe.</li>
       </ul>
 
-      <h2 id="correcoes">Política de correcciones</h2>
-      <p>Si nos equivocamos, corregimos. Si encontrás un dato erróneo, <a href="contato.html">escribile a la redacción</a>. Cuando la corrección cambia el sentido de la nota, publicamos una aclaración en el propio texto, con la fecha y lo que se modificó.</p>
+      <h2 id="correcciones">Política de correcciones</h2>
+      <p>Si nos equivocamos, corregimos. Si encontrás un dato erróneo, <a href="contacto.html">escribile a la redacción</a>. Cuando la corrección cambia el sentido de la nota, publicamos una aclaración en el propio texto, con la fecha y lo que se modificó.</p>
 
-      <h2 id="publicidade">Publicidad y periodismo</h2>
-      <p>Los anuncios aparecen siempre dentro de un espacio con la etiqueta “Publicidad” y no interfieren en la agenda de temas. Los anunciantes no leen las notas antes de su publicación. Mirá las reglas completas en <a href="anuncie.html">Anunciá</a>.</p>
+      <h2 id="publicidad">Publicidad y periodismo</h2>
+      <p>Los anuncios aparecen siempre dentro de un espacio con la etiqueta “Publicidad” y no interfieren en la agenda de temas. Los anunciantes no leen las notas antes de su publicación. Mirá las reglas completas en <a href="anuncia.html">Anunciá</a>.</p>
 
-      <h2 id="dados">Contacto de la redacción</h2>
+      <h2 id="datos">Contacto de la redacción</h2>
       <p>Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a></p>''')
 
-    institucional('contato.html', 'Contacto: hablá con la redacción | PASION',
+    institucional('contacto.html', 'Contacto: hablá con la redacción | PASION',
         'Hablá con la redacción de PASION: enviá sugerencias de temas, avisá sobre un error, pedí información '
         'comercial o ejercé tus derechos de privacidad.',
         'Hablá con la redacción', f'''
@@ -789,7 +795,7 @@ def gerar_institucionais():
         </div>
       </form>''')
 
-    institucional('anuncie.html', 'Anunciá en PASION: formatos y reglas | PASION',
+    institucional('anuncia.html', 'Anunciá en PASION: formatos y reglas | PASION',
         'Anunciá en PASION: formatos disponibles, reglas de aceptación y cómo hablar con el equipo comercial. '
         'Publicidad siempre identificada y separada del periodismo.',
         'Anunciá en PASION', f'''
@@ -807,7 +813,7 @@ def gerar_institucionais():
       </div>
       <p>Los datos de audiencia y los precios se envían a pedido, con el período de referencia.</p>
 
-      <h2 id="regras">Reglas de aceptación</h2>
+      <h2 id="reglas">Reglas de aceptación</h2>
       <ul>
         <li>Cumplimos la Ley 24.240 de Defensa del Consumidor, la Ley 22.802 de Lealtad Comercial y el Código de Ética y Autorregulación Publicitaria del CONARP: no aceptamos anuncios engañosos, abusivos ni de productos prohibidos por ley.</li>
         <li>No aceptamos promesas de ganancias fáciles, ingresos extra garantizados ni crédito sin información de costos.</li>
@@ -815,10 +821,10 @@ def gerar_institucionais():
         <li>El contenido patrocinado, cuando lo hay, se identifica en el título y no lo escribe la redacción.</li>
       </ul>
 
-      <h2 id="falar">Cómo contratar</h2>
+      <h2 id="contratar">Cómo contratar</h2>
       <p>Escribí a <a href="mailto:{EMAIL}?subject=Publicidad">{EMAIL}</a> con el asunto “Publicidad”, el período y el formato que te interesa.</p>''')
 
-    institucional('termos-de-uso.html', 'Términos de uso | PASION',
+    institucional('terminos-de-uso.html', 'Términos de uso | PASION',
         'Términos de uso de PASION: naturaleza periodística del portal, uso del contenido, responsabilidad sobre '
         'la información, enlaces externos y foro competente.',
         'Términos de uso', '''
@@ -836,7 +842,7 @@ def gerar_institucionais():
       <h2>4. Derechos de autor</h2>
       <p>Los textos, las artes y la marca de PASION están protegidos por la Ley 11.723 de Propiedad Intelectual de la Argentina. Podés citar fragmentos con crédito y enlace a la nota original. La reproducción íntegra requiere autorización.</p>''')
 
-    institucional('politica-de-privacidade.html', 'Política de privacidad y cookies | PASION',
+    institucional('politica-de-privacidad.html', 'Política de privacidad y cookies | PASION',
         'Conocé qué datos trata PASION, para qué, por cuánto tiempo y cómo ejercer tus derechos según la Ley 25.326, '
         'incluida la elección sobre las cookies de medición y de publicidad.',
         'Política de privacidad', f'''
@@ -883,8 +889,8 @@ def gerar_js(ms):
 def gerar_sitemap(ms):
     urls = [('', HOJE, '1.0'), ('noticias.html', HOJE, '0.8')]
     urls += [(m['url'], (m['atualizada'] or m['publicada'])[:10], '0.9') for m in ms]
-    urls += [(p, HOJE, '0.4') for p in ['quem-somos.html', 'contato.html', 'anuncie.html',
-                                         'politica-de-privacidade.html', 'termos-de-uso.html']]
+    urls += [(p, HOJE, '0.4') for p in ['quienes-somos.html', 'contacto.html', 'anuncia.html',
+                                         'politica-de-privacidad.html', 'terminos-de-uso.html']]
     corpo = '\n'.join(f'  <url><loc>{SITE}/{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>' for u, d, p in urls)
     (RAIZ / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{corpo}\n</urlset>\n', encoding='utf-8', newline='\n')
 
@@ -931,10 +937,10 @@ def gerar_llms(ms):
 {linhas}
 
 ## Institucional
-- [Quiénes somos, equipo y política editorial]({SITE}/quem-somos.html)
+- [Quiénes somos, equipo y política editorial]({SITE}/quienes-somos.html)
 - [Todas las noticias]({SITE}/noticias.html)
 - [Feed RSS]({SITE}/feed.xml)
-- [Contacto]({SITE}/contato.html)
+- [Contacto]({SITE}/contacto.html)
 ''', encoding='utf-8', newline='\n')
 
 
@@ -1005,7 +1011,7 @@ def gerar_capas(ms):
     for m in ms:
         renderizar(capa_html(EDITORIAS[m['editoria']]['nome'], m['arte'][0], m['arte'][1], m['editoria']), RAIZ / 'assets/images/capas' / f"{m['slug']}.jpg")
     renderizar(capa_html('Portal de noticias', 'PASION', 'Fútbol, economía del deporte y derechos del consumidor', None),
-               RAIZ / 'assets/images/og-arena-diaria.jpg')
+               RAIZ / 'assets/images/og-pasion.jpg')
     logo_html = f'''<!DOCTYPE html><html><head><style>html,body{{margin:0;width:512px;height:512px;background:#fff;display:flex;align-items:center;justify-content:center}}svg{{width:340px;height:auto}}</style></head><body>{ESCUDO.replace('width="26" height="32"', '')}</body></html>'''
     renderizar(logo_html, RAIZ / 'assets/images/logo-512.png', 512, 512)
 

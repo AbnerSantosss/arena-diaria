@@ -7,6 +7,10 @@
   <meta name="description" content="Portal de noticias sobre fútbol, economía del deporte y derechos del consumidor. Notas con fuente, lenguaje claro y correcciones transparentes.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://arenadiaria.proxserverabner.site/">
+  <link rel="alternate" hreflang="es-AR" href="https://arenadiaria.proxserverabner.site/">
+  <link rel="alternate" hreflang="x-default" href="https://arenadiaria.proxserverabner.site/">
+  <meta name="geo.region" content="AR">
+  <meta name="geo.placename" content="Argentina">
   <meta name="theme-color" content="#0B132B">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="PASION: últimas noticias" href="https://arenadiaria.proxserverabner.site/feed.xml">
@@ -17,7 +21,7 @@
   <meta property="og:title" content="PASION: fútbol, economía del deporte y consumidor">
   <meta property="og:description" content="Portal de noticias sobre fútbol, economía del deporte y derechos del consumidor. Notas con fuente, lenguaje claro y correcciones transparentes.">
   <meta property="og:url" content="https://arenadiaria.proxserverabner.site/">
-  <meta property="og:image" content="https://arenadiaria.proxserverabner.site/assets/images/og-arena-diaria.jpg">
+  <meta property="og:image" content="https://arenadiaria.proxserverabner.site/assets/images/og-pasion.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -25,13 +29,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PASION: fútbol, economía del deporte y consumidor">
   <meta name="twitter:description" content="Portal de noticias sobre fútbol, economía del deporte y derechos del consumidor. Notas con fuente, lenguaje claro y correcciones transparentes.">
-  <meta name="twitter:image" content="https://arenadiaria.proxserverabner.site/assets/images/og-arena-diaria.jpg">
+  <meta name="twitter:image" content="https://arenadiaria.proxserverabner.site/assets/images/og-pasion.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/tailwind.css?v=20261020a">
-  <link rel="stylesheet" href="assets/css/portal.css?v=20261020a">
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=20261020b">
+  <link rel="stylesheet" href="assets/css/portal.css?v=20261020b">
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -47,12 +51,20 @@
     "width": 512,
     "height": 512
    },
-   "email": "redacao@arenadiaria.com.br",
-   "publishingPrinciples": "https://arenadiaria.proxserverabner.site/quem-somos.html#politica-editorial",
-   "correctionsPolicy": "https://arenadiaria.proxserverabner.site/quem-somos.html#correcoes",
-   "masthead": "https://arenadiaria.proxserverabner.site/quem-somos.html#expediente",
-   "actionableFeedbackPolicy": "https://arenadiaria.proxserverabner.site/contato.html",
-   "inLanguage": "es-AR"
+   "email": "redaccion@proxserverabner.site",
+   "publishingPrinciples": "https://arenadiaria.proxserverabner.site/quienes-somos.html#politica-editorial",
+   "correctionsPolicy": "https://arenadiaria.proxserverabner.site/quienes-somos.html#correcciones",
+   "masthead": "https://arenadiaria.proxserverabner.site/quienes-somos.html#equipo",
+   "actionableFeedbackPolicy": "https://arenadiaria.proxserverabner.site/contacto.html",
+   "inLanguage": "es-AR",
+   "areaServed": {
+    "@type": "Country",
+    "name": "Argentina"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AR"
+   }
   },
   {
    "@type": "WebSite",
@@ -87,7 +99,7 @@
         <div id="busca-topo-lista" class="busca-resultados" hidden></div>
       </form>
       <button id="buscaToggle" type="button" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] md:hidden ml-auto text-slate-700" aria-expanded="false" aria-controls="buscaPainel" aria-label="Abrir búsqueda"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
-      <a href="anuncie.html" class="hidden sm:inline-flex h-11 items-center px-4 rounded-full border border-slate-300 text-sm font-semibold text-slate-700 hover:border-teal-700 hover:text-teal-700">Anunciá</a>
+      <a href="anuncia.html" class="hidden sm:inline-flex h-11 items-center px-4 rounded-full border border-slate-300 text-sm font-semibold text-slate-700 hover:border-teal-700 hover:text-teal-700">Anunciá</a>
     </div>
     </div>
     <div id="buscaPainel" class="md:hidden border-t border-slate-200 px-4 py-3" hidden>
@@ -119,9 +131,9 @@
 
   <main id="conteudo" class="home-main max-w-6xl mx-auto px-4 py-6">
     <h1 class="sr-only">PASION: noticias de fútbol, economía del deporte y derechos del consumidor</h1>
-    <aside class="billboard" aria-label="Publicidad"><span class="billboard-label">Publicidad</span><div class="billboard-area" data-ad-carousel aria-roledescription="carrossel"><a href="anuncie.html" data-slot="home-topo" class="billboard-slide billboard-first" aria-label="Publicidad Passo Nobre: tu próximo paso empieza acá"><picture><source media="(max-width: 767px)" srcset="assets/images/home/anuncio-passo-nobre-mobile.jpg"><img src="assets/images/home/anuncio-passo-nobre-01.jpg" width="1072" height="176" alt="Passo Nobre — tu próximo paso empieza acá. Comodidad, estilo y rendimiento para tu día, dentro y fuera de la cancha. Conocé la colección." class="billboard-img"></picture><span class="billboard-copy billboard-mobile-copy"><span class="billboard-brand">PASSO NOBRE</span><strong>Tu próximo paso<br>empieza acá.</strong><span class="billboard-caption">Comodidad, estilo y rendimiento.</span><span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></span><img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="" class="billboard-mobile-product"></a>
-<a href="anuncie.html" data-slot="home-topo" class="billboard-slide billboard-slide--produto billboard-slide--ritmo" aria-label="Publicidad Passo Nobre: comodidad que acompaña tu ritmo" hidden><span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span><strong>Comodidad que acompaña<br>tu ritmo.</strong><span class="billboard-caption">Movimiento con propósito, en cada paso.</span></span><img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Zapatilla deportiva destacada" class="billboard-product"><span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></a>
-<a href="anuncie.html" data-slot="home-topo" class="billboard-slide billboard-slide--produto billboard-slide--jogo" aria-label="Publicidad Passo Nobre: hecho para acompañar el juego" hidden><span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span><strong>Tu juego empieza<br>en cada paso.</strong><span class="billboard-caption">Ligereza y estilo dentro y fuera de la cancha.</span></span><img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Zapatilla deportiva destacada" class="billboard-product"><span class="billboard-cta">Mirá la colección <span aria-hidden="true">→</span></span></a><div class="billboard-controls" aria-label="Controles de los anuncios"><button type="button" class="billboard-nav" data-ad-prev aria-label="Anuncio anterior">‹</button><div class="billboard-dots"><button type="button" class="billboard-dot" data-ad-goto="0" aria-label="Mostrar anuncio 1 de 3" aria-pressed="true"></button><button type="button" class="billboard-dot" data-ad-goto="1" aria-label="Mostrar anuncio 2 de 3" aria-pressed="false"></button><button type="button" class="billboard-dot" data-ad-goto="2" aria-label="Mostrar anuncio 3 de 3" aria-pressed="false"></button></div><button type="button" class="billboard-nav" data-ad-next aria-label="Anuncio siguiente">›</button><button type="button" class="billboard-toggle" data-ad-toggle aria-pressed="false" aria-label="Pausar anuncios">Ⅱ</button></div></div></aside>
+    <aside class="billboard" aria-label="Publicidad"><span class="billboard-label">Publicidad</span><div class="billboard-area" data-ad-carousel aria-roledescription="carrossel"><a href="anuncia.html" data-slot="home-topo" class="billboard-slide billboard-first" aria-label="Publicidad Passo Nobre: tu próximo paso empieza acá"><picture><source media="(max-width: 767px)" srcset="assets/images/home/anuncio-passo-nobre-mobile.jpg"><img src="assets/images/home/anuncio-passo-nobre-01.jpg" width="1072" height="176" alt="Passo Nobre — tu próximo paso empieza acá. Comodidad, estilo y rendimiento para tu día, dentro y fuera de la cancha. Conocé la colección." class="billboard-img"></picture><span class="billboard-copy billboard-mobile-copy"><span class="billboard-brand">PASSO NOBRE</span><strong>Tu próximo paso<br>empieza acá.</strong><span class="billboard-caption">Comodidad, estilo y rendimiento.</span><span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></span><img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="" class="billboard-mobile-product"></a>
+<a href="anuncia.html" data-slot="home-topo" class="billboard-slide billboard-slide--produto billboard-slide--ritmo" aria-label="Publicidad Passo Nobre: comodidad que acompaña tu ritmo" hidden><span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span><strong>Comodidad que acompaña<br>tu ritmo.</strong><span class="billboard-caption">Movimiento con propósito, en cada paso.</span></span><img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Zapatilla deportiva destacada" class="billboard-product"><span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></a>
+<a href="anuncia.html" data-slot="home-topo" class="billboard-slide billboard-slide--produto billboard-slide--jogo" aria-label="Publicidad Passo Nobre: hecho para acompañar el juego" hidden><span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span><strong>Tu juego empieza<br>en cada paso.</strong><span class="billboard-caption">Ligereza y estilo dentro y fuera de la cancha.</span></span><img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Zapatilla deportiva destacada" class="billboard-product"><span class="billboard-cta">Mirá la colección <span aria-hidden="true">→</span></span></a><div class="billboard-controls" aria-label="Controles de los anuncios"><button type="button" class="billboard-nav" data-ad-prev aria-label="Anuncio anterior">‹</button><div class="billboard-dots"><button type="button" class="billboard-dot" data-ad-goto="0" aria-label="Mostrar anuncio 1 de 3" aria-pressed="true"></button><button type="button" class="billboard-dot" data-ad-goto="1" aria-label="Mostrar anuncio 2 de 3" aria-pressed="false"></button><button type="button" class="billboard-dot" data-ad-goto="2" aria-label="Mostrar anuncio 3 de 3" aria-pressed="false"></button></div><button type="button" class="billboard-nav" data-ad-next aria-label="Anuncio siguiente">›</button><button type="button" class="billboard-toggle" data-ad-toggle aria-pressed="false" aria-label="Pausar anuncios">Ⅱ</button></div></div></aside>
 
     <section aria-label="Titulares" class="home-headlines">
       <article class="card-link group home-feature">
@@ -268,10 +280,10 @@
           </ul>
           <a href="noticias.html" class="mt-4 inline-flex h-11 items-center text-sm font-bold text-teal-700 underline">Ver todas las noticias</a>
         </section>
-        <section aria-labelledby="fale-redacao" class="rounded-lg bg-slate-900 p-5 text-slate-200">
-          <h2 id="fale-redacao" class="text-lg font-extrabold text-white">¿Tenés un tema para proponer o viste un error?</h2>
+        <section aria-labelledby="habla-redaccion" class="rounded-lg bg-slate-900 p-5 text-slate-200">
+          <h2 id="habla-redaccion" class="text-lg font-extrabold text-white">¿Tenés un tema para proponer o viste un error?</h2>
           <p class="mt-2 text-base leading-relaxed">Escribile a la redacción. Leemos todos los mensajes y corregimos lo que esté mal.</p>
-          <a href="contato.html" class="mt-4 inline-flex h-11 items-center px-5 rounded-full bg-white text-sm font-bold text-slate-900 hover:bg-teal-50">Hablá con la redacción</a>
+          <a href="contacto.html" class="mt-4 inline-flex h-11 items-center px-5 rounded-full bg-white text-sm font-bold text-slate-900 hover:bg-teal-50">Hablá con la redacción</a>
         </section>
       </div>
     </div>
@@ -296,12 +308,12 @@
       <div>
         <h2 class="text-sm font-bold uppercase tracking-wide text-white">Institucional</h2>
         <ul class="mt-3 space-y-1 text-sm">
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quem-somos.html">Quiénes somos y equipo editorial</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quem-somos.html#politica-editorial">Política editorial</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="contato.html">Contacto</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="anuncie.html">Anunciá</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="politica-de-privacidade.html">Privacidad</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="termos-de-uso.html">Términos de uso</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quienes-somos.html">Quiénes somos y equipo editorial</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="quienes-somos.html#politica-editorial">Política editorial</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="contacto.html">Contacto</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="anuncia.html">Anunciá</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="politica-de-privacidad.html">Privacidad</a></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="terminos-de-uso.html">Términos de uso</a></li>
           <li><button type="button" data-abrir-cookies class="py-1.5 text-left hover:text-white hover:underline">Preferencias de cookies</button></li>
         </ul>
       </div>
@@ -321,13 +333,13 @@
 
   <div id="cookieConsentBanner" role="region" aria-label="Preferencias de cookies" hidden>
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-3">
-      <p class="flex-1 text-sm leading-relaxed">Usamos cookies de medición de audiencia y de anuncios solo si aceptás. Rechazar no cambia nada de lo que leés. <a href="politica-de-privacidade.html#cookies">Más información</a></p>
+      <p class="flex-1 text-sm leading-relaxed">Usamos cookies de medición de audiencia y de anuncios solo si aceptás. Rechazar no cambia nada de lo que leés. <a href="politica-de-privacidad.html#cookies">Más información</a></p>
       <div class="flex gap-2">
         <button type="button" data-cookie="recusar" class="flex-1 md:flex-none h-11 px-6 rounded-full border-2 border-white text-sm font-bold hover:bg-white hover:text-slate-900">Rechazar</button>
         <button type="button" data-cookie="aceitar" class="flex-1 md:flex-none h-11 px-6 rounded-full border-2 border-white text-sm font-bold hover:bg-white hover:text-slate-900">Aceptar</button>
       </div>
     </div>
   </div>
-  <script src="assets/js/portal.js?v=20261020a" defer></script>
+  <script src="assets/js/portal.js?v=20261020b" defer></script>
 </body>
 </html>

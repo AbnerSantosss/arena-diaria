@@ -520,13 +520,13 @@ body.home-page .masthead input[type="search"] {
 body.home-page .masthead input[type="search"]::placeholder { color: #d4deeb; }
 body.home-page .masthead form button { color: #f8fafc; }
 body.home-page #buscaToggle { color: white; }
-body.home-page .masthead a[href="anuncie.html"] {
+body.home-page .masthead a[href="anuncia.html"] {
   height: 2.5rem;
   border-color: #20dfc0;
   background: #20dfc0;
   color: #082235;
 }
-body.home-page .masthead a[href="anuncie.html"]:hover { background: #5eead4; }
+body.home-page .masthead a[href="anuncia.html"]:hover { background: #5eead4; }
 body.home-page .site-header nav { border-color: #e7ebef; background: rgba(255,255,255,.98); }
 body.home-page .site-header nav ul { max-width: 1072px; }
 body.home-page .site-header nav a { height: 2.5rem; }
@@ -701,7 +701,7 @@ body.news-page .masthead input[type="search"] {
 }
 body.news-page .masthead input[type="search"]::placeholder { color: #d4deeb; }
 body.news-page .masthead form button, body.news-page #buscaToggle { color: #f8fafc; }
-body.news-page .masthead a[href="anuncie.html"] {
+body.news-page .masthead a[href="anuncia.html"] {
   height: 2.5rem;
   border-color: #20dfc0;
   background: #20dfc0;

@@ -2,5 +2,5 @@
   <rect width="400" height="400" fill="#0B132B" rx="200"/>
   <circle cx="200" cy="150" r="70" fill="#028090"/>
   <path d="M80 400 C80 280 140 250 200 250 C260 250 320 280 320 400" fill="#1C2541"/>
-  <text x="200" y="370" font-family="system-ui" font-size="32" font-weight="bold" fill="#fff" text-anchor="middle">RODRIGO</text>
+  <text x="200" y="370" font-family="system-ui" font-size="32" font-weight="bold" fill="#fff" text-anchor="middle">MARTÍN</text>
 </svg>
