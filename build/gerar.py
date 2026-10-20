@@ -30,11 +30,11 @@ from urllib.parse import quote
 ATUAL = ' aria-current="page"'
 RAIZ = Path(__file__).resolve().parent.parent
 BUILD = RAIZ / 'build'
-SITE = 'https://arenadiaria.proxserverabner.site'
+SITE = 'https://pasionnoticias.proxserverabner.site'
 NOME = 'PASION'
 EMAIL = 'redaccion@proxserverabner.site'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261020b'                     # muda o cache de CSS/JS a cada publicação
+VERSAO = '20261020c'
 HOJE = '2026-10-20'
 
 EDITORIAS = {
