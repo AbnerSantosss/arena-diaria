@@ -1,25 +1,25 @@
 # PASION
 
-> Portal de notícias em português do Brasil sobre futebol, economia do esporte e direitos do consumidor. Cada matéria lista as fontes consultadas.
+> Portal de noticias en español (Argentina) sobre fútbol, economía del deporte y derechos del consumidor, con foco en Brasil. Cada nota lista las fuentes consultadas.
 
-## Editorias
-- Futebol: competições, regulamentos e seleções.
-- Economia do esporte: patrocínios, tributos e trabalho no setor.
-- Consumidor: pagamentos, golpes, direitos e mudanças na lei.
+## Secciones
+- Fútbol: competencias, reglamentos y selecciones.
+- Economía del deporte: patrocinios, tributos y trabajo en el sector.
+- Consumidor: pagos, estafas, derechos y cambios en la ley.
 
-## Matérias
-- [Como funciona o Brasileirão: pontos corridos, rodadas e o que vale cada posição](https://arenadiaria.proxserverabner.site/noticia-brasileirao-rodada.html): Entenda a fórmula do Brasileirão: 20 clubes, 38 rodadas em pontos corridos, critérios de desempate, vagas na Libertadores e na Sul-Americana e rebaixamento.
-- [Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base](https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html): Conheça os cinco títulos mundiais da Seleção Brasileira, entenda como funcionam a convocação e a data FIFA e veja o papel das categorias de base.
-- [Como funciona a Copa do Brasil: fases, desempate e vaga na Libertadores](https://arenadiaria.proxserverabner.site/noticia-copa-do-brasil.html): Entenda a Copa do Brasil: 126 clubes, nove fases de mata-mata, jogos únicos e de ida e volta, critérios de desempate e as vagas na Libertadores.
-- [Como funciona a Libertadores: das fases preliminares à final em jogo único](https://arenadiaria.proxserverabner.site/noticia-libertadores.html): Entenda a Libertadores: 47 clubes, três fases preliminares, oito grupos, mata-mata, final em jogo único e como os clubes brasileiros conquistam a vaga.
-- [Do master ao estádio: como as marcas chegam à camisa do seu time](https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html): Master, mangas, costas, naming rights e fornecedor de material: entenda como funciona o patrocínio no futebol e quais setores mais investem nos clubes.
-- [Direitos de transmissão no futebol: o que diz a lei do mandante e como os clubes negociam](https://arenadiaria.proxserverabner.site/noticia-direitos-de-transmissao.html): Entenda como funcionam os direitos de transmissão no futebol brasileiro: a Lei 14.205/2021, o direito de arena do mandante, os blocos de clubes e as ligas.
-- [O que é a SAF: como o clube vira empresa e o que acontece com as dívidas](https://arenadiaria.proxserverabner.site/noticia-saf-sociedade-anonima-futebol.html): Entenda a SAF, criada pela Lei 14.193/2021: como o clube vira empresa, como ficam as dívidas antigas, o regime de tributação TEF e o que muda para o torcedor.
-- [Ingressos para jogos de futebol: os direitos de quem compra a entrada](https://arenadiaria.proxserverabner.site/noticia-ingressos-direitos-torcedor.html): Veja seus direitos na compra de ingressos para jogos de futebol: Lei Geral do Esporte, CDC, meia-entrada, taxa de conveniência, jogo adiado e onde reclamar.
-- [Golpes no Pix: como se proteger e como pedir o dinheiro de volta pelo MED](https://arenadiaria.proxserverabner.site/noticia-pix-golpes-med.html): Saiba como evitar golpes no Pix e como pedir o dinheiro de volta pelo MED, o Mecanismo Especial de Devolução do Banco Central, com prazos e passo a passo.
+## Notas
+- [Cómo funciona el Brasileirão: todos contra todos, fechas y qué vale cada posición](https://arenadiaria.proxserverabner.site/noticia-brasileirao-rodada.html): Entendé la fórmula del Brasileirão: 20 clubes, 38 fechas todos contra todos, criterios de desempate, cupos para la Libertadores y la Sudamericana, y descensos.
+- [Selección de Brasil: los cinco títulos mundiales, la convocatoria y el papel de las inferiores](https://arenadiaria.proxserverabner.site/noticia-selecao-brasileira.html): Conocé los cinco títulos mundiales de la Selección de Brasil, entendé cómo funcionan la convocatoria y la fecha FIFA, y mirá el papel de las divisiones juveniles.
+- [Cómo funciona la Copa de Brasil: fases, desempate y cupo a la Libertadores](https://arenadiaria.proxserverabner.site/noticia-copa-do-brasil.html): Entendé la Copa de Brasil: 126 clubes, nueve fases de eliminación directa, partidos únicos y de ida y vuelta, criterios de desempate y los cupos para la Libertadores.
+- [Cómo funciona la Libertadores: de las fases preliminares a la final a partido único](https://arenadiaria.proxserverabner.site/noticia-libertadores.html): Entendé la Libertadores: 47 clubes, tres fases preliminares, ocho grupos, eliminación directa, final a partido único y cómo consiguen su cupo los clubes brasileños.
+- [Del sponsor principal al estadio: cómo llegan las marcas a la camiseta de tu equipo](https://arenadiaria.proxserverabner.site/noticia-patrocinios-futebol.html): Sponsor principal, mangas, espalda, naming rights y proveedor de indumentaria: entendé cómo funciona el patrocinio en el fútbol y qué sectores más invierten en los clubes.
+- [Derechos de transmisión en el fútbol: qué dice la ley del local y cómo negocian los clubes](https://arenadiaria.proxserverabner.site/noticia-direitos-de-transmissao.html): Entendé cómo funcionan los derechos de transmisión en el fútbol brasileño: la Ley 14.205/2021, el derecho de arena del local, los bloques de clubes y las ligas.
+- [Qué es la SAF: cómo el club se vuelve empresa y qué pasa con las deudas](https://arenadiaria.proxserverabner.site/noticia-saf-sociedade-anonima-futebol.html): Entendé la SAF, creada por la Ley 14.193/2021: cómo el club se vuelve empresa, qué pasa con las deudas anteriores, el régimen de tributación TEF y qué cambia para el hincha.
+- [Entradas para partidos de fútbol: los derechos de quien compra el ticket](https://arenadiaria.proxserverabner.site/noticia-ingressos-direitos-torcedor.html): Conocé tus derechos al comprar entradas para partidos de fútbol en Brasil: Ley General del Deporte, CDC, media entrada, cargo por servicio, partido postergado y dónde reclamar.
+- [Estafas con Pix: cómo protegerte y cómo pedir el dinero de vuelta por el MED](https://arenadiaria.proxserverabner.site/noticia-pix-golpes-med.html): Conocé cómo evitar estafas con Pix y cómo pedir la devolución del dinero por el MED, el Mecanismo Especial de Devolución del Banco Central de Brasil, con plazos y paso a paso.
 
 ## Institucional
-- [Quem somos, expediente e política editorial](https://arenadiaria.proxserverabner.site/quem-somos.html)
-- [Todas as notícias](https://arenadiaria.proxserverabner.site/noticias.html)
+- [Quiénes somos, equipo y política editorial](https://arenadiaria.proxserverabner.site/quem-somos.html)
+- [Todas las noticias](https://arenadiaria.proxserverabner.site/noticias.html)
 - [Feed RSS](https://arenadiaria.proxserverabner.site/feed.xml)
-- [Contato](https://arenadiaria.proxserverabner.site/contato.html)
+- [Contacto](https://arenadiaria.proxserverabner.site/contato.html)

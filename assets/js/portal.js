@@ -7,15 +7,15 @@
 /* Índice das matérias publicadas (usado pela busca e pela faixa de destaques).
    Ao publicar uma matéria nova, acrescente uma linha aqui. */
 const MATERIAS = [
-  {"titulo": "Como funciona o Brasileirão: pontos corridos, rodadas e o que vale cada posição", "resumo": "Pontos corridos, 38 rodadas e muito em jogo: veja como a tabela do Brasileirão define campeão, vagas continentais e rebaixados.", "editoria": "Futebol", "url": "noticia-brasileirao-rodada.html"},
-  {"titulo": "Seleção Brasileira: os cinco títulos mundiais, a convocação e o papel da base", "resumo": "Do primeiro título em 1958 ao penta em 2002: como a Seleção é formada, como funciona a data FIFA e por que a base importa.", "editoria": "Futebol", "url": "noticia-selecao-brasileira.html"},
-  {"titulo": "Como funciona a Copa do Brasil: fases, desempate e vaga na Libertadores", "resumo": "Nove fases, 126 clubes e nada de gol fora: veja como a Copa do Brasil define quem avança e quem vai à Libertadores.", "editoria": "Futebol", "url": "noticia-copa-do-brasil.html"},
-  {"titulo": "Como funciona a Libertadores: das fases preliminares à final em jogo único", "resumo": "Fases preliminares, grupos, mata-mata e final única: veja o caminho até a taça e como os brasileiros entram na Libertadores.", "editoria": "Futebol", "url": "noticia-libertadores.html"},
-  {"titulo": "Do master ao estádio: como as marcas chegam à camisa do seu time", "resumo": "Do master da camisa ao nome do estádio: como funciona o patrocínio no futebol e quais setores mais investem nos clubes brasileiros.", "editoria": "Economia do esporte", "url": "noticia-patrocinios-futebol.html"},
-  {"titulo": "Direitos de transmissão no futebol: o que diz a lei do mandante e como os clubes negociam", "resumo": "Quem vende o jogo para a TV? Veja o que mudou com a lei do mandante e como os clubes negociam em blocos e discutem uma liga.", "editoria": "Economia do esporte", "url": "noticia-direitos-de-transmissao.html"},
-  {"titulo": "O que é a SAF: como o clube vira empresa e o que acontece com as dívidas", "resumo": "O clube virou empresa? Veja como funciona a SAF, o que acontece com as dívidas antigas e quais garantias a lei dá ao torcedor.", "editoria": "Economia do esporte", "url": "noticia-saf-sociedade-anonima-futebol.html"},
-  {"titulo": "Ingressos para jogos de futebol: os direitos de quem compra a entrada", "resumo": "Ingresso numerado, preço impresso, meia-entrada e reembolso: conheça os direitos de quem compra entrada para o estádio.", "editoria": "Consumidor", "url": "noticia-ingressos-direitos-torcedor.html"},
-  {"titulo": "Golpes no Pix: como se proteger e como pedir o dinheiro de volta pelo MED", "resumo": "Caiu em golpe no Pix? Veja como usar o botão de contestação, qual é o prazo do MED e o que fazer para tentar reaver o dinheiro.", "editoria": "Consumidor", "url": "noticia-pix-golpes-med.html"}
+  {"titulo": "Cómo funciona el Brasileirão: todos contra todos, fechas y qué vale cada posición", "resumo": "Todos contra todos, 38 fechas y mucho en juego: mirá cómo la tabla del Brasileirão define al campeón, los cupos continentales y los descensos.", "editoria": "Fútbol", "url": "noticia-brasileirao-rodada.html"},
+  {"titulo": "Selección de Brasil: los cinco títulos mundiales, la convocatoria y el papel de las inferiores", "resumo": "Del primer título en 1958 al penta en 2002: cómo se arma la Selección, cómo funciona la fecha FIFA y por qué importan las inferiores.", "editoria": "Fútbol", "url": "noticia-selecao-brasileira.html"},
+  {"titulo": "Cómo funciona la Copa de Brasil: fases, desempate y cupo a la Libertadores", "resumo": "Nueve fases, 126 clubes y sin gol de visitante: mirá cómo la Copa de Brasil define quién avanza y quién va a la Libertadores.", "editoria": "Fútbol", "url": "noticia-copa-do-brasil.html"},
+  {"titulo": "Cómo funciona la Libertadores: de las fases preliminares a la final a partido único", "resumo": "Fases preliminares, grupos, eliminación directa y final única: mirá el camino hasta la copa y cómo entran los brasileños a la Libertadores.", "editoria": "Fútbol", "url": "noticia-libertadores.html"},
+  {"titulo": "Del sponsor principal al estadio: cómo llegan las marcas a la camiseta de tu equipo", "resumo": "Del sponsor principal de la camiseta al nombre del estadio: cómo funciona el patrocinio en el fútbol y qué sectores más invierten en los clubes brasileños.", "editoria": "Economía del deporte", "url": "noticia-patrocinios-futebol.html"},
+  {"titulo": "Derechos de transmisión en el fútbol: qué dice la ley del local y cómo negocian los clubes", "resumo": "¿Quién le vende el partido a la TV? Mirá qué cambió con la ley del local y cómo los clubes negocian en bloques y discuten una liga.", "editoria": "Economía del deporte", "url": "noticia-direitos-de-transmissao.html"},
+  {"titulo": "Qué es la SAF: cómo el club se vuelve empresa y qué pasa con las deudas", "resumo": "¿El club se volvió empresa? Mirá cómo funciona la SAF, qué pasa con las deudas anteriores y qué garantías le da la ley al hincha.", "editoria": "Economía del deporte", "url": "noticia-saf-sociedade-anonima-futebol.html"},
+  {"titulo": "Entradas para partidos de fútbol: los derechos de quien compra el ticket", "resumo": "Entrada numerada, precio impreso, media entrada y reembolso: conocé los derechos de quien compra una entrada para el estadio.", "editoria": "Consumidor", "url": "noticia-ingressos-direitos-torcedor.html"},
+  {"titulo": "Estafas con Pix: cómo protegerte y cómo pedir el dinero de vuelta por el MED", "resumo": "¿Caíste en una estafa con Pix? Mirá cómo usar el botón de contestación, cuál es el plazo del MED y qué hacer para intentar recuperar el dinero.", "editoria": "Consumidor", "url": "noticia-pix-golpes-med.html"}
 ];
 
 /* E-mail que recebe as mensagens do formulário de contato. */
@@ -61,7 +61,7 @@ function initData() {
   const alvo = document.getElementById('headerLiveDate');
   if (!alvo) return;
   const hoje = new Date();
-  const texto = hoje.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+  const texto = hoje.toLocaleDateString('es-AR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
   alvo.textContent = texto.charAt(0).toUpperCase() + texto.slice(1);
   alvo.setAttribute('datetime', hoje.toISOString().slice(0, 10));
 }
@@ -81,7 +81,7 @@ function initBusca() {
       const achadas = buscarMaterias(termo).slice(0, 6);
       lista.innerHTML = achadas.length
         ? achadas.map((m) => `<a href="${m.url}"><span class="block text-xs font-bold uppercase text-teal-700">${escaparHtml(m.editoria)}</span><span class="block text-sm font-semibold text-slate-900">${escaparHtml(m.titulo)}</span></a>`).join('')
-        : `<p class="px-4 py-3 text-sm text-slate-600">Nenhuma matéria encontrada para “${escaparHtml(termo)}”.</p>`;
+        : `<p class="px-4 py-3 text-sm text-slate-600">No se encontraron notas para “${escaparHtml(termo)}”.</p>`;
       lista.hidden = false;
       campo.setAttribute('aria-expanded', 'true');
     });
@@ -128,9 +128,9 @@ function initListaNoticias() {
       item.hidden = !mostra;
       if (mostra) visiveis++;
     });
-    if (!palavras.length) aviso.textContent = `${itens.length} matérias publicadas.`;
-    else if (visiveis) aviso.textContent = `${visiveis} ${visiveis === 1 ? 'matéria encontrada' : 'matérias encontradas'} para “${termo}”.`;
-    else aviso.textContent = `Nenhuma matéria encontrada para “${termo}”. Tente outra palavra.`;
+    if (!palavras.length) aviso.textContent = `${itens.length} notas publicadas.`;
+    else if (visiveis) aviso.textContent = `${visiveis} ${visiveis === 1 ? 'nota encontrada' : 'notas encontradas'} para “${termo}”.`;
+    else aviso.textContent = `No se encontraron notas para “${termo}”. Probá con otra palabra.`;
   };
 
   const termoInicial = new URLSearchParams(window.location.search).get('q') || '';
@@ -170,7 +170,7 @@ function initDestaques() {
   const atualizarBotao = () => {
     if (!botao) return;
     botao.setAttribute('aria-pressed', String(pausado));
-    botao.setAttribute('aria-label', pausado ? 'Retomar a troca de destaques' : 'Pausar a troca de destaques');
+    botao.setAttribute('aria-label', pausado ? 'Reanudar el cambio de destacadas' : 'Pausar el cambio de destacadas');
     botao.querySelector('[data-icone]').textContent = pausado ? '▶' : '❚❚';
   };
 
@@ -223,9 +223,9 @@ function initCompartilhar() {
           return;
         }
         await navigator.clipboard.writeText(url);
-        if (status) status.textContent = 'Link copiado.';
+        if (status) status.textContent = 'Enlace copiado.';
       } catch (e) {
-        if (status && e.name !== 'AbortError') status.textContent = `Não deu para copiar. O endereço é ${url}`;
+        if (status && e.name !== 'AbortError') status.textContent = `No se pudo copiar. La dirección es ${url}`;
       }
     });
   });
@@ -241,10 +241,10 @@ function initContato() {
     e.preventDefault();
     if (!form.reportValidity()) return;
     const dados = new FormData(form);
-    const assunto = `[${dados.get('assunto')}] Mensagem de ${dados.get('nome')}`;
+    const assunto = `[${dados.get('assunto')}] Mensaje de ${dados.get('nome')}`;
     const corpo = `${dados.get('mensagem')}\n\n—\n${dados.get('nome')}\n${dados.get('email')}`;
     window.location.href = `mailto:${EMAIL_CONTATO}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-    status.textContent = `Abrimos o seu aplicativo de e-mail com a mensagem pronta. Se ele não abriu, escreva para ${EMAIL_CONTATO}.`;
+    status.textContent = `Abrimos tu aplicación de correo con el mensaje listo. Si no se abrió, escribí a ${EMAIL_CONTATO}.`;
   });
 }
 
@@ -324,12 +324,12 @@ function initCarrosselAnuncios() {
     indice = (novo + slides.length) % slides.length;
     slides.forEach((slide, i) => { slide.hidden = i !== indice; });
     pontos.forEach((ponto, i) => ponto.setAttribute('aria-pressed', String(i === indice)));
-    carrossel.setAttribute('aria-label', `Publicidade, anúncio ${indice + 1} de ${slides.length}`);
+    carrossel.setAttribute('aria-label', `Publicidad, anuncio ${indice + 1} de ${slides.length}`);
   };
   const sincronizarBotao = () => {
     if (!alternar) return;
     alternar.setAttribute('aria-pressed', String(pausado));
-    alternar.setAttribute('aria-label', pausado ? 'Retomar anúncios' : 'Pausar anúncios');
+    alternar.setAttribute('aria-label', pausado ? 'Reanudar anuncios' : 'Pausar anuncios');
     alternar.textContent = pausado ? '▶' : 'Ⅱ';
   };
   const iniciar = () => {

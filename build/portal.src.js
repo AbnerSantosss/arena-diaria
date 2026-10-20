@@ -53,7 +53,7 @@ function initData() {
   const alvo = document.getElementById('headerLiveDate');
   if (!alvo) return;
   const hoje = new Date();
-  const texto = hoje.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+  const texto = hoje.toLocaleDateString('es-AR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
   alvo.textContent = texto.charAt(0).toUpperCase() + texto.slice(1);
   alvo.setAttribute('datetime', hoje.toISOString().slice(0, 10));
 }
@@ -73,7 +73,7 @@ function initBusca() {
       const achadas = buscarMaterias(termo).slice(0, 6);
       lista.innerHTML = achadas.length
         ? achadas.map((m) => `<a href="${m.url}"><span class="block text-xs font-bold uppercase text-teal-700">${escaparHtml(m.editoria)}</span><span class="block text-sm font-semibold text-slate-900">${escaparHtml(m.titulo)}</span></a>`).join('')
-        : `<p class="px-4 py-3 text-sm text-slate-600">Nenhuma matéria encontrada para “${escaparHtml(termo)}”.</p>`;
+        : `<p class="px-4 py-3 text-sm text-slate-600">No se encontraron notas para “${escaparHtml(termo)}”.</p>`;
       lista.hidden = false;
       campo.setAttribute('aria-expanded', 'true');
     });
@@ -120,9 +120,9 @@ function initListaNoticias() {
       item.hidden = !mostra;
       if (mostra) visiveis++;
     });
-    if (!palavras.length) aviso.textContent = `${itens.length} matérias publicadas.`;
-    else if (visiveis) aviso.textContent = `${visiveis} ${visiveis === 1 ? 'matéria encontrada' : 'matérias encontradas'} para “${termo}”.`;
-    else aviso.textContent = `Nenhuma matéria encontrada para “${termo}”. Tente outra palavra.`;
+    if (!palavras.length) aviso.textContent = `${itens.length} notas publicadas.`;
+    else if (visiveis) aviso.textContent = `${visiveis} ${visiveis === 1 ? 'nota encontrada' : 'notas encontradas'} para “${termo}”.`;
+    else aviso.textContent = `No se encontraron notas para “${termo}”. Probá con otra palabra.`;
   };
 
   const termoInicial = new URLSearchParams(window.location.search).get('q') || '';
@@ -162,7 +162,7 @@ function initDestaques() {
   const atualizarBotao = () => {
     if (!botao) return;
     botao.setAttribute('aria-pressed', String(pausado));
-    botao.setAttribute('aria-label', pausado ? 'Retomar a troca de destaques' : 'Pausar a troca de destaques');
+    botao.setAttribute('aria-label', pausado ? 'Reanudar el cambio de destacadas' : 'Pausar el cambio de destacadas');
     botao.querySelector('[data-icone]').textContent = pausado ? '▶' : '❚❚';
   };
 
@@ -215,9 +215,9 @@ function initCompartilhar() {
           return;
         }
         await navigator.clipboard.writeText(url);
-        if (status) status.textContent = 'Link copiado.';
+        if (status) status.textContent = 'Enlace copiado.';
       } catch (e) {
-        if (status && e.name !== 'AbortError') status.textContent = `Não deu para copiar. O endereço é ${url}`;
+        if (status && e.name !== 'AbortError') status.textContent = `No se pudo copiar. La dirección es ${url}`;
       }
     });
   });
@@ -233,10 +233,10 @@ function initContato() {
     e.preventDefault();
     if (!form.reportValidity()) return;
     const dados = new FormData(form);
-    const assunto = `[${dados.get('assunto')}] Mensagem de ${dados.get('nome')}`;
+    const assunto = `[${dados.get('assunto')}] Mensaje de ${dados.get('nome')}`;
     const corpo = `${dados.get('mensagem')}\n\n—\n${dados.get('nome')}\n${dados.get('email')}`;
     window.location.href = `mailto:${EMAIL_CONTATO}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-    status.textContent = `Abrimos o seu aplicativo de e-mail com a mensagem pronta. Se ele não abriu, escreva para ${EMAIL_CONTATO}.`;
+    status.textContent = `Abrimos tu aplicación de correo con el mensaje listo. Si no se abrió, escribí a ${EMAIL_CONTATO}.`;
   });
 }
 
@@ -316,12 +316,12 @@ function initCarrosselAnuncios() {
     indice = (novo + slides.length) % slides.length;
     slides.forEach((slide, i) => { slide.hidden = i !== indice; });
     pontos.forEach((ponto, i) => ponto.setAttribute('aria-pressed', String(i === indice)));
-    carrossel.setAttribute('aria-label', `Publicidade, anúncio ${indice + 1} de ${slides.length}`);
+    carrossel.setAttribute('aria-label', `Publicidad, anuncio ${indice + 1} de ${slides.length}`);
   };
   const sincronizarBotao = () => {
     if (!alternar) return;
     alternar.setAttribute('aria-pressed', String(pausado));
-    alternar.setAttribute('aria-label', pausado ? 'Retomar anúncios' : 'Pausar anúncios');
+    alternar.setAttribute('aria-label', pausado ? 'Reanudar anuncios' : 'Pausar anuncios');
     alternar.textContent = pausado ? '▶' : 'Ⅱ';
   };
   const iniciar = () => {
