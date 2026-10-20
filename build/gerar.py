@@ -34,8 +34,8 @@ SITE = 'https://arenadiaria.proxserverabner.site'
 NOME = 'PASION'
 EMAIL = 'redacao@arenadiaria.com.br'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261019a'                     # muda o cache de CSS/JS a cada publicação
-HOJE = '2026-10-19'
+VERSAO = '20261020a'                     # muda o cache de CSS/JS a cada publicação
+HOJE = '2026-10-20'
 
 EDITORIAS = {
     'futebol':    {'nome': 'Fútbol',              'ancora': 'futebol'},
@@ -47,11 +47,11 @@ AUTORES = {
     'Rodrigo Albuquerque': {
         'id': 'autor-rodrigo-albuquerque', 'cargo': 'Periodista de economía del deporte',
         'foto': 'assets/images/autor-rodrigo-albuquerque.svg',
-        'bio': 'Economista, cubre las finanzas de los clubes, los patrocinios y el dinero que circula en el fútbol brasileño.'},
+        'bio': 'Economista, cubre las finanzas de los clubes, los patrocinios y el dinero que circula en el fútbol argentino.'},
     'Mariana Silva': {
         'id': 'autor-mariana-silva', 'cargo': 'Periodista de tecnología',
         'foto': 'assets/images/autor-mariana-silva.jpg',
-        'bio': 'Periodista, cubre medios de pago, Pix, seguridad digital y el funcionamiento de las plataformas.'},
+        'bio': 'Periodista, cubre medios de pago, billeteras virtuales, seguridad digital y el funcionamiento de las plataformas.'},
     'Dr. Carlos Eduardo Mendes': {
         'id': 'autor-carlos-eduardo-mendes', 'cargo': 'Editor jefe',
         'foto': 'assets/images/autor-carlos-eduardo.jpg',
@@ -61,33 +61,33 @@ AUTORES = {
 # Ordem = ordem de importância na home e na lista de notícias.
 # arte: texto curto da capa (linha 1, linha 2).
 MATERIAS = [
-    dict(slug='noticia-brasileirao-rodada', fonte='brasileirao', editoria='futebol',
-         publicada='2026-10-13T09:00:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Brasileirão', '20 clubes, 38 fechas, ninguna final')),
-    dict(slug='noticia-selecao-brasileira', fonte='selecao', editoria='futebol',
+    dict(slug='noticia-liga-profesional', fonte='liga-profesional', editoria='futebol',
+         publicada='2026-10-19T10:00:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Liga Profesional', 'Torneos cortos, tabla anual y descensos')),
+    dict(slug='noticia-seleccion-argentina', fonte='seleccion-argentina', editoria='futebol',
          publicada='2026-09-02T16:20:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Selección de Brasil', 'Cinco títulos y la fuerza de la base')),
-    dict(slug='noticia-copa-do-brasil', fonte='copa-do-brasil', editoria='futebol',
-         publicada='2026-10-10T15:30:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Copa de Brasil', '126 clubes, 9 fases y cupo a la Libertadores')),
+         arte=('Selección Argentina', 'Títulos, Eliminatorias y Mundial 2026')),
+    dict(slug='noticia-copa-argentina', fonte='copa-argentina', editoria='futebol',
+         publicada='2026-10-18T15:30:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Copa Argentina', 'Eliminación directa y cupo a la Libertadores')),
     dict(slug='noticia-libertadores', fonte='libertadores', editoria='futebol',
-         publicada='2026-10-06T18:10:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Libertadores', 'De la fase previa a la final en un solo partido')),
-    dict(slug='noticia-patrocinios-futebol', fonte='patrocinios', editoria='economia',
+         publicada='2026-10-20T09:00:00-03:00', atualizada=None, nota=None, apoio=False,
+         arte=('Libertadores', 'Cómo entran los argentinos a la copa')),
+    dict(slug='noticia-sponsors-futbol-argentino', fonte='patrocinios', editoria='economia',
          publicada='2026-08-18T10:40:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Sponsors en el fútbol', 'Del sponsor de la camiseta al nombre del estadio')),
-    dict(slug='noticia-direitos-de-transmissao', fonte='transmissao', editoria='economia',
+         arte=('Sponsors en el fútbol', 'Cómo llegan las marcas a la camiseta')),
+    dict(slug='noticia-derechos-de-transmision', fonte='transmision', editoria='economia',
          publicada='2026-09-16T14:00:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Derechos de TV', 'Qué cambia con la ley del local')),
-    dict(slug='noticia-saf-sociedade-anonima-futebol', fonte='saf', editoria='economia',
+         arte=('Derechos de TV', 'Quién transmite el fútbol argentino')),
+    dict(slug='noticia-sad-sociedades-anonimas-deportivas', fonte='sad', editoria='economia',
          publicada='2026-09-08T09:30:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('SAF en el fútbol', 'Cómo el club se vuelve empresa y paga deudas')),
-    dict(slug='noticia-ingressos-direitos-torcedor', fonte='ingressos', editoria='consumidor',
+         arte=('SAD en Argentina', 'Qué son y en qué estado están')),
+    dict(slug='noticia-entradas-derechos-hincha', fonte='entradas', editoria='consumidor',
          publicada='2026-09-25T11:45:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Entradas', 'Media entrada, reembolso y dónde reclamar')),
-    dict(slug='noticia-pix-golpes-med', fonte='pix-golpes', editoria='consumidor',
+         arte=('Entradas', 'Arrepentimiento, reembolso y dónde reclamar')),
+    dict(slug='noticia-estafas-transferencias', fonte='estafas-transferencias', editoria='consumidor',
          publicada='2026-10-02T10:20:00-03:00', atualizada=None, nota=None, apoio=False,
-         arte=('Estafa con Pix', 'Cómo usar el MED y pedir el dinero de vuelta')),
+         arte=('Estafas con transferencias', 'Qué hacer y dónde reclamar')),
 ]
 
 MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto',
@@ -599,9 +599,9 @@ def gerar_materia(m, todas):
 # --------------------------------------------------------------------------
 def gerar_home(ms):
     destaque, d2, d3 = ms[0], ms[1], ms[2]
-    destaque['home_capa'] = 'assets/images/home/capa-brasileirao.jpg'
-    d2['home_capa'] = 'assets/images/home/capa-selecao.jpg'
-    d3['home_capa'] = 'assets/images/home/capa-copa-brasil.jpg'
+    destaque['home_capa'] = 'assets/images/home/capa-liga-profesional.jpg'
+    d2['home_capa'] = 'assets/images/home/capa-seleccion.jpg'
+    d3['home_capa'] = 'assets/images/home/capa-copa-argentina.jpg'
     secoes = ''
     for chave, ed in EDITORIAS.items():
         da_secao = [m for m in ms if m['editoria'] == chave and m not in (destaque, d2, d3)]
@@ -683,7 +683,7 @@ def gerar_noticias(ms):
     <p class="mt-3 text-lg text-slate-600">Las notas más recientes primero. Buscá por un tema, un equipo o una palabra.</p>
     <form action="noticias.html" method="get" role="search" class="mt-6" onsubmit="return false">
       <label for="buscaPagina" class="block text-sm font-bold text-slate-900">Buscar en las noticias</label>
-      <input id="buscaPagina" type="search" name="q" autocomplete="off" class="mt-2 w-full h-12 rounded-lg border border-slate-300 px-4 text-base" placeholder="Ej.: Pix, Brasileirão, sponsors">
+      <input id="buscaPagina" type="search" name="q" autocomplete="off" class="mt-2 w-full h-12 rounded-lg border border-slate-300 px-4 text-base" placeholder="Ej.: Liga Profesional, estafas, sponsors">
     </form>
     <p id="buscaStatus" class="mt-4 text-sm text-slate-600" role="status">{len(ms)} notas publicadas.</p>
     <ul class="mt-2">
@@ -750,8 +750,8 @@ def gerar_institucionais():
       <h2 id="publicidade">Publicidad y periodismo</h2>
       <p>Los anuncios aparecen siempre dentro de un espacio con la etiqueta “Publicidad” y no interfieren en la agenda de temas. Los anunciantes no leen las notas antes de su publicación. Mirá las reglas completas en <a href="anuncie.html">Anunciá</a>.</p>
 
-      <h2 id="dados">Datos institucionales</h2>
-      <p>Arena Diária Comunicação e Mídia Digital Ltda.<br>CNPJ 45.890.123/0001-90<br>Setor Hoteleiro Sul, Quadra 06, Bloco E, Asa Sul, Brasília (DF), CEP 70322-900<br>Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a></p>''')
+      <h2 id="dados">Contacto de la redacción</h2>
+      <p>Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a></p>''')
 
     institucional('contato.html', 'Contacto: hablá con la redacción | PASION',
         'Hablá con la redacción de PASION: enviá sugerencias de temas, avisá sobre un error, pedí información '
@@ -809,7 +809,7 @@ def gerar_institucionais():
 
       <h2 id="regras">Reglas de aceptación</h2>
       <ul>
-        <li>Seguimos el Código de Defensa del Consumidor y el Código Brasileño de Autorregulación Publicitaria: no aceptamos anuncios engañosos, abusivos ni de productos prohibidos por ley.</li>
+        <li>Cumplimos la Ley 24.240 de Defensa del Consumidor, la Ley 22.802 de Lealtad Comercial y el Código de Ética y Autorregulación Publicitaria del CONARP: no aceptamos anuncios engañosos, abusivos ni de productos prohibidos por ley.</li>
         <li>No aceptamos promesas de ganancias fáciles, ingresos extra garantizados ni crédito sin información de costos.</li>
         <li>Todo anuncio lleva la etiqueta “Publicidad”, y los enlaces se marcan como patrocinados.</li>
         <li>El contenido patrocinado, cuando lo hay, se identifica en el título y no lo escribe la redacción.</li>
@@ -822,7 +822,7 @@ def gerar_institucionais():
         'Términos de uso de PASION: naturaleza periodística del portal, uso del contenido, responsabilidad sobre '
         'la información, enlaces externos y foro competente.',
         'Términos de uso', '''
-      <p class="text-sm text-slate-600">Última actualización: 13 de octubre de 2026</p>
+      <p class="text-sm text-slate-600">Última actualización: 20 de octubre de 2026</p>
 
       <h2>1. Qué es PASION</h2>
       <p>PASION es un medio periodístico de información. Publicamos noticias, guías y reportajes sobre fútbol, economía del deporte y derechos del consumidor.</p>
@@ -834,16 +834,13 @@ def gerar_institucionais():
       <p>Indicamos fuentes oficiales y servicios de ayuda. No respondemos por el contenido ni por la disponibilidad de sitios de terceros.</p>
 
       <h2>4. Derechos de autor</h2>
-      <p>Los textos, las artes y la marca de PASION están protegidos por la Ley n.º 9.610/1998 de Brasil. Podés citar fragmentos con crédito y enlace a la nota original. La reproducción íntegra requiere autorización.</p>
-
-      <h2>5. Foro</h2>
-      <p>Se elige el foro de la Comarca de Brasília (DF) para resolver cuestiones sobre estos términos, sin perjuicio del foro del domicilio del consumidor.</p>''')
+      <p>Los textos, las artes y la marca de PASION están protegidos por la Ley 11.723 de Propiedad Intelectual de la Argentina. Podés citar fragmentos con crédito y enlace a la nota original. La reproducción íntegra requiere autorización.</p>''')
 
     institucional('politica-de-privacidade.html', 'Política de privacidad y cookies | PASION',
-        'Conocé qué datos trata PASION, para qué, por cuánto tiempo y cómo ejercer tus derechos según la LGPD, '
+        'Conocé qué datos trata PASION, para qué, por cuánto tiempo y cómo ejercer tus derechos según la Ley 25.326, '
         'incluida la elección sobre las cookies de medición y de publicidad.',
         'Política de privacidad', f'''
-      <p class="text-sm text-slate-600">Última actualización: 13 de octubre de 2026 · Ley n.º 13.709/2018 de Brasil (LGPD)</p>
+      <p class="text-sm text-slate-600">Última actualización: 20 de octubre de 2026 · Ley 25.326 de Protección de los Datos Personales de la Argentina</p>
 
       <h2>1. En resumen</h2>
       <p>Leés PASION sin registrarte. No vendemos ni cedemos datos personales. Las cookies de medición y de publicidad solo funcionan si las aceptás.</p>
@@ -869,7 +866,7 @@ def gerar_institucionais():
       <p>Las fuentes tipográficas del sitio se cargan desde Google Fonts, lo que envía a Google la dirección IP de tu navegador.</p>
 
       <h2>5. Tus derechos</h2>
-      <p>Según el art. 18 de la LGPD (Ley General de Protección de Datos de Brasil), podés pedir confirmación, acceso, corrección, anonimización o eliminación de tus datos. Escribí a <a href="mailto:{EMAIL}?subject=Privacidad">{EMAIL}</a> con el asunto “Privacidad”.</p>''')
+      <p>Según la Ley 25.326, podés pedir el acceso a tus datos (art. 14) y su rectificación, actualización o supresión (art. 16). La Agencia de Acceso a la Información Pública (AAIP) es el órgano de control de esa ley y atiende denuncias y reclamos. Escribí a <a href="mailto:{EMAIL}?subject=Privacidad">{EMAIL}</a> con el asunto “Privacidad”.</p>''')
 
 
 # --------------------------------------------------------------------------
@@ -923,7 +920,7 @@ def gerar_llms(ms):
     linhas = '\n'.join(f"- [{m['h1']}]({SITE}/{m['url']}): {m['description']}" for m in ms)
     (RAIZ / 'llms.txt').write_text(f'''# PASION
 
-> Portal de noticias en español (Argentina) sobre fútbol, economía del deporte y derechos del consumidor, con foco en Brasil. Cada nota lista las fuentes consultadas.
+> Portal de noticias en español (Argentina) sobre fútbol, economía del deporte y derechos del consumidor, con foco en la Argentina. Cada nota lista las fuentes consultadas.
 
 ## Secciones
 - Fútbol: competencias, reglamentos y selecciones.
@@ -973,7 +970,7 @@ p{{font-size:38px;font-weight:600;line-height:1.2;color:#CBD5E1;margin-top:22px}
 </style></head><body>
 <div class="grade"></div><div class="faixa"></div>{motivo}
 <div class="conteudo"><span class="rotulo">{e(rotulo)}</span><h1>{e(linha1)}</h1><p>{e(linha2)}</p></div>
-<div class="marca">Arena <span>Diária</span></div>
+<div class="marca">PASION</div>
 </body></html>'''
 
 

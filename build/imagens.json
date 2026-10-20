@@ -1,11 +1,11 @@
 {
-  "noticia-brasileirao-rodada": {"alt": "Estádio de futebol lotado à noite, com o gramado iluminado visto da arquibancada"},
-  "noticia-selecao-brasileira": {"alt": "Bola de futebol no gramado diante de uma arquibancada com torcedores vestidos de amarelo e verde"},
-  "noticia-patrocinios-futebol": {"alt": "Camisa de futebol sem marcas pendurada no vestiário, com espaço vazio no peito para o patrocinador"},
-  "noticia-copa-do-brasil": {"alt": "Taça dourada sobre um pedestal à beira do gramado, com o estádio desfocado ao fundo"},
-  "noticia-libertadores": {"alt": "Jogadores de dois times disputando a bola em um estádio sul-americano lotado, à noite"},
-  "noticia-direitos-de-transmissao": {"alt": "Câmera de televisão na lateral do campo filmando uma partida de futebol"},
-  "noticia-saf-sociedade-anonima-futebol": {"alt": "Mesa de reunião com contrato, caneta e uma bola de futebol, com a janela mostrando um estádio"},
-  "noticia-ingressos-direitos-torcedor": {"alt": "Torcedor mostrando o ingresso no celular na catraca de entrada do estádio"},
-  "noticia-pix-golpes-med": {"alt": "Mão segurando um celular com a tela de confirmação de um pagamento por Pix"}
+  "noticia-liga-profesional": {"alt": "Estadio de fútbol lleno de noche, con el césped iluminado visto desde la tribuna"},
+  "noticia-seleccion-argentina": {"alt": "Jugadores abrazados de espaldas con camisetas albicelestes frente a un estadio"},
+  "noticia-sponsors-futbol-argentino": {"alt": "Camiseta de fútbol sin marcas colgada en el vestuario, con el pecho vacío para el sponsor"},
+  "noticia-copa-argentina": {"alt": "Copa plateada sobre un pedestal con el estadio desenfocado al fondo"},
+  "noticia-libertadores": {"alt": "Jugadores de dos equipos disputando la pelota en un estadio sudamericano lleno, de noche"},
+  "noticia-derechos-de-transmision": {"alt": "Cámara de televisión al costado de la cancha filmando un partido de fútbol"},
+  "noticia-sad-sociedades-anonimas-deportivas": {"alt": "Mesa de reunión con contrato, lapicera y una pelota de fútbol, con un estadio en la ventana"},
+  "noticia-entradas-derechos-hincha": {"alt": "Hincha mostrando la entrada en el celular en el molinete de acceso al estadio"},
+  "noticia-estafas-transferencias": {"alt": "Mano sosteniendo un celular con la pantalla de confirmación de una transferencia"}
 }
