@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Gerador do portal PASION.
+Gerador do portal DUELO.
 
 Monta todas as páginas HTML da raiz a partir de um cabeçalho, um rodapé e um
 modelo de matéria únicos. Edite os textos aqui ou em build/materias/*.html e
@@ -31,11 +31,11 @@ ATUAL = ' aria-current="page"'
 RAIZ = Path(__file__).resolve().parent.parent
 BUILD = RAIZ / 'build'
 SITE = 'https://pasionnoticias.proxserverabner.site'
-NOME = 'PASION'
+NOME = 'DUELO'
 EMAIL = 'redaccion@proxserverabner.site'   # e-mail de contato (provisório)
 META_PIXEL_ID = '1879343259722567'                      # ID do Pixel da Meta; vazio = desligado
-VERSAO = '20261020c'
-HOJE = '2026-10-20'
+VERSAO = '20261120a'
+HOJE = '2026-11-20'
 
 EDITORIAS = {
     'futebol':    {'nome': 'Fútbol',              'ancora': 'futebol'},
@@ -138,9 +138,9 @@ def ler_materia(m):
     m['leitura'] = max(2, round(palavras / 220))
     m['url'] = f"{m['slug']}.html"
     m['capa'] = f"assets/images/capas/{m['slug']}.jpg"
-    m['alt'] = f"Arte de PASION con el texto “{m['arte'][0]}: {m['arte'][1]}”"
+    m['alt'] = f"Arte de DUELO con el texto “{m['arte'][0]}: {m['arte'][1]}”"
     m['capa_web'] = m['capa']
-    m['credito'] = 'Arte: PASION'
+    m['credito'] = 'Arte: DUELO'
     foto = preparar_foto(m['slug'])
     if foto:
         m['capa'], m['capa_web'] = foto
@@ -197,7 +197,7 @@ def logo(claro=False):
     cor = 'text-white' if claro else 'text-slate-900'
     destaque = 'text-teal-300' if claro else 'text-teal-700'
     return (f'{ESCUDO}<span class="text-xl font-black tracking-[.04em] {cor}">'
-            f'<span class="{destaque}">PASION</span></span>')
+            f'<span class="{destaque}">DUELO</span></span>')
 
 
 def form_busca(sufixo, classes):
@@ -223,7 +223,7 @@ def cabecalho(ativo):
   <header class="site-header sticky top-0 z-50 bg-white border-b border-slate-200">
     <div class="masthead">
     <div class="masthead-inner max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
-      <a href="./" class="flex items-center gap-2 shrink-0" aria-label="PASION, página de inicio">{logo(claro=ativo == 'inicio')}</a>
+      <a href="./" class="flex items-center gap-2 shrink-0" aria-label="DUELO, página de inicio">{logo(claro=ativo == 'inicio')}</a>
       <time id="headerLiveDate" class="hidden lg:block text-sm text-slate-600"></time>
       {form_busca('topo', 'hidden md:block ml-auto w-72')}
       <button id="buscaToggle" type="button" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] md:hidden ml-auto text-slate-700" aria-expanded="false" aria-controls="buscaPainel" aria-label="Abrir búsqueda">{LUPA}</button>
@@ -245,8 +245,9 @@ def rodape():
     return f'''<footer class="bg-slate-900 text-slate-300 mt-16">
     <div class="max-w-6xl mx-auto px-4 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <div>
-        <a href="./" class="flex items-center gap-2" aria-label="PASION, página de inicio">{logo(claro=True)}</a>
+        <a href="./" class="flex items-center gap-2" aria-label="DUELO, página de inicio">{logo(claro=True)}</a>
         <p class="mt-4 text-sm leading-relaxed">Noticias de fútbol, economía del deporte y derechos del consumidor, con fuente en cada dato.</p>
+        <p class="mt-2 text-xs text-slate-400">DUELO Medios Digitales · Ciudad Autónoma de Buenos Aires (CABA), Argentina.</p>
       </div>
       <div>
         <h2 class="text-sm font-bold uppercase tracking-wide text-white">Secciones</h2>
@@ -271,16 +272,20 @@ def rodape():
         </ul>
       </div>
       <div>
-        <h2 class="text-sm font-bold uppercase tracking-wide text-white">Secciones</h2>
+        <h2 class="text-sm font-bold uppercase tracking-wide text-white">Transparencia</h2>
         <ul class="mt-3 space-y-1 text-sm">
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="./#futebol">Fútbol</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="./#economia">Economía del deporte</a></li>
-          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="./#consumidor">Consumidor</a></li>
+          <li><span class="text-slate-400">Medio Digital Independiente</span></li>
+          <li><span class="text-slate-400">CABA, República Argentina</span></li>
+          <li><a class="inline-block py-1.5 hover:text-white hover:underline" href="mailto:{EMAIL}">{EMAIL}</a></li>
+          <li><span class="text-xs text-slate-400">Cumplimiento Ley 25.326 y Ley 24.240</span></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-slate-700">
-      <p class="max-w-6xl mx-auto px-4 py-5 text-sm text-slate-400">© 2026 PASION. Contenido periodístico.</p>
+      <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-slate-400">
+        <p>© 2026 DUELO. Contenido periodístico independiente.</p>
+        <p>Buenos Aires, Argentina · Contacto: {EMAIL}</p>
+      </div>
     </div>
   </footer>
 
@@ -301,7 +306,12 @@ ORG_ID = f'{SITE}/#organizacao'
 
 def jsonld_org():
     return {
-        '@type': 'NewsMediaOrganization', '@id': ORG_ID, 'name': NOME, 'url': f'{SITE}/',
+        '@type': 'NewsMediaOrganization',
+        '@id': ORG_ID,
+        'name': NOME,
+        'alternateName': 'DUELO Noticias',
+        'legalName': 'DUELO Medios Digitales',
+        'url': f'{SITE}/',
         'logo': {'@type': 'ImageObject', 'url': f'{SITE}/assets/images/logo-512.png', 'width': 512, 'height': 512},
         'email': EMAIL,
         'publishingPrinciples': f'{SITE}/quienes-somos.html#politica-editorial',
@@ -310,15 +320,20 @@ def jsonld_org():
         'actionableFeedbackPolicy': f'{SITE}/contacto.html',
         'inLanguage': 'es-AR',
         'areaServed': {'@type': 'Country', 'name': 'Argentina'},
-        'address': {'@type': 'PostalAddress', 'addressCountry': 'AR'},
+        'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': 'Ciudad Autónoma de Buenos Aires',
+            'addressRegion': 'CABA',
+            'addressCountry': 'AR',
+        },
     }
 
 
 def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', imagem=None, imagem_alt=None,
            extra_head='', grafo=None, robots='index, follow, max-image-preview:large'):
     url = f'{SITE}/' if arquivo == 'index.html' else f'{SITE}/{arquivo}'
-    imagem = imagem or 'assets/images/og-pasion.jpg'
-    imagem_alt = imagem_alt or 'PASION: fútbol, economía del deporte y derechos del consumidor'
+    imagem = imagem or 'assets/images/og-duelo.jpg'
+    imagem_alt = imagem_alt or 'DUELO: fútbol, economía del deporte y derechos del consumidor'
     grafo = [jsonld_org()] + (grafo or [])
     ld = json.dumps({'@context': 'https://schema.org', '@graph': grafo}, ensure_ascii=False, indent=1)
     if arquivo == 'index.html':
@@ -341,22 +356,27 @@ def pagina(arquivo, titulo, descricao, corpo, ativo='', og_tipo='website', image
   <meta name="geo.region" content="AR">
   <meta name="geo.placename" content="Argentina">
   <meta name="theme-color" content="#0B132B">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="alternate" type="application/rss+xml" title="PASION: últimas noticias" href="{SITE}/feed.xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="DUELO: últimas noticias" href="{SITE}/feed.xml">
 
   <meta property="og:site_name" content="{NOME}">
   <meta property="og:locale" content="es_AR">
   <meta property="og:type" content="{og_tipo}">
-  <meta property="og:title" content="{e(titulo.replace(' | PASION', ''))}">
+  <meta property="og:title" content="{e(titulo.replace(' | DUELO', ''))}">
   <meta property="og:description" content="{e(descricao)}">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{SITE}/{imagem}">
+  <meta property="og:image:secure_url" content="{SITE}/{imagem}">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="{e(imagem_alt)}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{e(titulo.replace(' | PASION', ''))}">
+  <meta name="twitter:title" content="{e(titulo.replace(' | DUELO', ''))}">
   <meta name="twitter:description" content="{e(descricao)}">
   <meta name="twitter:image" content="{SITE}/{imagem}">
 {extra_head}
@@ -393,14 +413,14 @@ def publicidade(slot, formato='retangulo'):
     img = RAIZ / 'assets' / 'images' / 'anuncios' / f'{formato}.webp'
     if img.exists():
         w, h = {'retangulo': (300, 250), 'faixa': (728, 90)}[formato]
-        miolo = (f'<a href="anuncia.html" data-slot="{slot}" class="block">'
+        miolo = (f'<a href="anuncia.html" data-slot="{slot}" rel="sponsored" class="block">'
                  f'<img src="assets/images/anuncios/{formato}.webp" width="{w}" height="{h}" loading="lazy" '
-                 f'alt="Anunciá en PASION: hablá con nuestro equipo comercial" class="w-full h-auto"></a>')
+                 f'alt="Anunciá en DUELO: hablá con nuestro equipo comercial" class="w-full h-auto"></a>')
     else:
-        miolo = (f'<a href="anuncia.html" data-slot="{slot}" class="article-ad-creative">'
+        miolo = (f'<a href="anuncia.html" data-slot="{slot}" rel="sponsored" class="article-ad-creative">'
                  f'<span class="article-ad-brand">{logo(claro=True)}</span>'
                  f'<span class="article-ad-title">Tu marca <strong>acá</strong></span>'
-                 f'<span class="article-ad-copy">Hablá con el equipo comercial de PASION.</span>'
+                 f'<span class="article-ad-copy">Hablá con el equipo comercial de DUELO.</span>'
                  f'<span class="article-ad-cta">Anunciá acá <span aria-hidden="true">→</span></span></a>')
     return f'<aside class="ad-slot" aria-label="Publicidad"><span class="ad-label">Publicidad</span>{miolo}</aside>'
 
@@ -408,7 +428,7 @@ def publicidade(slot, formato='retangulo'):
 def billboard(slot):
     """Carrossel de três criativos de demonstração, com altura reservada e controles acessíveis."""
     anuncios = [
-        (f'<a href="anuncia.html" data-slot="{slot}" class="billboard-slide billboard-first" aria-label="Publicidad Passo Nobre: tu próximo paso empieza acá">'
+        (f'<a href="anuncia.html" data-slot="{slot}" rel="sponsored" class="billboard-slide billboard-first" aria-label="Publicidad Passo Nobre: tu próximo paso empieza acá">'
          f'<picture><source media="(max-width: 767px)" srcset="assets/images/home/anuncio-passo-nobre-mobile.jpg">'
          f'<img src="assets/images/home/anuncio-passo-nobre-01.jpg" width="1072" height="176" '
          f'alt="Passo Nobre — tu próximo paso empieza acá. Comodidad, estilo y rendimiento para tu día, dentro y fuera de la cancha. Conocé la colección." class="billboard-img"></picture>'
@@ -417,13 +437,13 @@ def billboard(slot):
          f'<span class="billboard-caption">Comodidad, estilo y rendimiento.</span>'
          f'<span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></span>'
          f'<img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="" class="billboard-mobile-product"></a>'),
-        (f'<a href="anuncia.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--ritmo" aria-label="Publicidad Passo Nobre: comodidad que acompaña tu ritmo" hidden>'
+        (f'<a href="anuncia.html" data-slot="{slot}" rel="sponsored" class="billboard-slide billboard-slide--produto billboard-slide--ritmo" aria-label="Publicidad Passo Nobre: comodidad que acompaña tu ritmo" hidden>'
          f'<span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span>'
          f'<strong>Comodidad que acompaña<br>tu ritmo.</strong>'
          f'<span class="billboard-caption">Movimiento con propósito, en cada paso.</span></span>'
          f'<img src="assets/images/home/produto-tenis.webp" width="560" height="330" alt="Zapatilla deportiva destacada" class="billboard-product">'
          f'<span class="billboard-cta">Conocé la colección <span aria-hidden="true">→</span></span></a>'),
-        (f'<a href="anuncia.html" data-slot="{slot}" class="billboard-slide billboard-slide--produto billboard-slide--jogo" aria-label="Publicidad Passo Nobre: hecho para acompañar el juego" hidden>'
+        (f'<a href="anuncia.html" data-slot="{slot}" rel="sponsored" class="billboard-slide billboard-slide--produto billboard-slide--jogo" aria-label="Publicidad Passo Nobre: hecho para acompañar el juego" hidden>'
          f'<span class="billboard-copy"><span class="billboard-brand">PASSO NOBRE</span>'
          f'<strong>Tu juego empieza<br>en cada paso.</strong>'
          f'<span class="billboard-caption">Ligereza y estilo dentro y fuera de la cancha.</span></span>'
@@ -531,7 +551,7 @@ def gerar_materia(m, todas):
 
       <figure class="story-hero mt-6">
         <img src="{m['capa_web']}" width="1200" height="630" alt="{e(m['alt'])}" fetchpriority="high" class="w-full h-auto rounded-lg">
-        <span class="story-art-brand" aria-label="PASION">PASION</span>
+        <span class="story-art-brand" aria-label="DUELO">DUELO</span>
         <figcaption class="mt-2 text-sm text-slate-600">{m['credito']}</figcaption>
       </figure>
 
@@ -632,7 +652,7 @@ def gerar_home(ms):
   </div>
 
   <main id="conteudo" class="home-main max-w-6xl mx-auto px-4 py-6">
-    <h1 class="sr-only">PASION: noticias de fútbol, economía del deporte y derechos del consumidor</h1>
+    <h1 class="sr-only">DUELO: noticias de fútbol, economía del deporte y derechos del consumidor</h1>
     {billboard('home-topo')}
 
     <section aria-label="Titulares" class="home-headlines">
@@ -664,13 +684,15 @@ def gerar_home(ms):
       </div>
     </div>
   </main>'''
-    grafo = [{'@type': 'WebSite', '@id': f'{SITE}/#site', 'url': f'{SITE}/', 'name': NOME, 'inLanguage': 'es-AR',
+    grafo = [{'@type': 'WebSite', '@id': f'{SITE}/#site', 'url': f'{SITE}/', 'name': NOME,
+              'alternateName': ['DUELO Noticias', 'pasionnoticias.proxserverabner.site'],
+              'inLanguage': 'es-AR',
               'publisher': {'@id': ORG_ID},
               'potentialAction': {'@type': 'SearchAction', 'target': f'{SITE}/noticias.html?q={{search_term_string}}',
                                   'query-input': 'required name=search_term_string'}}]
-    pagina('index.html', 'PASION: fútbol, economía del deporte y consumidor',
-           'Portal de noticias sobre fútbol, economía del deporte y derechos del consumidor. Notas con fuente, '
-           'lenguaje claro y correcciones transparentes.', corpo, ativo='inicio', grafo=grafo)
+    pagina('index.html', 'Fútbol Argentino, Finanzas y Derechos del Hincha | DUELO',
+           'Noticias del fútbol argentino, economía deportiva y derechos del consumidor. Análisis con fuentes verificadas y rigor editorial. Leé los informes en DUELO.',
+           corpo, ativo='inicio', grafo=grafo)
 
 
 def gerar_noticias(ms):
@@ -696,18 +718,23 @@ def gerar_noticias(ms):
 {itens}
     </ul>
   </main>'''
-    grafo = [{'@type': 'CollectionPage', 'url': f'{SITE}/noticias.html', 'name': 'Todas las noticias', 'isPartOf': {'@id': f'{SITE}/#site'},
-              'mainEntity': {'@type': 'ItemList', 'itemListElement': [
-                  {'@type': 'ListItem', 'position': i + 1, 'url': f"{SITE}/{m['url']}"} for i, m in enumerate(por_data)]}}]
-    pagina('noticias.html', 'Todas las noticias | PASION',
-           'Lista completa de las notas de PASION sobre fútbol, economía del deporte y derechos del consumidor, '
-           'de la más reciente a la más antigua.', corpo, ativo='noticias', grafo=grafo)
+    grafo = [
+        {'@type': 'CollectionPage', 'url': f'{SITE}/noticias.html', 'name': 'Todas las noticias', 'isPartOf': {'@id': f'{SITE}/#site'},
+         'mainEntity': {'@type': 'ItemList', 'itemListElement': [
+             {'@type': 'ListItem', 'position': i + 1, 'url': f"{SITE}/{m['url']}"} for i, m in enumerate(por_data)]}},
+        {'@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': f'{SITE}/'},
+            {'@type': 'ListItem', 'position': 2, 'name': 'Todas las noticias', 'item': f'{SITE}/noticias.html'}]}
+    ]
+    pagina('noticias.html', 'Todas las Noticias de Fútbol y Economía Deportiva | DUELO',
+           'Archivo completo de notas de DUELO sobre fútbol argentino, finanzas de clubes y derechos del consumidor. Fuentes oficiales y chequeadas. Buscá tus temas acá.',
+           corpo, ativo='noticias', grafo=grafo)
 
 
 # --------------------------------------------------------------------------
 # Páginas institucionais
 # --------------------------------------------------------------------------
-def institucional(arquivo, titulo, descricao, h1, conteudo, ativo='', chapeu_txt=''):
+def institucional(arquivo, titulo, descricao, h1, conteudo, ativo='', chapeu_txt='', breadcrumb_titulo=None):
     ch = f'<p class="text-sm font-bold uppercase tracking-wide text-teal-700">{chapeu_txt}</p>' if chapeu_txt else ''
     corpo = f'''  <main id="conteudo" class="max-w-3xl mx-auto px-4 py-10">
     {ch}
@@ -716,7 +743,14 @@ def institucional(arquivo, titulo, descricao, h1, conteudo, ativo='', chapeu_txt
 {conteudo}
     </div>
   </main>'''
-    pagina(arquivo, titulo, descricao, corpo, ativo=ativo)
+    b_nome = breadcrumb_titulo or h1
+    grafo = [
+        {'@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': f'{SITE}/'},
+            {'@type': 'ListItem', 'position': 2, 'name': b_nome, 'item': f'{SITE}/{arquivo}'}
+        ]}
+    ]
+    pagina(arquivo, titulo, descricao, corpo, ativo=ativo, grafo=grafo)
 
 
 def gerar_institucionais():
@@ -725,11 +759,10 @@ def gerar_institucionais():
           <div><h3 class="text-lg font-extrabold text-slate-900">{e(nome)}</h3><p class="text-sm font-semibold text-teal-700">{a['cargo']}</p><p class="mt-1 text-base">{a['bio']}</p></div>
         </div>''' for nome, a in AUTORES.items())
 
-    institucional('quienes-somos.html', 'Quiénes somos, equipo y política editorial | PASION',
-        'Conocé PASION: qué cubrimos, quién escribe, cómo chequeamos la información, cómo corregimos errores '
-        'y cómo separamos la publicidad del periodismo.',
+    institucional('quienes-somos.html', 'Quiénes Somos, Equipo Editorial y Misión de Prensa | DUELO',
+        'Conocé al equipo de DUELO, nuestros estándares periodísticos y la política de corrección de datos. Periodismo deportivo transparente e independiente en CABA.',
         'Quiénes somos', f'''
-      <p class="text-lg">PASION es un portal de noticias sobre fútbol, economía del deporte y derechos del consumidor. Explicamos reglas, contratos y cambios en la ley que afectan a quienes siguen el deporte, con fuente en cada dato.</p>
+      <p class="text-lg">DUELO es un portal de noticias sobre fútbol, economía del deporte y derechos del consumidor. Explicamos reglas, contratos y cambios en la ley que afectan a quienes siguen el deporte, con fuente en cada dato.</p>
 
       <h2 id="que-cubrimos">Qué cubrimos</h2>
       <ul>
@@ -756,14 +789,17 @@ def gerar_institucionais():
       <h2 id="publicidad">Publicidad y periodismo</h2>
       <p>Los anuncios aparecen siempre dentro de un espacio con la etiqueta “Publicidad” y no interfieren en la agenda de temas. Los anunciantes no leen las notas antes de su publicación. Mirá las reglas completas en <a href="anuncia.html">Anunciá</a>.</p>
 
-      <h2 id="datos">Contacto de la redacción</h2>
-      <p>Correo electrónico: <a href="mailto:{EMAIL}">{EMAIL}</a></p>''')
+      <h2 id="transparencia-legal">Datos de la empresa y redacción</h2>
+      <p><strong>Identificación:</strong> DUELO Medios Digitales</p>
+      <p><strong>Naturaleza jurídica:</strong> Medio periodístico digital independiente de información deportiva y del consumidor.</p>
+      <p><strong>Ubicación y redacción central:</strong> Ciudad Autónoma de Buenos Aires (CABA), República Argentina.</p>
+      <p><strong>Correo electrónico de contacto:</strong> <a href="mailto:{EMAIL}">{EMAIL}</a></p>
+      <p><strong>Marco normativo:</strong> Cumplimiento estricto de la Ley 11.723 de Propiedad Intelectual, la Ley 25.326 de Protección de Datos Personales y la Ley 24.240 de Defensa del Consumidor.</p>''')
 
-    institucional('contacto.html', 'Contacto: hablá con la redacción | PASION',
-        'Hablá con la redacción de PASION: enviá sugerencias de temas, avisá sobre un error, pedí información '
-        'comercial o ejercé tus derechos de privacidad.',
+    institucional('contacto.html', 'Contacto: Mensajes a la Redacción y Consultas | DUELO',
+        'Comunicate con la redacción de DUELO para enviar sugerencias, corregir información o solicitar datos comerciales. Atención personalizada. Escribinos hoy.',
         'Hablá con la redacción', f'''
-      <p class="text-lg">Sugerencia de tema, corrección, publicidad o privacidad: todo llega por la misma dirección, <a href="mailto:{EMAIL}">{EMAIL}</a>. Respondemos en días hábiles.</p>
+      <p class="text-lg">Sugerencia de tema, corrección, publicidad o privacidad: todo llega por la misma dirección, <a href="mailto:{EMAIL}">{EMAIL}</a>. Respondemos en días hábiles (lunes a viernes, 9 a 18 h de Argentina).</p>
 
       <form id="formContato" class="not-prose mt-8 grid gap-5 rounded-lg border border-slate-200 bg-white p-5 sm:p-6" novalidate>
         <div>
@@ -795,10 +831,9 @@ def gerar_institucionais():
         </div>
       </form>''')
 
-    institucional('anuncia.html', 'Anunciá en PASION: formatos y reglas | PASION',
-        'Anunciá en PASION: formatos disponibles, reglas de aceptación y cómo hablar con el equipo comercial. '
-        'Publicidad siempre identificada y separada del periodismo.',
-        'Anunciá en PASION', f'''
+    institucional('anuncia.html', 'Anunciá en DUELO: Formatos y Tarifas de Medios | DUELO',
+        'Conectá tu marca con la audiencia del fútbol y el deporte en Argentina. Espacios de publicidad transparente y formatos digitales de alto impacto. Contactanos.',
+        'Anunciá en DUELO', f'''
       <p class="text-lg">Lectores que siguen el fútbol, el dinero y los derechos del consumidor. Tu marca aparece en un espacio identificado como publicidad, lejos del texto periodístico.</p>
 
       <h2 id="formatos">Formatos</h2>
@@ -815,64 +850,67 @@ def gerar_institucionais():
 
       <h2 id="reglas">Reglas de aceptación</h2>
       <ul>
-        <li>Cumplimos la Ley 24.240 de Defensa del Consumidor, la Ley 22.802 de Lealtad Comercial y el Código de Ética y Autorregulación Publicitaria del CONARP: no aceptamos anuncios engañosos, abusivos ni de productos prohibidos por ley.</li>
+        <li>Cumplimos la Ley 24.240 de Defensa del Consumidor, la Ley 22.802 de Lealtad Comercial, los estándares de publicidad de Meta Ads y el Código de Ética y Autorregulación Publicitaria del CONARP: no aceptamos anuncios engañosos, abusivos ni de productos prohibidos por ley.</li>
         <li>No aceptamos promesas de ganancias fáciles, ingresos extra garantizados ni crédito sin información de costos.</li>
-        <li>Todo anuncio lleva la etiqueta “Publicidad”, y los enlaces se marcan como patrocinados.</li>
+        <li>Todo anuncio lleva la etiqueta “Publicidad”, y los enlaces se marcan como patrocinados (<code>rel="sponsored"</code>).</li>
         <li>El contenido patrocinado, cuando lo hay, se identifica en el título y no lo escribe la redacción.</li>
       </ul>
 
       <h2 id="contratar">Cómo contratar</h2>
       <p>Escribí a <a href="mailto:{EMAIL}?subject=Publicidad">{EMAIL}</a> con el asunto “Publicidad”, el período y el formato que te interesa.</p>''')
 
-    institucional('terminos-de-uso.html', 'Términos de uso | PASION',
-        'Términos de uso de PASION: naturaleza periodística del portal, uso del contenido, responsabilidad sobre '
-        'la información, enlaces externos y foro competente.',
+    institucional('terminos-de-uso.html', 'Términos de Uso y Condiciones del Servicio Web | DUELO',
+        'Revisá las condiciones generales de uso, propiedad intelectual según Ley 11.723 y responsabilidades de DUELO. Información periodística clara. Conocé más acá.',
         'Términos de uso', '''
-      <p class="text-sm text-slate-600">Última actualización: 20 de octubre de 2026</p>
+      <p class="text-sm text-slate-600">Última actualización: 20 de noviembre de 2026</p>
 
-      <h2>1. Qué es PASION</h2>
-      <p>PASION es un medio periodístico de información. Publicamos noticias, guías y reportajes sobre fútbol, economía del deporte y derechos del consumidor.</p>
+      <h2>1. Qué es DUELO</h2>
+      <p>DUELO es un medio periodístico de información digital. Publicamos noticias, guías y reportajes sobre fútbol, economía del deporte y derechos del consumidor en la República Argentina.</p>
 
       <h2>2. Uso de la información</h2>
-      <p>Las notas informan y no reemplazan el asesoramiento jurídico, financiero o médico para tu caso. Las fechas, los plazos y las reglas pueden cambiar; por eso cada nota muestra cuándo fue publicada y actualizada.</p>
+      <p>Las notas tienen fin informativo y no reemplazan el asesoramiento jurídico, financiero o contable específico para cada caso. Las fechas, los plazos y las reglas reglamentarias pueden modificarse con el tiempo; por eso cada nota muestra cuándo fue publicada y actualizada.</p>
 
       <h2>3. Enlaces a otros sitios</h2>
-      <p>Indicamos fuentes oficiales y servicios de ayuda. No respondemos por el contenido ni por la disponibilidad de sitios de terceros.</p>
+      <p>Indicamos fuentes primarias oficiales (AFA, Liga Profesional, Boletín Oficial de la República Argentina, BCRA, CONMEBOL). No respondemos por el contenido, cambios ni disponibilidad de plataformas de terceros.</p>
 
       <h2>4. Derechos de autor</h2>
-      <p>Los textos, las artes y la marca de PASION están protegidos por la Ley 11.723 de Propiedad Intelectual de la Argentina. Podés citar fragmentos con crédito y enlace a la nota original. La reproducción íntegra requiere autorización.</p>''')
+      <p>Los textos, las artes y la marca de DUELO están protegidos por la Ley 11.723 de Propiedad Intelectual de la República Argentina. Se autoriza la cita de fragmentos con mención explícita de crédito y enlace directo a la nota original. La reproducción íntegra o sistemática no autorizada queda prohibida.</p>
 
-    institucional('politica-de-privacidad.html', 'Política de privacidad y cookies | PASION',
-        'Conocé qué datos trata PASION, para qué, por cuánto tiempo y cómo ejercer tus derechos según la Ley 25.326, '
-        'incluida la elección sobre las cookies de medición y de publicidad.',
+      <h2>5. Jurisdicción y ley aplicable</h2>
+      <p>Para todas las cuestiones relativas a la interpretación o cumplimiento de estos términos, rigen las leyes de la República Argentina. Las partes se someten a la competencia de los Tribunales Ordinarios en lo Comercial con asiento en la Ciudad Autónoma de Buenos Aires (CABA).</p>''')
+
+    institucional('politica-de-privacidad.html', 'Política de Privacidad y Protección de Datos | DUELO',
+        'Conocé cómo protegemos tus datos personales bajo la Ley 25.326 y cómo podés configurar tus cookies de navegación en DUELO. Privacidad segura. Leé la política.',
         'Política de privacidad', f'''
-      <p class="text-sm text-slate-600">Última actualización: 20 de octubre de 2026 · Ley 25.326 de Protección de los Datos Personales de la Argentina</p>
+      <p class="text-sm text-slate-600">Última actualización: 20 de noviembre de 2026 · Ley 25.326 de Protección de los Datos Personales de la República Argentina</p>
 
       <h2>1. En resumen</h2>
-      <p>Leés PASION sin registrarte. No vendemos ni cedemos datos personales. Las cookies de medición y de publicidad solo funcionan si las aceptás.</p>
+      <p>Leés DUELO sin necesidad de registro ni cuenta de usuario. No vendemos ni cedemos datos personales a terceros. Las cookies de medición de audiencia y de publicidad solo se activan si das tu consentimiento voluntario.</p>
 
       <h2>2. Qué datos tratamos</h2>
       <ul>
-        <li><strong>Datos técnicos de acceso</strong>, como la dirección IP y el navegador, que el servidor registra por seguridad.</li>
-        <li><strong>Tu elección sobre las cookies</strong>, guardada en tu propio navegador.</li>
-        <li><strong>Datos de medición y de publicidad</strong> (por ejemplo, el Pixel de Meta), solo si aceptás las cookies.</li>
-        <li><strong>Lo que nos escribís</strong> por correo electrónico, cuando decidís contactarnos.</li>
+        <li><strong>Datos técnicos de acceso:</strong> dirección IP, identificador de navegador y páginas solicitadas, recopilados en los registros del servidor con fines de seguridad de red y prevención de ataques informáticos.</li>
+        <li><strong>Tu preferencia sobre cookies:</strong> registrada localmente en tu propio dispositivo para recordar si aceptaste o rechazaste los rastreadores.</li>
+        <li><strong>Datos de medición y publicidad digital (Pixel de Meta):</strong> únicamente activos si presionás “Aceptar” en nuestro aviso de cookies.</li>
+        <li><strong>Comunicaciones directas:</strong> tu nombre, correo y mensaje cuando decidís escribirle voluntariamente a nuestra redacción.</li>
       </ul>
 
       <h2>3. Para qué los usamos</h2>
       <ul>
-        <li>Mantener el sitio en línea y protegido contra ataques.</li>
-        <li>Medir la audiencia y el resultado de nuestras campañas de difusión, si das tu consentimiento.</li>
-        <li>Responder a tus mensajes.</li>
+        <li>Asegurar el funcionamiento técnico del sitio y su disponibilidad continua.</li>
+        <li>Medir la interacción de lectores con los informes periodísticos para planificar contenidos y medir el rendimiento de campañas de difusión en Meta Ads (Facebook e Instagram).</li>
+        <li>Responder consultas, sugerencias y solicitudes de rectificación periodística.</li>
       </ul>
 
-      <h2 id="cookies">4. Cookies y cómo cambiar tu elección</h2>
-      <p>En la primera visita, elegís entre aceptar o rechazar. Podés cambiar la elección en cualquier momento:</p>
+      <h2 id="cookies">4. Cookies, Pixel de Meta y configuración de preferencias</h2>
+      <p>DUELO utiliza el <strong>Pixel de Meta</strong> (Meta Platforms, Inc.) exclusivamente para fines analíticos y de medición de alcance publicitario (eventos PageView y ViewContent) en lectores que hayan otorgado su consentimiento expreso. Este pixel no accede a datos bancarios ni recopila contraseñas.</p>
+      <p>En tu primera visita podés aceptar o rechazar libremente. Para cambiar tu elección en cualquier momento, usá el siguiente control:</p>
       <p><button type="button" data-abrir-cookies class="h-11 px-5 rounded-full border border-slate-300 text-sm font-bold text-slate-900 hover:border-teal-700">Revisar preferencias de cookies</button></p>
-      <p>Las fuentes tipográficas del sitio se cargan desde Google Fonts, lo que envía a Google la dirección IP de tu navegador.</p>
+      <p>El sitio utiliza además fuentes tipográficas alojadas mediante Google Fonts, servicio que procesa la dirección IP de conexión conforme a sus propias políticas de privacidad.</p>
 
-      <h2>5. Tus derechos</h2>
-      <p>Según la Ley 25.326, podés pedir el acceso a tus datos (art. 14) y su rectificación, actualización o supresión (art. 16). La Agencia de Acceso a la Información Pública (AAIP) es el órgano de control de esa ley y atiende denuncias y reclamos. Escribí a <a href="mailto:{EMAIL}?subject=Privacidad">{EMAIL}</a> con el asunto “Privacidad”.</p>''')
+      <h2>5. Tus derechos (Habeas Data)</h2>
+      <p>En cumplimiento del artículo 14 y 16 de la Ley 25.326, todo titular de datos personales tiene derecho a solicitar el acceso, rectificación, actualización o supresión de sus datos de forma gratuita. La <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>, Órgano de Control de la Ley Nº 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.</p>
+      <p>Para ejercer tus derechos ante DUELO, escribinos a <a href="mailto:{EMAIL}?subject=Privacidad">{EMAIL}</a> con el asunto “Privacidad y Datos Personales”.</p>''')
 
 
 # --------------------------------------------------------------------------
@@ -911,7 +949,7 @@ def gerar_feed(ms):
     (RAIZ / 'feed.xml').write_text(f'''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
-  <title>PASION</title>
+  <title>DUELO</title>
   <link>{SITE}/</link>
   <atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Noticias de fútbol, economía del deporte y derechos del consumidor.</description>
@@ -924,7 +962,7 @@ def gerar_feed(ms):
 
 def gerar_llms(ms):
     linhas = '\n'.join(f"- [{m['h1']}]({SITE}/{m['url']}): {m['description']}" for m in ms)
-    (RAIZ / 'llms.txt').write_text(f'''# PASION
+    (RAIZ / 'llms.txt').write_text(f'''# DUELO
 
 > Portal de noticias en español (Argentina) sobre fútbol, economía del deporte y derechos del consumidor, con foco en la Argentina. Cada nota lista las fuentes consultadas.
 
@@ -976,7 +1014,7 @@ p{{font-size:38px;font-weight:600;line-height:1.2;color:#CBD5E1;margin-top:22px}
 </style></head><body>
 <div class="grade"></div><div class="faixa"></div>{motivo}
 <div class="conteudo"><span class="rotulo">{e(rotulo)}</span><h1>{e(linha1)}</h1><p>{e(linha2)}</p></div>
-<div class="marca">PASION</div>
+<div class="marca">DUELO</div>
 </body></html>'''
 
 
@@ -1010,7 +1048,7 @@ def renderizar(html_txt, destino_jpg, w=1200, h=630, qualidade=84):
 def gerar_capas(ms):
     for m in ms:
         renderizar(capa_html(EDITORIAS[m['editoria']]['nome'], m['arte'][0], m['arte'][1], m['editoria']), RAIZ / 'assets/images/capas' / f"{m['slug']}.jpg")
-    renderizar(capa_html('Portal de noticias', 'PASION', 'Fútbol, economía del deporte y derechos del consumidor', None),
+    renderizar(capa_html('Portal de noticias', 'DUELO', 'Fútbol, economía del deporte y derechos del consumidor', None),
                RAIZ / 'assets/images/og-pasion.jpg')
     logo_html = f'''<!DOCTYPE html><html><head><style>html,body{{margin:0;width:512px;height:512px;background:#fff;display:flex;align-items:center;justify-content:center}}svg{{width:340px;height:auto}}</style></head><body>{ESCUDO.replace('width="26" height="32"', '')}</body></html>'''
     renderizar(logo_html, RAIZ / 'assets/images/logo-512.png', 512, 512)

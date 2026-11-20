@@ -1,18 +1,7 @@
-# Robots.txt — PASION
+# robots.txt — PASION (Argentina)
+# Regla general: todo el contenido público está habilitado para buscadores y motores de IA
+
 User-agent: *
-Allow: /
-
-# Permitir indexadores de Inteligência Artificial (AEO / GEO 2026)
-User-agent: GPTBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://pasionnoticias.proxserverabner.site/sitemap.xml

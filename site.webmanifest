@@ -1,0 +1,26 @@
+{
+  "name": "DUELO",
+  "short_name": "DUELO",
+  "description": "Noticias del fútbol argentino, economía deportiva y derechos del consumidor.",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0B132B",
+  "background_color": "#0B132B",
+  "display": "standalone"
+}
